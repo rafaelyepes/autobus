@@ -1,0 +1,236 @@
+<!-- Modal showAddModal -->
+<div class="myModal" id="myModal" role="dialog" v-if="showAddModal">
+  <div class="modal-dialog">
+      <!-- Modal content-->
+  	  <div class="modal-header modal-content">
+			<div class="editHeader">
+				<span class="headerTitle col-xs-10 col-md-10">Ajouter un nouvel employé</span>
+				<button class="closeEditBtn pull-right col-xs-2 col-md-2" @click="showAddModal = false">&times;</button>
+			</div>
+          		
+			 		<div class="form-group">
+						<label>Prénom</label>
+						<input type="text" class="form-control" v-model="newMember.nommov">
+	 		 		</div>
+			 		<div class="form-group">
+						<label>Nom</label>
+						<input type="text" class="form-control" v-model="newMember.apemov">
+			 		</div>
+			 		<div class="form-group">
+						<label>Sexe:</label>
+ 						<select class="form-control" id="sel1" name="template" v-model="category">
+    					<option v-for="template in templates"
+        				:selected="template == category ? 'selected' : ''"
+        				:value="template">
+       					{{ template }}
+			   			</option>
+						</select>
+			 		</div>
+					<div class="modal-footer">
+					<div class="footerBtn pull-right">
+					<button class="btn btn-default warning" @click="showAddModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-success warning" @click="showAddModal = false; saveMember();"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+				</div>
+     		</div>
+  		</div>
+	</div> 
+</div> 
+<!-- FIN FIN FIN Modal showAddModal -->
+<!-- FIN FIN FIN Modal showAddModal -->
+<!-- FIN FIN FIN Modal showAddModal -->
+
+
+
+
+
+
+
+
+<!-- Edit Modal -->
+<div class="myModal" v-if="showEditModal && (clickMember.nummov == null ||  clickMember.nummov == '')">
+	<div class="modalContainer">
+		<div class="editHeader">
+			<span class="headerTitle">Modifier un employé</span>
+			<button class="closeEditBtn pull-right" @click="showEditModal = false">&times;</button>
+		</div>
+		<div class="modalBody">
+			<div class="form-group">
+				<label>Prénom</label>
+				<input type="text" class="form-control" v-model="clickMember.nommov">
+			</div>
+			<div class="form-group">
+				<label>Nom</label>
+				<input type="text" class="form-control" v-model="clickMember.apemov">
+			</div>
+			<div class="form-group">
+				<label>Sexe:</label>
+  				<label for="sel1">Sélectionnez la liste (sélectionnez-en une):</label>
+      			<select class="form-control" id="sel1" v-model="clickMember.sexmov">
+				<option value="" disabled="disabled">sélectionnez le Sexe</option>      			
+		        <option value="Homme" selected="true">Homme</option>
+		        <option value="Femme">Femme</option>
+		        </select>
+			</div>
+		</div>
+	
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+
+				<button class="btn btn-default warning" @click="showEditModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+				 <button class="btn btn-success warning" @click="showEditModal = false; updateMember();"><span class="glyphicon glyphicon-check warning"></span> Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FIN FIN FIN EDIT Modal EDIT MODAL -->
+<!-- FIN FIN FIN EDIT Modal EDIT MODAL -->
+<!-- FIN FIN FIN EDIT Modal EDIT MODAL -->
+
+
+
+<!-- Delete Modal 
+<div class="myModal" v-if="showDeleteModal">
+	<div class="modalContainer">
+		<div class="deleteHeader">
+			<span class="headerTitle">Delete Member</span>
+			<button class="closeDelBtn pull-right" @click="showDeleteModal = false">&times;</button>
+		</div>
+		<div class="modalBody">
+			<h5 class="text-center">Are you sure you want to Delete</h5>
+			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apenom}}</h2>
+		</div>
+		<hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+				<button class="btn btn-default" @click="showDeleteModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-danger" @click="showDeleteModal = false; deleteMember(); "><span class="glyphicon glyphicon-trash"></span> Yes</button>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+<!-- Débarque Modal -->
+<div class="myModal" v-if="showDebarqueModal">
+	<div class="modalContainer">
+		<div class="deleteHeader">
+			<span class="headerTitle">Débarqué employé </span>
+			<button class="closeDelBtn pull-right" @click="showDebarqueModal = false">&times;</button>
+		</div>
+		<div class="modalBody">
+			<h5 class="text-center">Êtes-vous sûr de vouloir Débarqué</h5>
+			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apemov}}</h2>
+		</div>
+		<hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+				<button class="btn btn-default warning" @click="showDebarqueModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-danger warning" @click="showDebarqueModal = false; debarqueMember(); "><span class="glyphicon glyphicon-trash"></span> Yes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FIN Débarque Modal -->
+
+
+<!-- MOSTRAL Modal -->
+<div class="myModal" v-if="mostrarModal">
+	<div class="modalContainer">
+		<div class="modalHeader">
+            <span class="headerTitle">OJO-Modal Nuevo-ojo</span>
+            <button class="closeBtn pull-right" @click="mostrarModal = false">&times;</button>
+        </div>
+        <div class="modalBody">
+			<h5 class="text-center">Êtes-vous sûr de vouloir Débarqué</h5>
+			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apemov}}</h2>
+		</div>
+   	    <hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+				<button class="btn btn-default warning" @click="mostrarModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-danger warning" @click="mostrarModal = false; debarqueMember(); "><span class="glyphicon glyphicon-trash"></span> Yes</button>
+			</div>
+		</div>
+	 </div>
+</div>
+<!-- FIN mostral Modal -->
+
+
+<!-- Edit Modal -->
+<div class="myModal" v-if="showQuestion">
+	<div class="modalContainer">
+		<div class="editHeader">
+			<span class="headerTitle">Employé enregistré</span>
+			<button class="closeEditBtn pull-right" @click="showQuestion = false">&times;</button>
+		</div>
+		<div class="modalBody">
+						<h1 class="text-center">Voules-vous faire un autre enregistrement</h1>
+		</div>
+		<hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+			<fieldset class="btn upload1">
+            <div class="controls upload1">
+            <input type="file" accept="image/*" capture="camera" @click="showQuestion = false"/></div>
+        	</fieldset>
+			<!--
+			<fieldset class="input-group upload1">
+            <div class="controls upload1">
+            <input type="file" accept="image/*" capture="camera"/></div>
+        	</fieldset>
+			-->
+			<button class="btn btn-default warning" @click="showQuestion = false"><span class="glyphicon glyphicon-remove"></span>NON</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin -->
+
+<!-- Edit Modal -->
+<div class="myModal" v-if="showQuestion2">
+	<div class="modalContainer">
+		<div class="deleteHeader">
+		<span class="headerTitle">Employé NON enregistré</span>
+			<button class="closeDelBtn pull-right" @click="showQuestion2 = false">&times;</button>
+		</div>
+		<div class="modalBody">
+		<h1 class="text-center">Veuillez recommencer</h1>
+		</div>
+		<hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+			<fieldset class="btn upload1">
+            <div class="controls upload1">
+            <input type="file" accept="image/*" capture="camera" @click="showQuestion2 = false"/></div>
+        	</fieldset>
+			<!--
+			<fieldset class="input-group upload1">
+            <div class="controls upload1">
+            <input type="file" accept="image/*" capture="camera"/></div>
+        	</fieldset>
+			-->
+			<button class="btn btn-default warning" @click="showQuestion2 = false"><span class="glyphicon glyphicon-remove"></span>NON</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin -->
+
+
+
+<!-- Modal showAddimagen -->
+<div class="myModal" id="myModal" role="dialog" v-if="showAddimagen">
+  <div class="modal-dialog">
+  	  	  <div class="modal-header modal-content">
+			<div class="editHeader">
+				<span class="headerTitle col-xs-2 col-md-2">Employé ajouté</span>
+			</div>
+	        <div class="col-xs-10 col-md-10">
+		    <img class="upload1img" @click="showAddimagen = false">
+            </div>
+  	        <div class="col-xs-2 col-md-2">
+					<div class="modal-footer">
+					<div class="footerBtn pull-right">
+					</div>
+		     		</div>
+		</div>
+  </div>
+</div>  
+

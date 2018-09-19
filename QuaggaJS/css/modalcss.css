@@ -1,0 +1,93 @@
+.myModal{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.modalContainer{
+	width: 90%;
+	background: #FFFFFF;
+	margin:auto;
+	margin-top: 5px;
+}
+
+.modalHeader{
+	padding: 5px;
+	background: #008CBA;
+	color: #FFFFFF;
+	height: 35px;
+	font-size: 22px;
+	padding-left:15px;
+}
+
+.editHeader{
+	padding: 5px;
+	background: #4CAF50;
+	color: #FFFFFF;
+	height: 35px;
+	font-size:20px;
+	/*padding-left:15px;*/
+}
+
+.deleteHeader{
+	padding: 5px;
+	background: #f44336;
+	color: #FFFFFF;
+	height: 35px;
+	font-size:22px;
+	padding-left:15px;
+}
+
+.modalBody{
+	padding: 10px;
+}
+
+.modalFooter{
+	height:44px;
+}
+
+.footerBtn{
+	margin-right:10px;
+	margin-top:-9px;
+}
+
+.closeBtn{
+	background: #008CBA;
+	color: #FFFFFF;
+	border:none;
+}
+
+.closeEditBtn{
+	background: #4CAF50;
+	color: #FFFFFF;
+	border:none;
+}
+
+.closeDelBtn{
+	background: #f44336;
+	color: #FFFFFF;
+	border:none;
+}
+
+.container-fluid{
+/*margin-top: 37px;*/
+
+}
+
+.form-control1{
+text-align: left;
+
+}
+
+th{
+text-align: center;
+}
+
+
+
+label{
+font-size: 18px;	
+}

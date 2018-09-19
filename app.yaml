@@ -1,0 +1,10 @@
+application: autobuslacroix
+version: one
+runtime: php
+api_version: 1
+
+handlers:
+
+- url: /.*
+  script: index.php
+  
