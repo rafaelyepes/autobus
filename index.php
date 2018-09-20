@@ -389,7 +389,7 @@ height: 50%;
 -->
 <div class="container-fluid" id="QR-Code">	
      
-      <table border="2" style="margin: 0; padding: 0;">
+      <table border="2" style="margin: 0; padding: 0; width: 100%;">
       <tr>
       <td class="col-xs-1 col-md-1">
       <img class="img2" src="./img/logolacroixform.png" alt="Logo Lacroix">
