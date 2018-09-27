@@ -1,27 +1,27 @@
 <?php 
-include ("./conectar4.php"); 
+//include ("./conectar4.php"); 
+date_default_timezone_set("America/Montreal");
 
-//https://www.dynamsoft.com/demo/DBR_HTML5/WebcamBarcodeReader.htm
-//https://github.com/dynamsoft-dbr/HTML5-Webcam-Barcode-Reader
-
-
-//include ("./conectar.php"); 
-//include ("./classevar01.php"); 
-
-/*
-$menu="S";
-if(isset($_GET['menu'])) {
-$menu=$_GET['menu'];
-}  
-
-if ($menu == "S"){
-include ("./indexg1.php"); 
-}else{
-include ("./ipads.php"); 
-}
-*/
 $bus="";
-$fecha="2018-09-10";
+
+/*Calculando la fecha de Salida del Autobus*/
+$fecha = new DateTime('NOW');
+$hora= $fecha->format('H');
+$minuto=$fecha->format('i');
+$segundos=$fecha->format('s');
+$fecha=$fecha->format('Y-m-d');
+$horatotal= ($hora.":".$minuto.":".$segundos);
+$ano = substr($fecha,2,2);
+$mes = substr($fecha,5,2);
+$dia = substr($fecha,8,2);
+/*Calculando la fecha de Salida del Autobus*/
+
+
+
+
+
+
+//$fecha="2018-09-10";
 $chofer="";
 $viaje="";
 $documento="zz";
@@ -49,7 +49,7 @@ if(isset($_GET["viaje"])){
 $viaje=$_GET['viaje'];
 }
 
-
+/*
 $consulta="SELECT * FROM autobusmae where docmae='$documento'";
 $rs_tabla=mysqli_query($conexion, $consulta);
 
@@ -61,6 +61,7 @@ $rs_tabla=mysqli_query($conexion, $consulta);
          $horadepart=mysqli_result($rs_tabla,$i,"hr2mae");
          $horallegada=mysqli_result($rs_tabla,$i,"hr3mae");
     }        
+*/
 
 ?>
 
@@ -68,16 +69,18 @@ $rs_tabla=mysqli_query($conexion, $consulta);
 <html>
 <head>
 	<title>LacroixNet</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="./js/jquery.js"></script>
-    <link href="./css/bootstrap.css" rel="stylesheet">
+   
     <link rel="stylesheet" type="text/css" href="./QuaggaJS/css/modalcss.css">
+    <link rel="stylesheet" type="text/css" href="./QuaggaJS/css/alert.css">
+
 
     <link rel="stylesheet" type="text/css" href="./QuaggaJS/css/styles.css?v=<?php echo(rand()); ?>" />
     <!--<link href="css/style.css" rel="stylesheet">-->
@@ -88,6 +91,29 @@ $rs_tabla=mysqli_query($conexion, $consulta);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     -->
 <script>
+
+function validachofer(){
+  app.ValidaMembers('10014');
+} 
+function validaautobus(){
+  app.ValidaMembers('10656');
+} 
+function empleado1(){
+  app.ValidaMembers('10366');
+} 
+function empleado2(){
+  app.ValidaMembers('50097');
+} 
+function empleado3(){
+  app.ValidaMembers('41393');
+} 
+function empleado4(){
+  app.ValidaMembers('22006');
+} 
+function empleado5(){
+  app.ValidaMembers('41251');
+} 
+
 
 function sonido(){ 
 
@@ -104,26 +130,31 @@ app.consultaMember = {nummov:numero};
 app.ConsultaMembers();
 }
 
-function inicio(){
-      var documentog = <?php echo json_encode($documento)?>;
-      var horadepart = <?php echo json_encode($horadepart)?>;
-      var horallegada = <?php echo json_encode($horallegada)?>;
+function validahora(horadepart, horallegada){
       if (horadepart == "00:00:00"){
          $("#depart").show();
          $("#arrive").hide();
          $("#rearrive").hide();
-         $("#arrive").removeAttr("style").hide();
-         $("#rearrive").removeAttr("style").hide();
+         $("#reouvrir").hide();
+    //     $("#arrive").removeAttr("style").hide();
+    //     $("#rearrive").removeAttr("style").hide();
+         $("#boton1").show();
+           $("#boton1").prop("disabled",false);
+    //     $("#boton1").removeAttr("style").show();
+          $("#interactive").show();
+
       }
       if (horadepart != "00:00:00"){
+          
+
             $("#depart").hide();
-            $("#depart").removeAttr("style").hide();
+ //           $("#depart").removeAttr("style").hide();
 
             $("#boton1").hide();
-            $("#boton1").removeAttr("style").hide();
+//            $("#boton1").removeAttr("style").hide();
 
             $(".upload1").hide();
-            $(".upload1").removeAttr("style").hide();
+//            $(".upload1").removeAttr("style").hide();
 
          
 
@@ -133,136 +164,242 @@ function inicio(){
            
 
           //  $("#boton3").prop("disabled",true);
-            $("#interactive").removeAttr("style").hide();
+
+            /*captura de la camara*/
+            $("#interactive").hide();
 
         if (horallegada == "00:00:00"){
+          inicio = document.getElementById("horadepart").value;
+          //$reg_time=strtotime($reg_time);
+          
+          fin = <?php echo json_encode($horatotal)?>;
 
+          inicioMinutos = parseInt(inicio.substr(3,2));
+          inicioHoras = parseInt(inicio.substr(0,2));
+          
+          finMinutos = parseInt(fin.substr(3,2));
+          finHoras = parseInt(fin.substr(0,2));
+
+          transcurridoMinutos = finMinutos - inicioMinutos;
+          transcurridoHoras = finHoras - inicioHoras;
+  
+          if (transcurridoMinutos < 0) {
+            transcurridoHoras--;
+            transcurridoMinutos = 60 + transcurridoMinutos;
+          }
+  
+          horas = transcurridoHoras.toString();
+          minutos = transcurridoMinutos.toString();
+  
+         // alert (horas+"  "+minutos);
+
+        if (horas <= 1){
+ //         if (horas >= 1){
              $("#arrive").show();
-             $("#rearrive").show();
+          }
+          $("#rearrive").show();
+        } //horallegada
+        else{
+            $("#reouvrir").show();
+            $("#depart").hide();
+            $("#depart").removeAttr("style").hide();
+
+
+            $("#arrive").hide();
+            $("#arrive").removeAttr("style").hide();
+
+            $("#rearrive").hide();
+            $("#rearrive").removeAttr("style").hide();
+
+            $("#boton1").hide();
+            $("#boton1").removeAttr("style").hide();
+
+            $(".upload1").hide();
+            $(".upload1").removeAttr("style").hide();
+
+
         }
-      }
+      } //horadepart
+
+
+
+
+}
+
+function inicio(){
+      var documentog = <?php echo json_encode($documento)?>;
+      var horadepart = "00:00:00";
+      var horallegada = "00:00:00";;
+      validahora(horadepart, horallegada);
 }
 
 function arrive(){
 if(confirm('Voulez-vous Arrive à destination')){ /* si on clique sur ok */
-          documento=document.getElementById("documento").value;
-          fecha=document.getElementById("fecha").value;
-          bus=document.getElementById("bus").value;
-          chofer=document.getElementById("chofer").value;
-          control="arrive";
-          var dataString = '&d1=' + fecha + '&d2=' + bus + '&d3=' + chofer+ '&documento=' + documento+ '&control=' + control;  
-          if (documento != ""){
-          $.ajax({
-          url: 'controlautobus.php',//Definimos url .php
-          type: 'POST', //Definimos o método HTTP usado
-          data: dataString, //enviamos datos
-          encoding:"UTF-8", //Definimos o tipo de retorno
-          dataType: 'JSON',
-          cache: false,
-          error: function(){
-                 alert("Essayez à nouveau s'il vous plaît");
-          },
-          success: function(respuesta){
-            location.reload(true);
-          } // fin del succes
-          });  // fin de la funcion ajax
+  fecmov = document.getElementById("fecha").value;
+        docmov = document.getElementById("documento").value;
+        chofer = document.getElementById("chofer").value;
+        autobus = document.getElementById("bus").value;
+        crud="arrive";
+        const formData = new FormData();
+        formData.append('crud', crud);
+        formData.append('fecmov', fecmov);
+        formData.append('docmov', docmov);
+        formData.append('autobus', autobus);
+        formData.append('chofer', chofer);
+        console.log("Arrive Autobus");
+        axios({
+                  method: 'POST',
+                  url: 'api.php',
+                  responseType: 'json',
+                  data: formData
+          })
+       .then(function(response){
+          console.log(response);
+          app.clickMember = {};
+          if(response.data.error){
+            app.errorMessage = response.data.message;
           }
-          } //vou voulez depart
-}
+          else{
+            document.getElementById("horallegada").value = response.data.horadepart;
+            horallegada=response.data.horadepart;
+            horadepart=document.getElementById("horadepart").value;
+            validahora(horadepart, horallegada);
+            //app.getAllMembers();
+          }
+        });
+    } //vou voulez arrive
+
+
+
+} //Fin arrive
+
+function reouvrir(){
+   if(confirm('Voulez-vous Re-Ouvrir')){ /* si on clique sur ok */
+        fecmov = document.getElementById("fecha").value;
+        docmov = document.getElementById("documento").value;
+        chofer = document.getElementById("chofer").value;
+        autobus = document.getElementById("bus").value;
+        crud="reouvrir";
+        const formData = new FormData();
+        formData.append('crud', crud);
+        formData.append('fecmov', fecmov);
+        formData.append('docmov', docmov);
+        formData.append('autobus', autobus);
+        formData.append('chofer', chofer);
+        console.log("Rearrive Autobus");
+        axios({
+                  method: 'POST',
+                  url: 'api.php',
+                  responseType: 'json',
+                  data: formData
+          })
+       .then(function(response){
+          console.log(response);
+          app.clickMember = {};
+          if(response.data.error){
+            app.errorMessage = response.data.message;
+          }
+          else{
+            document.getElementById("horadepart").value = response.data.horadepart;
+            horadepart=response.data.horadepart;
+            horallegada=document.getElementById("horallegada").value;
+            validahora(horadepart, horallegada);
+            //app.getAllMembers();
+          }
+        });
+
+
+   }
+} //Fin reouvrir
 
 function depart(){
-          if(confirm('Voulez-vous Départ')){ /* si on clique sur ok */
-          documento=document.getElementById("documento").value;
-          fecha=document.getElementById("fecha").value;
-          bus=document.getElementById("bus").value;
-          chofer=document.getElementById("chofer").value;
-          control="depart";
-                
-          var dataString = '&d1=' + fecha + '&d2=' + bus + '&d3=' + chofer+ '&documento=' + documento+ '&control=' + control;  
-          if (documento != ""){
-          $.ajax({
-          url: 'controlautobus.php',//Definimos url .php
-          type: 'POST', //Definimos o método HTTP usado
-          data: dataString, //enviamos datos
-          encoding:"UTF-8", //Definimos o tipo de retorno
-          dataType: 'JSON',
-          cache: false,
-          error: function(){
-                 alert("Essayez à nouveau s'il vous plaît");
-          },
-          success: function(respuesta){
-            location.reload(true);
-
-         
-          } // fin del succes
-          });  // fin de la funcion ajax
+   if(confirm("Vous avez enregistré tous les employés qui sont dans l autobus et êtes prêt à partir?")){ /* si on clique sur ok */
+        fecmov = document.getElementById("fecha").value;
+        docmov = document.getElementById("documento").value;
+        chofer = document.getElementById("chofer").value;
+        autobus = document.getElementById("bus").value;
+        crud="depart";
+        const formData = new FormData();
+        formData.append('crud', crud);
+        formData.append('fecmov', fecmov);
+        formData.append('docmov', docmov);
+        formData.append('autobus', autobus);
+        formData.append('chofer', chofer);
+        console.log("Depart Autobus");
+        axios({
+                  method: 'POST',
+                  url: 'api.php',
+                  responseType: 'json',
+                  data: formData
+          })
+       .then(function(response){
+          console.log(response);
+          app.clickMember = {};
+          if(response.data.error){
+            app.errorMessage = response.data.message;
           }
-          } //vou voulez depart
-
+          else{
+            document.getElementById("horadepart").value = response.data.horadepart;
+            horadepart=response.data.horadepart;
+            horallegada=document.getElementById("horallegada").value;
+            validahora(horadepart, horallegada);
+            //app.getAllMembers();
+          }
+        });
+    } //vou voulez depart
 }  //fin funcion depart
 
 function rearrive(){
-if(confirm('Voulez-vous Ajouté une employé')){ /* si on clique sur ok */
- // alert ("0");
-          documento=document.getElementById("documento").value;
-          fecha=document.getElementById("fecha").value;
-          bus=document.getElementById("bus").value;
-          chofer=document.getElementById("chofer").value;
-          control="rearrive";
-                
-          var dataString = '&d1=' + fecha + '&d2=' + bus + '&d3=' + chofer+ '&documento=' + documento+ '&control=' + control;  
-          if (documento != ""){
-          $.ajax({
-          url: 'controlautobus.php',//Definimos url .php
-          type: 'POST', //Definimos o método HTTP usado
-          data: dataString, //enviamos datos
-          encoding:"UTF-8", //Definimos o tipo de retorno
-          dataType: 'JSON',
-          cache: false,
-          error: function(){
-                 alert("error petición ajax-1");
-          },
-          success: function(respuesta){
-            location.reload(true);
-
-         
-          } // fin del succes
-          });  // fin de la funcion ajax
+   if(confirm("Voulez-vous ajouter un/des employé(s)")){ /* si on clique sur ok */
+        fecmov = document.getElementById("fecha").value;
+        docmov = document.getElementById("documento").value;
+        chofer = document.getElementById("chofer").value;
+        autobus = document.getElementById("bus").value;
+        crud="rearrive";
+        const formData = new FormData();
+        formData.append('crud', crud);
+        formData.append('fecmov', fecmov);
+        formData.append('docmov', docmov);
+        formData.append('autobus', autobus);
+        formData.append('chofer', chofer);
+        console.log("Rearrive Autobus");
+        axios({
+                  method: 'POST',
+                  url: 'api.php',
+                  responseType: 'json',
+                  data: formData
+          })
+       .then(function(response){
+          console.log(response);
+          app.clickMember = {};
+          if(response.data.error){
+            app.errorMessage = response.data.message;
           }
-          } //vou voulez depart
-}
+          else{
+            document.getElementById("horadepart").value = response.data.horadepart;
+            horadepart=response.data.horadepart;
+            horallegada=document.getElementById("horallegada").value;
+            validahora(horadepart, horallegada);
+            //app.getAllMembers();
+          }
+        });
+    } //vou voulez depart
+
+}  //fin funcion depart
+
+function functimer(){ 
+   setTimeout(function() {
+     app.showAddimagen = "false";
+   }, 1000);
+}  
 
 //inicio de las funcion JQUERY
 $(document).ready(function(){
-
-  //ALERT CONFIRM//
-  $.confirm({
-    title: 'Confirm!',
-    content: 'Simple confirm!',
-    buttons: {
-        confirm: function () {
-            $.alert('Confirmed!');
-        },
-        cancel: function () {
-            $.alert('Canceled!');
-        },
-        somethingElse: {
-            text: 'Something else',
-            btnClass: 'btn-blue',
-            keys: ['enter', 'shift'],
-            action: function(){
-                $.alert('Something else?');
-            }
-        }
-    }
-  });
-  //FIN FIN FIN ALERT CONFIRM//
 
 
 $( "#camara" ).click(function() {
   $("#respuesta").hide();
 });
-
 
 $("#boton1xx" ).click(function() {
  // alert ("0");
@@ -291,6 +428,8 @@ function botonx2(){
 function cancelar(){
   window.location="../autobus/index.php";
 }  
+
+var $node="hola"; 
 
 </script>
 
@@ -379,15 +518,13 @@ height: 50%;
 }
 
 }
-
-
 </style>
 </head>
 <body onload="inicio()">
 <!--	
 <div class="container-fluid">
 -->
-<div class="container-fluid" id="QR-Code">	
+<div class="container-fluid" id="QR-Code" style="background-color: #FE2E2E;">	
      
       <table border="2" style="margin: 0; padding: 0; width: 100%;">
       <tr>
@@ -405,7 +542,7 @@ height: 50%;
       <div class="col-xs-12 col-md-12" style="padding-left: 0px;">
 
        <div class="col-xs-3 col-md-3">
-       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Employé</button>
+       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Nouvel employé</button>
        </div>  
              
       <div class="col-xs-3 col-md-3">
@@ -416,12 +553,17 @@ height: 50%;
       <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
       </div>
 
+      
       <!--onClick="depart()"-->
 
       <div class="col-xs-3 col-md-3">
       <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button> 
       </div>
 
+      <!--onClick="reouvrir()"-->
+      <div class="col-xs-3 col-md-3"> 
+      <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
+      </div>
      
 
       </div> 
@@ -545,9 +687,7 @@ height: 50%;
 
   <script src="./QuaggaJS/vendor/jquery-1.9.0.min.js" type="text/javascript"></script>
 
-
-  <script src="./QuaggaJSvendor/jquery-1.9.0.min.js" type="text/javascript"></script>
-  
+ 
   
   <!--Utilizado para scanner fijo
   <script src="./QuaggaJS/js/file_input.js" type="text/javascript"></script>
@@ -606,9 +746,9 @@ height: 50%;
 						<td class="danger1">{{ member.nommov }}</td>
 						<td class="danger1">{{ member.apemov }}</td>
 						<td class="danger1">{{ member.sexmov }}</td>
-                        <td class="danger1">{{ member.stamov }}</td>
+            <td class="danger1">{{ member.stamov }}</td>
 						<td class="trans text-center">
-							<button id="boton2" class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
+							<button id="boton2" class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
                         </td>    
                         <td class="trans text-center">
 							<button id="boton3" class="btn btn-danger btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash danger1"></span>Débarqué</button>
@@ -626,57 +766,74 @@ height: 50%;
     <div class="panel panel-primary" >
 -->
 
-   
-    <div style="display: none" class="panel panel-primary" style="margin:20px;">
+     <div class="row">
+          <div class="col-xs-3 col-md-3">
+          <label>Autobus</label>
+          </div>
+          <div class="col-xs-3 col-md-3">
+          <input style="width: 100%; background-color: #FA5858;" type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
+          </div>
+          <div class="col-xs-3 col-md-3">
+          <label>Chauffeur</label>
+          </div>
+          <div class="col-xs-3 col-md-3">
+          <input type="text" style="width: 100%; background-color: #FA5858;" placeholder="" class="form-control" value="<?php echo ($chofer)?>" id="chofer" name="chofer" readonly>
+          </div>  
+     </div>     
+    <div style="display: " class="panel panel-primary" style="margin:20px;">
    
     <div class="panel-heading">
             <h3 class="panel-title">R.F</h3>
     </div>
     <div class="panel-body">
+
     <form>
-    <div class="col-md-12 col-sm-12">
-    <div class="row">
-    <div class="col-sm-6 form-group">
-                                <label>Document No</label>
-                                <input type="text"  class="form-control" value="<?php echo ($documento)?>" id="documento" name="documento" readonly>
-                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <label>Date</label>
-                                <input type="text" class="form-control" value="<?php echo ($fecha)?>" id="fecha" name="fecha" readonly>
-                            </div>
-                        </div>                  
-                        <div class="row">
-                            <div class="col-sm-4 form-group">
-                                <label>Autobus No</label>
-                                <input type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>Chauffeur</label>
-                                <input type="text" placeholder="" class="form-control" value="<?php echo ($chofer)?>" id="chofer" name="chofer" readonly>
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>No</label>
-                                <input type="text" placeholder="" class="form-control" value="<?php echo ($viaje)?>" id="viaje" name="viaje" readonly>
-                            </div>      
-                        </div>
-                      </div>   
-          
-       
+    <div class="col-md-12 col-sm-12" >
+    
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label>Document No</label>
+            <input type="text"  class="form-control" value="<?php echo ($documento)?>" id="documento" name="documento" readonly>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label>Date</label>
+            <input type="text" class="form-control" value="<?php echo ($fecha)?>" id="fecha" name="fecha" readonly>
+          </div>
+        </div>                  
 
-                </form> 
-                </div>
+        <div class="row">
+         
+          <div class="col-sm-4 form-group">
+            <label>No</label>
+            <input type="text" placeholder="" class="form-control" value="<?php echo ($viaje)?>" id="viaje" name="viaje" readonly>
+          </div>   
+          <div class="col-sm-4 form-group">
+            <label>Validacion No</label>
+            <input type="text" placeholder="" class="form-control" value="0" id="validacion" name="validacion" readonly>
+          </div>    
+          <div class="col-sm-4 form-group">
+           <input type="text" onclick="validachofer()" value="Chofer"/>
+           <input type="text" onclick="validaautobus()" value="Autobus"/>
+           <input type="text" onclick="empleado1()" value="Empleado-1"/>
+           <input type="text" onclick="empleado2()" value="Empleado-2"/>
+           <input type="text" onclick="empleado3()" value="Empleado-3"/>
+           <input type="text" onclick="empleado4()" value="Empleado-4"/>
+           <input type="text" onclick="empleado5()" value="Empleado-5"/>
+          </div>    
+        
+          <div class="col-sm-4 form-group">
+          <input type="text" placeholder="" class="form-control" value="00:00:00" id="horadepart" name="horadepart" readonly>
+          <input type="text" placeholder="" class="form-control" value="00:00:00" id="horallegada" name="horallegada" readonly>
+          </div>    
 
-
-                </div>
-
-               <div class="controls" style="margin-left: 30%;">
-               <button  class="stop btn btn-warning">Arrêtez la caméra
-</button>
-
-<input type="button" value=" Send " id="trig" onclick="sonido()" />
-
-
+      
+        </div>
+      </div>   
+     </form> 
+    </div>
+</div>
+<div class="controls" style="margin-left: 30%;">
 <audio id="audio" controls>
 <source type="audio/wav" src="beep.mp3">
 </audio>
@@ -686,6 +843,7 @@ height: 50%;
 <script src="dist/adapter-latest.js" type="text/javascript"></script>
 <script src="dist/quagga.min.js" type="text/javascript"></script>
 <script src="./QuaggaJS/js/live_w_locator.js?v=<?php echo(rand()); ?>" type="text/javascript"></script>
+<script src="./js/alert.js"></script>
 <script src="./js/vue.js"></script>
 <script src="./js/axios.js"></script>
 <script src="./js/app.js?v=<?php echo(rand()); ?>"></script>

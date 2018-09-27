@@ -1,5 +1,4 @@
 $(function() {
-   
     var App = {
         init: function() {
             var self = this;
@@ -244,83 +243,28 @@ $(function() {
 
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
-
+        console.log("Detectando Imagen");
         if (App.lastResult !== code) {
             App.lastResult = code;
             var $node = null, canvas = Quagga.canvas.dom.image;
 
             $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
             $node.find("img").attr("src", canvas.toDataURL());
+
          //   $node.find("h4.code").html(code);
-            $("#result_strip ul.thumbnails").prepend($node);
+         
+           $("#result_strip ul.thumbnails").prepend($node);
 
             /*VALIDA CARTA*/    
             numero=code;
            // var audio = document.getElementById("audio");
            // audio.play();
+           
 
             app.consultaMember = {nummov:numero};
-            documentono =  $('#documento').val();
-            if (documentono == ""){
-                numerot= $('#bus').val();
-                 if (numerot == ""){
-                  $("#bus").val(numero);
-                  $("#bus").css({
-                  "background-color": "green",
-                  "color": "white",
-                  "font-size": "20px",
-                 }); //FIN DEL CSS
-                 // FIN DEL IF NUMER 
-              }else{
-                numerot2= $('#chofer').val();
-                  if (numerot2 == ""){
-                   $("#chofer").val(code);
-                   $("#chofer").css({
-                   "background-color": "green",
-                   "color": "white",
-                   "font-size": "20px",
-                   });
-
-                   fecha=$('#fecha').val();
-                   bus=$('#bus').val();
-                   chofer=$('#chofer').val();
-                   viaje=$('#viaje').val();
-
-
-                      var dataString = '&fecha=' + fecha + '&bus=' + bus + '&chofer=' + chofer+ '&viaje=' + viaje;  
-                      $.ajax({
-                      url: 'consecautobus.php',//Definimos url .php
-                      type: 'POST', //Definimos o método HTTP usado
-                      data: dataString, //enviamos datos
-                      encoding:"UTF-8", //Definimos o tipo de retorno
-                      dataType: 'JSON',
-                      cache: false,
-                      error: function(){
-                             alert("error petición ajax-No Document");
-                      },
-                      success: function(respuesta){
-                      for(var i=0; i<respuesta.length; i++){
-                        $("#documento").val(respuesta[i].docu);
-                        $("#viaje").val(respuesta[i].viamae);
-                       }  //fin del for
-                       } // fin del succes
-                       });  // fin de la funcion ajax
-
-
-
-                  } //fin if numerot2
-              } //fin if numerot
-            }else{
-              app.ValidaMembers();
-            }  // fin documento    
-
-
-
-
-            
-
-
-
+           
+            app.ValidaMembers(numero);
+          
       }else{
         app.showAddimagenX = "true";
       

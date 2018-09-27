@@ -18,7 +18,7 @@
 			 		</div>
 			 		<div class="form-group">
 						<label>Sexe:</label>
- 						<select class="form-control" id="sel1" name="template" v-model="category">
+ 			<select class="form-control" id="sel1" name="template" v-model="newMember.sexmov">
     					<option v-for="template in templates"
         				:selected="template == category ? 'selected' : ''"
         				:value="template">
@@ -233,4 +233,3 @@
 		</div>
   </div>
 </div>  
-

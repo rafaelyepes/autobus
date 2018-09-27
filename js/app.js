@@ -25,37 +25,42 @@ var app = new Vue({
 	mounted: function(){
 		this.getAllMembers();
 	},
-
 	methods:{
 		getAllMembers: function(){
-		
-//		axios.post('api.php?documento=documento')
-//		axios.post('api.php?documento=DOC0101')
-		documento=document.getElementById("documento").value;;
-//esta esta bien//
-		axios.get('api.php?documento='+documento)
-//****////	
-	
-	
-		
 
-		
-
+		fecmov = document.getElementById("fecha").value;
+		docmov = document.getElementById("documento").value;
+		chofer = document.getElementById("chofer").value;
+		autobus = document.getElementById("bus").value;
+		crud="read";
+		const formData = new FormData();
+		formData.append('crud', crud);
+		formData.append('fecmov', fecmov);
+		formData.append('docmov', docmov);
+	    formData.append('autobus', autobus);
+		formData.append('chofer', chofer);
+	    console.log("Muestra Todos los grabados");
+		axios({
+              method: 'POST',
+              url: 'api.php',
+              responseType: 'json',
+              data: formData
+        })
+		//esta esta bien//
 		.then(function(response){
-			//console.log(response);
+					console.log("Respueta grabados");
+					console.log(response);
 					if(response.data.error){
 						app.errorMessage = response.data.message;
-//						app.errorMessage = "Error -01";
 					}
 					else{
-						app.members = response.data.members;
-
-						//app.successMessage = "Miembros OK"
+						app.members = response.data.results;
 					}
 			});
 		},
 
 		ConsultaMembers: function(){
+			alert ("Consulta miembros");
 			app.successMessage = "si esta consultando";
 			var memForm = app.toFormData(app.consultaMember);
 			axios.post('api.php?crud=consulta', memForm)
@@ -92,79 +97,122 @@ var app = new Vue({
 					}
 				});
 		},
-
-		ValidaMembers: function(){
-			app.consultaMember.fecmov=document.getElementById("fecha").value;
-			app.consultaMember.docmov=document.getElementById("documento").value;  
-			var memForm = app.toFormData(app.consultaMember);
-			nummov = app.consultaMember.nummov;
-			crud="grababd";
-  	    	fecmov=document.getElementById("fecha").value; 
-
-
-  	    	//alert (crud+" "+fecmov+" "+nummov);   
-  	  		
-  	  		/*
-  	  		axios.post('api.php', {
-   			params: {
-      		crud: crud,
-      		nummov: nummov,
-      		fecmov: fecmov
-  	  		}
-			})
-			*/
-			
-			axios.post('api.php?crud=grababd', memForm)
-
+		ValidaMembers: function(nummov){
+		//	alert (nummov);
+			//nummov = "C0001";
+			fecmov = document.getElementById("fecha").value;
+			docmov = document.getElementById("documento").value;
+			chofer = document.getElementById("chofer").value;
+			autobus = document.getElementById("bus").value;
+			validacion = "1";
+			if (chofer =='' || autobus ==''){
+				validacion = "0";
+			}
+			if (validacion == "1"){	
+				crud="grababandolinea";
+				const formData = new FormData();
+		        formData.append('crud', crud);
+		        formData.append('nummov', nummov);
+		        formData.append('fecmov', fecmov);
+		        formData.append('docmov', docmov);
+	            formData.append('autobus', autobus);
+		        formData.append('chofer', chofer);
+		        console.log("Consultando Respuesta AL SERVIDOR-validacion-111");
+				axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+		        })
+				//esta esta bien//
 				.then(function(response){
-					//console.log(response);
+					console.log("Consultando Respuesta LINEA AGREGADA");
+					console.log(response);
 					if(response.data.error){
 						app.errorMessage = response.data.message;
-//						app.errorMessage = "Error -01";
 					}
 					else{
-					//	app.members = response.data.members;
-//					app.successMessage = response.data.message
-					
-
-					
-//   				    app.successMessage = response.data.members[0].nommov;
-
-
 					//numero=response.data.members[0].nummov;
+					nombre=response.data.members[0].nommov;
 					nombre=response.data.members[0].nommov;
 					if (nombre == "EXISTE"){
 						app.successMessage = "Respuesta ok-ya existe";
              		   //app.ConsultaMembers();
-						$("#respuesta").css({"background-color": "red"});
+               		    $("#result_strip ul.thumbnails li:first-child").remove();
+ 		     		    alert ("Employé est déjà enregistré");
+						/*$("#respuesta").css({"background-color": "red"});
 						$("#respuesta").text("Employé est déjà enregistré");
-	        		 	$("#respuesta").show();
-
+	        		 	$("#respuesta").show();*/
             		 }else{
             		 	app.successMessage = "Grabado Nuevo";
-            		 	$("#respuesta").css("background-color","green");
-						$("#respuesta").text("Employé enregistré");
-	        		 	$("#respuesta").show();
-            		 	app.showAddimagen = "true";
-						app.getAllMembers();
-						
+            		 	//$("#respuesta").css("background-color","green");
+						//$("#respuesta").text("Employé enregistré");
+	        		 	//$("#respuesta").show();
+            		 	console.log("LLamando a todos los miembros getAllMembers");
+            		 	app.getAllMembers();
+            		 	console.log("Set Timer-01");
+            		 	//contador para cerrar el MODAL AUTOMAQTICAMENTE//	
+				  		app.showAddimagen = true;
+				        setTimeout(() => {
+				            app.showAddimagen = false;
+				        }, 8000);
 
 
-//            		 	app.showDebarqueModal = "true";
-						//app.RevisaMembers();
+
             		 }
-					/*
-					nombre=response.data.members[0].nomemp;
-					apellido=response.data.members[0].apeemp;
-					sexo=response.data.members[0].sexemp;
-
-					*/
-        
-//					app.newMember = {nummov:numero, nommov:nombre, apemov:apellido, sexmov:sexo};
-//					app.saveMember1();
-
 					}
-				});
+				}); // fin then funcion
+				} // FIN VALIDACION =1;
+			
+			if (validacion == "0"){
+					//Validando si el BUS YA FUE ABIERTO O CERRADO//
+					//alert ("Validacion Carta Autobus o Carta Conductor");
+					crud="validaautobus";
+					const formData = new FormData();
+			        formData.append('crud', crud);
+			        formData.append('nummov', nummov);
+			        formData.append('fecmov', fecmov);
+			        formData.append('docmov', docmov);
+                    formData.append('autobus', autobus);
+			        formData.append('chofer', chofer);
+			        console.log("Consultando Respuesta AL SERVIDOR-CARTA AUTOBUS");
+					axios({
+			              method: 'POST',
+			              url: 'api.php',
+			              responseType: 'json',
+			              data: formData
+			        })
+					//esta esta bien//
+					.then(function(response){
+							console.log(response);
+							if(response.data.error){
+								app.errorMessage = response.data.message;
+							}else{
+							if (response.data.respuesta =='EMPLEADO NO ACORDE'){
+								$("#result_strip ul.thumbnails li:first-child").remove();
+								alert ("SVP scanner la carte du chauffeur et identifier l'autobus");	
+								return false;
+							}
+	 					    document.getElementById("bus").value=response.data.autobus;
+							document.getElementById("chofer").value=response.data.chofer;
+							document.getElementById("documento").value=response.data.documento;
+							document.getElementById("horadepart").value=response.data.horadepart;
+							document.getElementById("horallegada").value=response.data.horallegada;
+							validahora(response.data.horadepart, response.data.horallegada);
+							if (response.data.chofer !=''){
+								$("#chofer").css("background-color", "#9FF781");
+							}
+							if (response.data.autobus !=''){
+								$("#bus").css("background-color", "#9FF781");
+							}
+							if (response.data.chofer !='' && response.data.autobus !=''){
+							$(".container-fluid").css("background-color", "#FFFFFF");
+							}
+
+							app.getAllMembers();
+							}
+						}); // fin then funcion
+			}//fin validacion 0	
 		}, //fin funcion valida miembros
 
 		RevisaMembers: function(){
@@ -191,22 +239,35 @@ var app = new Vue({
 
 
 		saveMember: function(){
-			//console.log(app.newMember);
-   	   	//  var documento = <?php echo json_encode($documento)?>;
-		//	app.newMember.documento=documento;
-			app.newMember.fecmov=document.getElementById("fecha").value;
-			app.newMember.documento=document.getElementById("documento").value;
-			app.newMember.sexmov=app.category;
-
-			var memForm = app.toFormData(app.newMember);
-			axios.post('api.php?crud=create', memForm)
+				fecmov = document.getElementById("fecha").value;
+				docmov = document.getElementById("documento").value;
+				chofer = document.getElementById("chofer").value;
+				autobus = document.getElementById("bus").value;
+				crud="create";
+				const formData = new FormData();
+			    formData.append('crud', crud);
+		        formData.append('fecmov', fecmov);
+		        formData.append('docmov', docmov);
+	            formData.append('autobus', autobus);
+		        formData.append('chofer', chofer);
+		        formData.append('firstname', app.newMember.nommov);
+		        formData.append('lastname', app.newMember.apemov);
+		        formData.append('sexe', app.newMember.sexmov);
+				console.log("Consultando Respuesta GRABANDO ADICIONAL");
+				console.log(app.newMember);
+				axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+		        })
+				//esta esta bien//
 				.then(function(response){
-					//console.log(response);
+					console.log(response);
 					app.newMember = {nommov:'', apemov:'', sexmov:'', fecmov:'', docmov:''};
 					if(response.data.error){
 						app.errorMessage = response.data.message;
 //						app.errorMessage = "Error -01";
-
 					}
 					else{
 //						app.successMessage = "Si esta buscando en el cruddd";
@@ -214,11 +275,7 @@ var app = new Vue({
 						app.getAllMembers();
 					}
 				});
-				
-
 		},
-
-
 
 		saveMember1: function(){
 			//console.log(app.newMember);
@@ -243,6 +300,32 @@ var app = new Vue({
 		},
 
 		updateMember(){
+				fecmov = document.getElementById("fecha").value;
+				docmov = document.getElementById("documento").value;
+				chofer = document.getElementById("chofer").value;
+				autobus = document.getElementById("bus").value;
+				crud="update";
+				const formData = new FormData();
+			    formData.append('crud', crud);
+		        formData.append('fecmov', fecmov);
+		        formData.append('docmov', docmov);
+	            formData.append('autobus', autobus);
+		        formData.append('chofer', chofer);
+		        formData.append('firstname', app.clickMember.nommov);
+		        formData.append('lastname', app.clickMember.apemov);
+		        formData.append('sexe', app.clickMember.sexmov);
+		        formData.append('memid', app.clickMember.id);
+				console.log("UPDATE GRABANDO ADICIONAL");
+				console.log(app.clickMember);
+				axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+		        })
+				//esta esta bien//
+
+
 			var memForm = app.toFormData(app.clickMember);
 			axios.post('api.php?crud=update', memForm)
 				.then(function(response){
@@ -261,9 +344,19 @@ var app = new Vue({
 
 
 		deleteMember(){
-			var memForm = app.toFormData(app.clickMember);
-			axios.post('api.php?crud=delete', memForm)
-				.then(function(response){
+			crud="delete";
+			const formData = new FormData();
+  		    formData.append('crud', crud);
+			formData.append('memid', app.clickMember.id);
+			console.log("Borrando Miembro");
+			console.log(app.clickMember);
+			axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+	        })
+			.then(function(response){
 					//console.log(response);
 					app.clickMember = {};
 					if(response.data.error){
@@ -277,10 +370,21 @@ var app = new Vue({
 		},
 
 		debarqueMember(){
-			var memForm = app.toFormData(app.clickMember);
-			axios.post('api.php?crud=debarque', memForm)
-				.then(function(response){
-					//console.log(response);
+			crud="debarque";
+			const formData = new FormData();
+  		    formData.append('crud', crud);
+			formData.append('memid', app.clickMember.id);
+			console.log("Debarcando Miembro");
+			console.log(app.clickMember);
+			axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+	        })
+			.then(function(response){
+					console.log("Respuesta debarcando Miembro");
+					console.log(response);
 					app.clickMember = {};
 					if(response.data.error){
 						app.errorMessage = response.data.message;

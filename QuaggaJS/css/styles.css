@@ -249,16 +249,16 @@ i.icon-24-scan {
   }
 
   #interactive.viewport {
-    width: 320px;
-    height: 250px;
+    width: 420px;
+    height: 300px;
     overflow: hidden;
   }
 
 
   #interactive.viewport canvas, video {
     margin-top: 0px;
-    width: 205px;
-    height: 240px;
+    width: 405px;
+    height: 300px;
   }
 
   #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
@@ -323,21 +323,22 @@ i.icon-24-scan {
 /*orientacion horizontal ipads*/
 @media all and (min-width: 604px) and (max-width: 750px){
   #interactive.viewport {
-    width: 580px;
-    height: 150px;
+    width: 585px;
+    height: 280px;
     overflow: hidden;
-
   }
 
 
 
 #interactive.viewport canvas, video {
   float: left;
-  margin-left: 35%;
+  margin-left: 5%;
   margin-right: 0px;
   padding: 0;
-  width: 200px;
-  height: 150px;
+  width: 530px;
+  height: 300px;
+
+
 }
 
 #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
