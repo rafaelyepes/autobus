@@ -387,11 +387,6 @@ function rearrive(){
 
 }  //fin funcion depart
 
-function functimer(){ 
-   setTimeout(function() {
-     app.showAddimagen = "false";
-   }, 1000);
-}  
 
 //inicio de las funcion JQUERY
 $(document).ready(function(){
@@ -787,13 +782,13 @@ height: 50%;
     </div>
     <div class="panel-body">
 
-    <form>
+   
     <div class="col-md-12 col-sm-12" >
     
         <div class="row">
           <div class="col-sm-6 form-group">
             <label>Document No</label>
-            <input type="text"  class="form-control" value="<?php echo ($documento)?>" id="documento" name="documento" readonly>
+            <input type="text"  class="form-control" id="documento" name="documento" readonly>
             <span class="glyphicon glyphicon-ok form-control-feedback"></span>
           </div>
           <div class="col-sm-6 form-group">
@@ -830,7 +825,8 @@ height: 50%;
       
         </div>
       </div>   
-     </form> 
+   
+   
     </div>
 </div>
 <div class="controls" style="margin-left: 30%;">

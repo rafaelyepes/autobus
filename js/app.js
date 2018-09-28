@@ -184,6 +184,7 @@ var app = new Vue({
 			        })
 					//esta esta bien//
 					.then(function(response){
+					        console.log("Consultando SERVIDOR-CARTA AUTOBUS");
 							console.log(response);
 							if(response.data.error){
 								app.errorMessage = response.data.message;
@@ -199,6 +200,8 @@ var app = new Vue({
 							document.getElementById("horadepart").value=response.data.horadepart;
 							document.getElementById("horallegada").value=response.data.horallegada;
 							validahora(response.data.horadepart, response.data.horallegada);
+							alert (response.data.autobus);
+							alert (response.data.documento);
 							if (response.data.chofer !=''){
 								$("#chofer").css("background-color", "#9FF781");
 							}
