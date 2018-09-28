@@ -194,14 +194,16 @@ var app = new Vue({
 								alert ("SVP scanner la carte du chauffeur et identifier l'autobus");	
 								return false;
 							}
+							autobus=response.data.autobus;
 	 					    document.getElementById("bus").value=response.data.autobus;
 							document.getElementById("chofer").value=response.data.chofer;
 							document.getElementById("documento").value=response.data.documento;
 							document.getElementById("horadepart").value=response.data.horadepart;
 							document.getElementById("horallegada").value=response.data.horallegada;
 							validahora(response.data.horadepart, response.data.horallegada);
-							alert (response.data.autobus);
-							alert (response.data.documento);
+							console.log(response.data.autobus);
+							console.log(response.data.chofer);
+							console.log(response.data.documento);
 							if (response.data.chofer !=''){
 								$("#chofer").css("background-color", "#9FF781");
 							}
