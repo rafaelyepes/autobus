@@ -117,6 +117,7 @@ $ano = substr($fecha,2,2);
 $mes = substr($fecha,5,2);
 $dia = substr($fecha,8,2);
 /*Calculando la fecha de Salida del Autobus*/
+$members = array();
 
 if($crud == 'read'){
 	//$documento="abc";
@@ -124,7 +125,7 @@ if($crud == 'read'){
 	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov'";
 	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
-	$members = array();
+	
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
 	}
@@ -192,7 +193,7 @@ if($crud == 'validaautobus'){
 				$lastname  = $row['apeemp'];
 				$grupoemp  = $row['gruemp'];
 			}
-			$res['respuesta'] = "SIII existe EL EMPLEADO  : ".$grupoemp;
+			$res['respuesta00'] = "SIII existe EL EMPLEADO  : ".$grupoemp;
 			if ($grupoemp =="G1" || $grupoemp =="G2" ){
 				$res['respuesta'] = "g1--g2";
 				if ($grupoemp =="G1"){
@@ -210,7 +211,7 @@ if($crud == 'validaautobus'){
  			// if ($autobusact =="" && $choferact =="" ){
  				if ($autobus !="" && $chofer !="" ){
 				$res['respuesta'] = "CHOFER-AUTOBUS";
-		$res['respuesta2'] = "SELECTI-AUTOBUS-MAE VIRIFCA SI EXISTE EL NUMERO  :".$fecmov." : ".$chofer." : ".$autobus;
+				$res['respuesta2'] = "SELECTI-AUTOBUS-MAE VIRIFCA SI EXISTE EL NUMERO  :".$fecmov." : ".$chofer." : ".$autobus;
 				$docmov='';
 				$sql = "SELECT * from autobusmae WHERE (datmae='$fecmov' and chomae='$chofer' and busmae='$autobus')";
 				$query = $conn->query($sql);

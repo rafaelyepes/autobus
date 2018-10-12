@@ -48,7 +48,7 @@ var app = new Vue({
         })
 		//esta esta bien//
 		.then(function(response){
-					console.log("Respueta grabados");
+					console.log("Respueta grabados-todos los miembros");
 					console.log(response);
 					if(response.data.error){
 						app.errorMessage = response.data.message;
@@ -155,7 +155,7 @@ var app = new Vue({
 				  		app.showAddimagen = true;
 				        setTimeout(() => {
 				            app.showAddimagen = false;
-				        }, 8000);
+				        }, 1300);
 
 
 

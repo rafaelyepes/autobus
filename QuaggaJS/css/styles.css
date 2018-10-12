@@ -236,6 +236,13 @@ i.icon-24-scan {
 /*orientacion vertical ipads*/
 @media (max-width: 603px) {*/
 
+.img2{
+width: 420px; 
+max-width: 420px; 
+height: 50%;
+}
+
+
   .reader-config-group {
     width: 100%;
   }
@@ -249,43 +256,48 @@ i.icon-24-scan {
   }
 
   #interactive.viewport {
-    width: 420px;
+    margin-top: 2px;
+    width: 340px;
     height: 300px;
     overflow: hidden;
   }
 
 
   #interactive.viewport canvas, video {
+    margin-left: -20px;
     margin-top: 0px;
-    width: 405px;
+    width: 320px;
     height: 300px;
   }
 
   #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
-    margin-left: -220px;
+    margin-left: -300px;
   }
 
 
   #result_strip {
-    margin-top: 5px;
+    margin-top: 0px;
     padding-top: 5px;
-    height: 100px;
+    height: 70px;
   }
 
   #result_strip ul.thumbnails > li {
-    width: 150px;
+    width: 100px;
+    height: 62px;
   }
 
   #result_strip ul.thumbnails > li .thumbnail .imgWrapper {
     width: 100px;
-    height: 80px;
+    height: 60px;
     overflow: hidden;
   }
 
   #result_strip ul.thumbnails > li .thumbnail .imgWrapper img {
+   /*
     margin-top: -25px;
     width: 130px;
     height: 110px;
+   */ 
   }
 }
 @media (max-width: 603px) {

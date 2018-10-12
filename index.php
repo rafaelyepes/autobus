@@ -274,7 +274,7 @@ if(confirm('Voulez-vous Arrive à destination')){ /* si on clique sur ok */
 } //Fin arrive
 
 function reouvrir(){
-   if(confirm('Voulez-vous Re-Ouvrir')){ /* si on clique sur ok */
+   if(confirm('Vous êtes arrivés à destination êtes vous sur de vouloir ajouter des employés')){ /* si on clique sur ok */
         fecmov = document.getElementById("fecha").value;
         docmov = document.getElementById("documento").value;
         chofer = document.getElementById("chofer").value;
@@ -313,7 +313,7 @@ function reouvrir(){
 } //Fin reouvrir
 
 function depart(){
-   if(confirm("Vous avez enregistré tous les employés qui sont dans l autobus et êtes prêt à partir?")){ /* si on clique sur ok */
+   if(confirm("Vous avez enregistré tous les employés qui sont dans l'autobus et êtes prêt à partir?")){ /* si on clique sur ok */
         fecmov = document.getElementById("fecha").value;
         docmov = document.getElementById("documento").value;
         chofer = document.getElementById("chofer").value;
@@ -505,12 +505,24 @@ max-width: 100%;
 height: 60%;
 }
 
-@media all and (min-width: 604px) and (max-width: 750px){
-.img2{
-width: auto; 
-max-width: 100%; 
-height: 50%;
+.img2lc{
+margin-left: 0px;
+margin-right: 0px; 
+
+max-width: 38px;
+width: 38px;
+height: 65px;
+max-height: 65px;
+
 }
+
+
+@media all and (min-width: 604px) and (max-width: 750px){
+
+
+
+
+
 
 }
 </style>
@@ -519,17 +531,17 @@ height: 50%;
 <!--	
 <div class="container-fluid">
 -->
-<div class="container-fluid" id="QR-Code" style="background-color: #FE2E2E;">	
+<div class="container-fluid" id="QR-Code" style="background-color: ;">	
      
-      <table border="2" style="margin: 0; padding: 0; width: 100%;">
+      <table border="0" style="margin: 0; padding: 0; width: 100%;">
       <tr>
       <td class="col-xs-1 col-md-1">
-      <img class="img2" src="./img/logolacroixform.png" alt="Logo Lacroix">
+      <img class="img2lc" src="./img/logolacroixform.png" alt="Logo Lacroix">
       </td>
-      <td class="col-xs-7 col-md-9" style="text-align: center">
+      <td class="col-xs-7 col-md-9" style="text-align: center; padding-left: 50px;">
       <h1>Autobus</h1>
       </td>  
-      <td class="col-xs-4 col-md-2">
+      <td class="col-xs-4 col-md-4">
       <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </td>  
       </tr>
       </table>
@@ -539,24 +551,34 @@ height: 50%;
        <div class="col-xs-3 col-md-3">
        <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Nouvel employé</button>
        </div>  
-             
-      <div class="col-xs-3 col-md-3">
-      <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
-      </div>
 
-      <div class="col-xs-3 col-md-3"> 
+       <div class="col-xs-2 col-md-2" style="margin-left: 0px; padding-left: 0px">
+       <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
+       </div>
+
+       <div class="col-xs-2 col-md-2" style="margin-left: 10px">
+        <input style="width: 55px; background-color: #FA5858; height: 35px; padding-left: 0px; margin-left: 0px; " type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
+       </div> 
+
+       <div class="col-xs-2 col-md-2">
+         <input type="text" style="width: 55px; background-color: #FA5858; ; height: 35px;" placeholder="" class="form-control" value="<?php echo ($chofer)?>" id="chofer" name="chofer" readonly>
+       </div> 
+
+     
+
+      <div class="col-xs-2 col-md-2"> 
       <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
       </div>
 
       
       <!--onClick="depart()"-->
 
-      <div class="col-xs-3 col-md-3">
+      <div class="col-xs-2 col-md-2">
       <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button> 
       </div>
 
       <!--onClick="reouvrir()"-->
-      <div class="col-xs-3 col-md-3"> 
+      <div class="col-xs-1 col-md-1" style="margin-left: 0px;"> 
       <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
       </div>
      
@@ -672,7 +694,11 @@ height: 50%;
       </div>
     
       <!--Espacio de captura de la camara dentro del div -->
-      <div id="interactive" class="viewport"></div>
+      <!--./QuaggaJS/css/styles.css -->
+      <div id="interactive" class="viewport">
+        
+
+      </div>
     
 
     </section>
@@ -766,16 +792,18 @@ height: 50%;
           <label>Autobus</label>
           </div>
           <div class="col-xs-3 col-md-3">
+          <!--  
           <input style="width: 100%; background-color: #FA5858;" type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
+        -->
           </div>
           <div class="col-xs-3 col-md-3">
           <label>Chauffeur</label>
           </div>
           <div class="col-xs-3 col-md-3">
-          <input type="text" style="width: 100%; background-color: #FA5858;" placeholder="" class="form-control" value="<?php echo ($chofer)?>" id="chofer" name="chofer" readonly>
+         
           </div>  
      </div>     
-    <div style="display: " class="panel panel-primary" style="margin:20px;">
+    <div style="display: none" class="panel panel-primary" style="margin:20px;">
    
     <div class="panel-heading">
             <h3 class="panel-title">R.F</h3>
@@ -788,7 +816,7 @@ height: 50%;
         <div class="row">
           <div class="col-sm-6 form-group">
             <label>Document No</label>
-            <input type="text"  class="form-control" id="documento" name="documento" readonly>
+            <input type="text"  class="form-control" id="documento" value="<?php echo ($documento)?>" name="documento" readonly>
             <span class="glyphicon glyphicon-ok form-control-feedback"></span>
           </div>
           <div class="col-sm-6 form-group">

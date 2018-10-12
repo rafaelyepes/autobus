@@ -59,9 +59,14 @@ $mail->Body = $mensaje;
 
 $d1="rafael.yepes@lacroixmeats.com";
 $ruta="";
-
+0.725---0.800
 $d2="Autob117";
-$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
+//$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
+
+$rutaadic='/archivos/pdf/'.$d2.'.pdf';
+$archivoi=getcwd().$rutaadic;
+
+
 //$archivoi='C:\xampp\htdocs\autobus\archivos\pdf'."'\'".$d2.".pdf";
 
 //$archivoi = 'C:\xampp\www\autobus\archivos\pdf'.'"\"'.$d2.".pdf";

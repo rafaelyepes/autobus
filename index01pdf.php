@@ -4,7 +4,7 @@ require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 include ("./conectar4.php"); 
 $informe="Rapport Autobus";
 $docmae = "117";
-$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
+$ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
 
 $busmae="xxxx";
 $firstname = "NA";
