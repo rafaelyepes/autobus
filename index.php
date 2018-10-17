@@ -2,7 +2,7 @@
 //include ("./conectar4.php"); 
 date_default_timezone_set("America/Montreal");
 
-$bus="";
+$bus="Numero de Bus";
 
 /*Calculando la fecha de Salida del Autobus*/
 $fecha = new DateTime('NOW');
@@ -22,7 +22,7 @@ $dia = substr($fecha,8,2);
 
 
 //$fecha="2018-09-10";
-$chofer="";
+$chofer="Test de prueba chofer";
 $viaje="";
 $documento="zz";
 $horadepart="00:00:00";
@@ -61,7 +61,10 @@ $rs_tabla=mysqli_query($conexion, $consulta);
          $horadepart=mysqli_result($rs_tabla,$i,"hr2mae");
          $horallegada=mysqli_result($rs_tabla,$i,"hr3mae");
     }        
+
 */
+include ("autentican.php");
+
 
 ?>
 
@@ -556,13 +559,9 @@ max-height: 65px;
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
 
-       <div class="col-xs-2 col-md-2" style="margin-left: 10px">
-        <input style="width: 55px; background-color: #FA5858; height: 35px; padding-left: 0px; margin-left: 0px; " type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
-       </div> 
+      
 
-       <div class="col-xs-2 col-md-2">
-         <input type="text" style="width: 55px; background-color: #FA5858; ; height: 35px;" placeholder="" class="form-control" value="<?php echo ($chofer)?>" id="chofer" name="chofer" readonly>
-       </div> 
+      
 
      
 
@@ -583,32 +582,21 @@ max-height: 65px;
       </div>
      
 
-      </div> 
+      </div>
+
+       <div class="row">
+          <div class="col-xs-6 col-md-6" style="text-align: center;">
+          <label id="bus" name="bus" ><?php echo ($bus)?></label>
+          </div>
+        
+          <div class="col-xs-6 col-md-6" style="text-align: left;">
+          <label value="<?php echo ($chofer)?>" id="chofer" name="chofer"><?php echo ($chofer)?></label>
+          </div>
+        
+       </div>      
 
      
       <div class="col-xs-12 col-md-12" style="padding: 0;">
-<!--        
-       <div class="col-xs-4 col-md-4">
-       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Employé</button>
-       </div>
-
-
-       <div class="col-xs-4 col-md-4">
-       <button id="boton1" onClick="botonx2()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Mostrar Imagen</button>
-       </div>
--->
-
-       <!-- 
-       <div class="col-xs-4 col-md-4">
-       <div class="upload1">
-       <div class="controls upload1 center-block"">
-       <input type="file" accept="image/*" capture="camera" id="camara"/>
-       </div>
-       </div>
-       </div>
-      </div>
-      -->
-
 
       <div  style="padding-left: 0px; padding-bottom: 0px; text-align: center; border-style: none; width: 100%">
       <span  id="respuesta" style="display: none; text-align: center">xxx</span>
@@ -687,17 +675,18 @@ max-height: 65px;
             </fieldset>
         </div> <!--FIN DIV CONTROL-->
 
-      <!--Espacio de mostrar la foto tomada -->
-      <div id="result_strip" style="padding: 0;">
-        <ul class="thumbnails"></ul>
-        <ul class="collector"></ul>
-      </div>
+     
     
       <!--Espacio de captura de la camara dentro del div -->
       <!--./QuaggaJS/css/styles.css -->
       <div id="interactive" class="viewport">
         
 
+      </div>
+       <!--Espacio de mostrar la foto tomada -->
+      <div id="result_strip" style="padding: 0;">
+        <ul class="thumbnails"></ul>
+        <ul class="collector"></ul>
       </div>
     
 
@@ -787,22 +776,7 @@ max-height: 65px;
     <div class="panel panel-primary" >
 -->
 
-     <div class="row">
-          <div class="col-xs-3 col-md-3">
-          <label>Autobus</label>
-          </div>
-          <div class="col-xs-3 col-md-3">
-          <!--  
-          <input style="width: 100%; background-color: #FA5858;" type="text" placeholder="" class="form-control" value="<?php echo ($bus)?>" id="bus" name="bus" readonly>
-        -->
-          </div>
-          <div class="col-xs-3 col-md-3">
-          <label>Chauffeur</label>
-          </div>
-          <div class="col-xs-3 col-md-3">
-         
-          </div>  
-     </div>     
+    
     <div style="display: none" class="panel panel-primary" style="margin:20px;">
    
     <div class="panel-heading">
