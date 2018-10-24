@@ -3,12 +3,38 @@ require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 // Introducimos HTML de prueba
 include ("./conectar4.php"); 
 $informe="Rapport Autobus";
-$docmae = "117";
+$docmae = "";
+$d2="Sin numero";
+$chomae = "";
+$busmae = "";
+$datmae = "";
+
+
+if(isset($_GET['docmov'])){
+  $docmae = $_GET['docmov'];
+}
+if(isset($_POST['docmov'])){
+  $docmae = $_POST['docmov'];
+}
+
+if(isset($_GET['chomae'])){
+  $chomae = $_GET['chomae'];
+}
+if(isset($_POST['chomae'])){
+  $chomae = $_POST['chomae'];
+}
+
+
+
+$d2="Autob".$docmae;
+
 $ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
 
 $busmae="xxxx";
 $firstname = "NA";
 $lastname = "NA";
+
+
 
 $sql = "SELECT * from autobusmae WHERE docmae='$docmae'";
 $query = $conn->query($sql);
@@ -21,13 +47,11 @@ while($row = $query->fetch_array()){
 }
 
 $sql = "SELECT * from autobusemp where numemp='$chomae'";
-    $query = $conn->query($sql);
-    while($row = $query->fetch_array()){
-      //$firstname = "Primer nombre ok";
-      //$lastname  = "Last Name OK";
-      $firstname = $row['nomemp'];
-      $lastname = $row['apeemp'];
-    }
+$query = $conn->query($sql);
+while($row = $query->fetch_array()){
+  $firstname = $row['nomemp'];
+  $lastname = $row['apeemp'];
+}
 $nombreauto=$firstname."  ".$lastname;    
 
 
@@ -79,6 +103,10 @@ $codigoHTML = '
           </tr>
           ';
           $lin1 = 0;
+          $cod1= "";
+          $cod2= "";
+          $cod3= "";
+          $cod4= "";
           $cont1 = 0;
           $cont2 = 0;
           $cont3 = 0;
@@ -141,10 +169,7 @@ $codigoHTML = '
         
          ';
 
- 
-
 $codigoHTML=utf8_encode($codigoHTML);
-
 $dompdf=new DOMPDF();
 //$paper_size = (25,15,760,590);
 //$dompdf->set_paper($paper_size);
@@ -158,6 +183,92 @@ file_put_contents($ruta, $output);
 $dompdf->stream($ruta, array("Attachment" => false));
 
 
+//fin de creacion del PDF //
 
+
+//include "./php/enviaradjunto.php";
+//$res = array('error' => false);
+//$res['results'] = $d2;
+//echo json_encode($res);
+
+header('Content-Type: text/html; charset=ISO-8859-1');
+// para evitar que se nos detenga la ejecucion del script (en caso de que el servidor tarde en responder) definimos un intervalo de 5 minutos de inactividad
+ini_set('max_execution_time', 300);
+include ("php/class.phpmailer.php");
+//Recibir todos los parámetros del formulario
+
+$para = "rafael.yepes@lacroixmeats.com";
+//$para1 = "paula.franco@lacroixmeats.com";
+$para1 = "";
+$para2 = "";
+$asunto = "Asunto";
+$mensaje = "Mensaje";
+
+$username = 'docs@lacroixmeats.com';
+$password = 'DoLa753?';
+ 
+// Enviamos la respuesta
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->SMTPDebug = 2;//$mail->SMTPDebug = 1; // Degug. Valores 1 -> errores y mensajes // 2 solo mensajes // 0 no informa nada
+
+//$mail->Host = "smtp.aol.com";
+//$mail->Host = "stmp.yahoo.com";
+//$mail->Host = "smtp.gmail.com";
+
+$mail->Host = "smtp.office365.com";
+$mail->Port = "587";
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = TRUE;
+$mail->Username = $username;
+$mail->Password = $password;
+ 
+$mail->From = $username;
+$mail->FromName = "Rafael Yepes";
+
+
+//Agregar destinatario
+$mail->AddAddress($para);
+$mail->AddAddress($para1);
+$mail->AddAddress($para2);
+
+$mail->Subject = $asunto;
+$mail->Body = $mensaje;
+
+$d1="rafael.yepes@lacroixmeats.com";
+$ruta="";
+
+//$d2="Autob124";
+
+//$d2=$nomemail;
+
+//$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
+
+$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
+$archivoi=getcwd().$rutaadic;
+
+$d2g=$d2.".pdf";
+
+echo ("Nombre del Archivo No 1 :".$d2);
+echo ("    .     ");
+echo ("<br>");
+echo ("Correo Electronico :".$d1);
+echo ("<br>");
+echo ("Ruta Real   :".$ruta);
+echo ("<br>");
+echo ("Nombre del Archivo No 2 :".$archivoi);
+echo ("<br>");
+
+$mail->AddAttachment($archivoi,$d2g);
+ 
+$mail->WordWrap = 50;
+$mail->IsHTML(TRUE);
+ 
+if($mail->Send())
+{
+         //enviado
+}
+else{
+         //no enviado
+}
 ?>
-

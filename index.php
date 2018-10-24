@@ -24,7 +24,7 @@ $dia = substr($fecha,8,2);
 //$fecha="2018-09-10";
 $chofer="";
 $viaje="";
-$documento="zz";
+$documento="";
 $horadepart="00:00:00";
 $horallegada="00:00:00";
 
@@ -316,9 +316,13 @@ function reouvrir(){
 } //Fin reouvrir
 
 function depart(){
-   if(confirm("Vous avez enregistré tous les employés qui sont dans l'autobus et êtes prêt à partir?")){ /* si on clique sur ok */
+   docmov =(document.getElementById("documento").value).trim();
+   if (docmov == ""){
+    //alert ("0");
+   }else{
+     if(confirm("Vous avez enregistré tous les employés qui sont dans l'autobus et êtes prêt à partir?")){ /* si on clique sur ok */
         fecmov = document.getElementById("fecha").value;
-        docmov = document.getElementById("documento").value;
+        //docmov = document.getElementById("documento").value;
         chofer = document.getElementById("chofer").value;
         autobus = document.getElementById("bus").value;
         crud="depart";
@@ -346,10 +350,44 @@ function depart(){
             horadepart=response.data.horadepart;
             horallegada=document.getElementById("horallegada").value;
             validahora(horadepart, horallegada);
-            //app.getAllMembers();
+            app.showAddimagen2 = "true";
+
+            //docmov="121"
+            console.log("Genernado PDF-1");
+
+            
+            //app.showAddimagen2 = false;
+
+            const formData = new FormData();
+            formData.append('docmov', docmov);
+             formData.append('chomae', chofer);
+            //2do axios
+            axios({
+                  method: 'POST',
+                  url: 'index01pdf.php',
+  //                dataType: "json",
+                  responseType: 'text',
+//                  responseType: 'json',
+                  data: formData
+              })
+            .then(function(response){
+              console.log("Respuesta PDF-2");
+              console.log(response);
+              app.showAddimagen2 = false;
+             })
+            .catch(function (error) {
+              alert ("Error-Courriel");
+              console.log("Genernado PDF-3");
+              app.showAddimagen2 = false;
+              // handle error
+              console.log(error);
+           
+            }); //fin 2di=o axios
           }
         });
     } //vou voulez depart
+
+    } //fin if vacios
 }  //fin funcion depart
 
 function rearrive(){
@@ -393,6 +431,10 @@ function rearrive(){
 
 //inicio de las funcion JQUERY
 $(document).ready(function(){
+
+$(".img2lc").click(function() {
+  window.location.href = "menun.php";
+});
 
 
 $( "#camara" ).click(function() {
@@ -457,6 +499,14 @@ text-align: center;
     border-style: none;
 }
 
+.form-img {
+    margin-left: 30px;
+    width: 210px;
+    height: 230px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-style: none;
+}
 
 
 
@@ -544,6 +594,7 @@ max-height: 65px;
       <table border="0" style="margin: 0; padding: 0; width: 100%;">
       <tr>
       <td class="col-xs-1 col-md-1">
+
       <img class="img2lc" src="./img/logolacroixform.png" alt="Logo Lacroix">
       </td>
       <td class="col-xs-7 col-md-9" style="text-align: center; padding-left: 50px;">
@@ -563,12 +614,6 @@ max-height: 65px;
        <div class="col-xs-2 col-md-2" style="margin-left: 0px; padding-left: 0px">
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
-
-      
-
-      
-
-     
 
       <div class="col-xs-2 col-md-2"> 
       <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
@@ -772,6 +817,11 @@ max-height: 65px;
 			</table>
 		    </div>
         </div>
+           <!--                  
+           <pre>
+            {{ $data }}
+           <pre> 
+           -->
         <?php include('modal.php'); ?>
     </div>
     </div>

@@ -11,7 +11,7 @@
 header('Content-Type: text/html; charset=ISO-8859-1');
 // para evitar que se nos detenga la ejecucion del script (en caso de que el servidor tarde en responder) definimos un intervalo de 5 minutos de inactividad
 ini_set('max_execution_time', 300);
-include "./php/class.phpmailer.php";
+include ("php/class.phpmailer.php");
 //Recibir todos los parámetros del formulario
 
 $para = "rafael.yepes@lacroixmeats.com";
@@ -55,13 +55,13 @@ $mail->Body = $mensaje;
 $d1="rafael.yepes@lacroixmeats.com";
 $ruta="";
 
-//$d2="Autob124";
+$d2="Autob124";
 
 //$d2=$nomemail;
 
 //$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
 
-$rutaadic='./archivos/pdf/'.$d2.'.pdf';
+$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
 $archivoi=getcwd().$rutaadic;
 
 

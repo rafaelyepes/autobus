@@ -3,6 +3,7 @@ var app = new Vue({
 	el: '#members',
 	data:{
 		showAddimagen: false,
+		showAddimagen2: false,
 		showAddimagenX: false,
 		showAddModal: false,
 		showAddModal1: false,
