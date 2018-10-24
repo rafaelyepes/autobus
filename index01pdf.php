@@ -28,7 +28,8 @@ if(isset($_POST['chomae'])){
 
 $d2="Autob".$docmae;
 
-$ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
+//$ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
+$ruta = "/php/archivos/pdf/"."Autob".$docmae.".pdf";
 
 $busmae="xxxx";
 $firstname = "NA";
@@ -181,10 +182,7 @@ $output = $dompdf->output();
 file_put_contents($ruta, $output);
 //$dompdf->stream($ruta);
 $dompdf->stream($ruta, array("Attachment" => false));
-
-
 //fin de creacion del PDF //
-
 
 //include "./php/enviaradjunto.php";
 //$res = array('error' => false);
