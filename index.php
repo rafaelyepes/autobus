@@ -2,7 +2,6 @@
 //include ("./conectar4.php"); 
 date_default_timezone_set("America/Montreal");
 
-$bus="";
 
 /*Calculando la fecha de Salida del Autobus*/
 $fecha = new DateTime('NOW');
@@ -22,9 +21,10 @@ $dia = substr($fecha,8,2);
 
 
 //$fecha="2018-09-10";
-$chofer="";
+$bus="10656";
+$chofer="10014";
 $viaje="";
-$documento="";
+$documento="126";
 $horadepart="00:00:00";
 $horallegada="00:00:00";
 
@@ -357,7 +357,7 @@ function depart(){
 
             
             //app.showAddimagen2 = false;
-            alert (docmov);
+           // alert (docmov);
             const formData = new FormData();
             formData.append('docmov', docmov);
              formData.append('chomae', chofer);
@@ -374,9 +374,10 @@ function depart(){
               console.log("Respuesta PDF-2");
               console.log(response);
               app.showAddimagen2 = false;
-              alert ("Respuesta");
+              //alert ("Respuesta");
              })
             .catch(function (error) {
+              //alert ("Error");
               alert ("Error-Courriel");
               console.log("Genernado PDF-3");
               app.showAddimagen2 = false;
