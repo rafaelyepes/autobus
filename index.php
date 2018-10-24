@@ -2,7 +2,7 @@
 //include ("./conectar4.php"); 
 date_default_timezone_set("America/Montreal");
 
-$bus="Numero de Bus";
+$bus="";
 
 /*Calculando la fecha de Salida del Autobus*/
 $fecha = new DateTime('NOW');
@@ -22,7 +22,7 @@ $dia = substr($fecha,8,2);
 
 
 //$fecha="2018-09-10";
-$chofer="Test de prueba chofer";
+$chofer="";
 $viaje="";
 $documento="zz";
 $horadepart="00:00:00";
@@ -433,6 +433,11 @@ var $node="hola";
 
 <style>
 
+.borderno{
+border: none;
+
+}
+
 #respuesta{
 font-size: 15px;
 padding-bottom: 0px;
@@ -586,13 +591,12 @@ max-height: 65px;
 
        <div class="row">
           <div class="col-xs-6 col-md-6" style="text-align: center;">
-          <label id="bus" name="bus" ><?php echo ($bus)?></label>
+          <input class="borderno" id="bus" name="bus" ><?php echo ($bus)?></input>
           </div>
         
           <div class="col-xs-6 col-md-6" style="text-align: left;">
-          <label value="<?php echo ($chofer)?>" id="chofer" name="chofer"><?php echo ($chofer)?></label>
+          <input class="borderno" value="<?php echo ($chofer)?>" id="chofer" name="chofer"><?php echo ($chofer)?></input>
           </div>
-        
        </div>      
 
      

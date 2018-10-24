@@ -98,17 +98,22 @@ var app = new Vue({
 				});
 		},
 		ValidaMembers: function(nummov){
-		//	alert (nummov);
+			//alert (nummov);
 			//nummov = "C0001";
 			fecmov = document.getElementById("fecha").value;
 			docmov = document.getElementById("documento").value;
 			chofer = document.getElementById("chofer").value;
 			autobus = document.getElementById("bus").value;
+
+			//alert ("Chofer : "+chofer+"   "+"Autobus  :"+autobus);
+
+
 			validacion = "1";
 			if (chofer =='' || autobus ==''){
 				validacion = "0";
 			}
-			if (validacion == "1"){	
+			if (nummov != chofer && nummov != autobus){	
+			 if (validacion == "1"){	
 				crud="grababandolinea";
 				const formData = new FormData();
 		        formData.append('crud', crud);
@@ -162,6 +167,9 @@ var app = new Vue({
             		 }
 					}
 				}); // fin then funcion
+				
+				} // FIN VALIDACION chofer-autbous;
+
 				} // FIN VALIDACION =1;
 			
 			if (validacion == "0"){
@@ -175,6 +183,7 @@ var app = new Vue({
 			        formData.append('docmov', docmov);
                     formData.append('autobus', autobus);
 			        formData.append('chofer', chofer);
+			       // alert ("0");
 			        console.log("Consultando Respuesta AL SERVIDOR-CARTA AUTOBUS");
 					axios({
 			              method: 'POST',
