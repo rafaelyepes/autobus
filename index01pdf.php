@@ -29,7 +29,7 @@ if(isset($_POST['chomae'])){
 $d2="Autob".$docmae;
 
 //$ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
-$ruta = "/php/archivos/pdf/"."Autob".$docmae.".pdf";
+$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
 
 $busmae="xxxx";
 $firstname = "NA";
