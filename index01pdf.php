@@ -196,7 +196,7 @@ include ("php/class.phpmailer.php");
 //Recibir todos los parámetros del formulario
 
 $para = "rafael.yepes@lacroixmeats.com";
-//$para1 = "paula.franco@lacroixmeats.com";
+$para1 = "paula.franco@lacroixmeats.com";
 $para1 = "";
 $para2 = "";
 $asunto = "Asunto";
