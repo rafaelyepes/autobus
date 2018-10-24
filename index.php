@@ -357,7 +357,7 @@ function depart(){
 
             
             //app.showAddimagen2 = false;
-
+            alert (docmov);
             const formData = new FormData();
             formData.append('docmov', docmov);
              formData.append('chomae', chofer);
@@ -374,6 +374,7 @@ function depart(){
               console.log("Respuesta PDF-2");
               console.log(response);
               app.showAddimagen2 = false;
+              alert ("Respuesta");
              })
             .catch(function (error) {
               alert ("Error-Courriel");
