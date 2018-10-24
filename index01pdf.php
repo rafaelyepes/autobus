@@ -206,6 +206,10 @@ $mensaje = "Mensaje";
 
 $username = 'docs@lacroixmeats.com';
 $password = 'DoLa753?';
+
+$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
+$archivoi=getcwd().$rutaadic;
+
  
 // Enviamos la respuesta
 $mail = new PHPMailer();
@@ -233,7 +237,10 @@ $mail->AddAddress($para1);
 $mail->AddAddress($para2);
 
 $mail->Subject = $asunto;
-$mail->Body = $mensaje;
+//$mail->Body = $mensaje;
+$mail->Body = $archivoi;
+
+
 
 $d1="rafael.yepes@lacroixmeats.com";
 $ruta="";
@@ -244,8 +251,10 @@ $ruta="";
 
 //$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
 
-$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
-$archivoi=getcwd().$rutaadic;
+//$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
+//$archivoi=getcwd().$rutaadic;
+
+
 
 $d2g=$d2.".pdf";
 
