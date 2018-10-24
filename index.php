@@ -21,10 +21,10 @@ $dia = substr($fecha,8,2);
 
 
 //$fecha="2018-09-10";
-$bus="10656";
-$chofer="10014";
+$bus="";
+$chofer="";
 $viaje="";
-$documento="126";
+$documento="";
 $horadepart="00:00:00";
 $horallegada="00:00:00";
 
