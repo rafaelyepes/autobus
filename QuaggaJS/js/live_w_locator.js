@@ -248,26 +248,42 @@ $(function() {
             App.lastResult = code;
             var $node = null, canvas = Quagga.canvas.dom.image;
 
-            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
-            $node.find("img").attr("src", canvas.toDataURL());
-
-         //   $node.find("h4.code").html(code);
-         
-           $("#result_strip ul.thumbnails").prepend($node);
-
+          
             /*VALIDA CARTA*/    
             numero=code;
            // var audio = document.getElementById("audio");
            // audio.play();
-           
+                    
+            chiffres = numero.replace(/[^0-9]/g, '');
+            compteur = chiffres.length;
+            if (compteur!=5)
+            {
+                app.ValidaChiffres(numero);
+            } else {
+                $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
+                $node.find("img").attr("src", canvas.toDataURL());
+                //   $node.find("h4.code").html(code);
 
-            app.consultaMember = {nummov:numero};
-           
-            app.ValidaMembers(numero);
-          
+                $node1 = $('<li class="col-sm-12"><a class="thumbnail"><img src=""></img></a></li>');
+                $node1.find("img").attr("src", canvas.toDataURL());
+                $("#slider-thumbs ul.hide-bullets").prepend($node1);
+
+
+               // $("#result_strip ul.thumbnails").prepend($node);
+
+                app.consultaMember = {nummov:numero};
+                app.ValidaMembers(numero);
+            }
       }else{
-        app.showAddimagenX = "true";
-      
+        numero=code;
+        chiffres = numero.replace(/[^0-9]/g, '');
+        compteur = chiffres.length;
+        if (compteur!=5)
+        {
+                app.ValidaChiffres(numero);
+        }else{
+                app.showAddimagenX = "true";
+        }
 
 
         }

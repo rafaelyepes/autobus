@@ -15,11 +15,6 @@ $mes = substr($fecha,5,2);
 $dia = substr($fecha,8,2);
 /*Calculando la fecha de Salida del Autobus*/
 
-
-
-
-
-
 //$fecha="2018-09-10";
 $bus="";
 $chofer="";
@@ -94,6 +89,35 @@ include ("autentican.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     -->
 <script>
+
+  /*carrousel jquery*/
+  jQuery(document).ready(function($) {
+ 
+        $('#myCarousel').carousel({
+                interval: 5000
+        });
+ 
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click(function () {
+        var id_selector = $(this).attr("id");
+        try {
+            var id = /-(\d+)$/.exec(id_selector)[1];
+            console.log(id_selector, id);
+            jQuery('#myCarousel').carousel(parseInt(id));
+        } catch (e) {
+            console.log('Regex failed!', e);
+        }
+    });
+      /*FIN carrousel jquery*/
+    
+
+
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid.bs.carousel', function (e) {
+                 var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+});
 
 function validachofer(){
   app.ValidaMembers('10014');
@@ -237,7 +261,7 @@ function inicio(){
 }
 
 function arrive(){
-if(confirm('Voulez-vous Arrive à destination')){ /* si on clique sur ok */
+if(confirm('Vous confirmez que vous êtes arrivés à destination')){ /* si on clique sur ok */
   fecmov = document.getElementById("fecha").value;
         docmov = document.getElementById("documento").value;
         chofer = document.getElementById("chofer").value;
@@ -477,6 +501,10 @@ var $node="hola";
 
 <style>
 
+.classegris{
+background-color: #F6CED8;
+
+}
 .borderno{
 border: none;
 
@@ -559,10 +587,15 @@ font-size: 22px;
 
 
 .img2{
-margin-left: 30px;
+margin-left: 0px;
 margin-right: 0px; 
+width: 100%;
 max-width: 100%; 
-height: 60%;
+height: 65px;
+}
+
+.img2autobus{
+height: 65px;
 }
 
 .img2lc{
@@ -571,8 +604,8 @@ margin-right: 0px;
 
 max-width: 38px;
 width: 38px;
-height: 65px;
-max-height: 65px;
+height: 66px;
+max-height: 66px;
 
 }
 
@@ -593,19 +626,21 @@ max-height: 65px;
 -->
 <div class="container-fluid" id="QR-Code" style="background-color: ;">	
      
-      <table border="0" style="margin: 0; padding: 0; width: 100%;">
-      <tr>
-      <td class="col-xs-1 col-md-1">
+      <br>
+      <div class="row" >  
 
+      <div class="col-xs-3 col-sm-1  col-md-1" >
       <img class="img2lc" src="./img/logolacroixform.png" alt="Logo Lacroix">
-      </td>
-      <td class="col-xs-7 col-md-9" style="text-align: center; padding-left: 50px;">
-      <h1>Autobus</h1>
-      </td>  
-      <td class="col-xs-4 col-md-4">
-      <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </td>  
-      </tr>
-      </table>
+      </div>
+
+      <div class="col-xs-6 col-sm-9  col-md-9 img2autobus" style="text-align: center; ">
+      <h1 class="img2autobus">Autobus</h1>
+      </div>  
+
+      <div class="col-xs-3 col-sm-2  col-md-2" style="text-align: center; ">
+      <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </div>  
+
+      </div>
      
       <div class="col-xs-12 col-md-12" style="padding-left: 0px;">
 
@@ -637,22 +672,24 @@ max-height: 65px;
       </div>
 
        <div class="row">
-          <div class="col-xs-6 col-md-6" style="text-align: center;">
+          <div class="col-xs-6 col-md-6" style="text-align: center;  margin-left: 8px;">
           <input class="borderno" id="bus" name="bus" ><?php echo ($bus)?></input>
           </div>
         
-          <div class="col-xs-6 col-md-6" style="text-align: left;">
+          <div class="col-xs-5 col-md-5" style="text-align: left;">
           <input class="borderno" value="<?php echo ($chofer)?>" id="chofer" name="chofer"><?php echo ($chofer)?></input>
           </div>
        </div>      
 
      
-      <div class="col-xs-12 col-md-12" style="padding: 0;">
+      <div class="col-xs-12 col-md-12" style="padding: 0; border-top: 30px;">
 
-      <div  style="padding-left: 0px; padding-bottom: 0px; text-align: center; border-style: none; width: 100%">
-      <span  id="respuesta" style="display: none; text-align: center">xxx</span>
-      </div>
+        <div class="col-xs-9 col-md-9" style="padding-left: 0px; padding-bottom: 0px; text-align: center; border-style: none; width: 100%">
+        <span  id="respuesta" style="display: none; text-align: center">xxx</span>
+        </div>
 
+     
+         </div>
 
          <section id="container" class="container">
         
@@ -730,19 +767,56 @@ max-height: 65px;
     
       <!--Espacio de captura de la camara dentro del div -->
       <!--./QuaggaJS/css/styles.css -->
-      <div id="interactive" class="viewport">
-        
+      <div class="row anchop" >
+      <div class="col-sm-12 col-xs-12 col-md-12">
 
-      </div>
+      <div class="col-sm-10 col-xs-9 col-md-9">
+
+        <div id="interactive" class="viewport">
+          
+
+        </div>
+
+      </div>  
+      <div class="col-sm-2 col-xs-3 col-md-3" id="slider-thumbs" >
+                <!-- Bottom switcher of slider -->
+                <ul class="hide-bullets">
+                    <!--
+                    <li class="col-sm-12" >
+                        <a class="thumbnail" id="carousel-selector-0">
+                            <img src="http://placehold.it/150x150&text=zero">
+                        </a>
+                    </li>
+
+                    <li class="col-sm-12">
+                        <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/150x150&text=1"></a>
+                    </li>
+                  -->
+
+                </ul>
+            </div>
+
+          </div>  
+          </div>  
+
+
+
+
        <!--Espacio de mostrar la foto tomada -->
-      <div id="result_strip" style="padding: 0;">
+<!--   <div id="result_strip" style="padding: 0;"> -->
+      
+        <!--Quitado slider horizontal
+       <div class="col-sm-12 col-xs-12 col-md-12" style="border: 20px;">
+       <div id="result_strip" style="padding: 0;">
         <ul class="thumbnails"></ul>
         <ul class="collector"></ul>
-      </div>
-    
+       </div>
+       </div> 
+       --> 
+
 
     </section>
-  
+             
 
 
 
@@ -797,33 +871,32 @@ max-height: 65px;
           <th class="warning">Action</th>
 				</thead>
 				<tbody>
-          <!--  
-          <tr v-for="(member array in sortedArray, index) in members">
-          -->  
-
-    				<tr v-for="(member, index) in members"> 
-						<td class="danger1">{{ index+1 }}</td>
-						<td class="danger1">{{ member.nummov }}</td>
-						<td class="danger1">{{ member.nommov }}</td>
-						<td class="danger1">{{ member.apemov }}</td>
-						<td class="danger1">{{ member.sexmov }}</td>
-            <td class="danger1">{{ member.stamov }}</td>
-						<td class="trans text-center">
-							<button id="boton2" class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
-                        </td>    
-                        <td class="trans text-center">
-							<button id="boton3" class="btn btn-danger btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash danger1"></span>Débarqué</button>
+            <!--  
+            <tr v-for="(member array in sortedArray, index) in members">
+            -->  
+    				<tr v-for="(member, index) in members" > 
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ index+1 }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nummov }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nommov }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.apemov }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.sexmov }}</td>
+            <td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.stamov }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }" class="trans text-center">
+						<button id="boton2" v-bind:class="{'classegris': index+1 == 1, danger1 }" class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
+            </td>    
+            <td class="trans text-center">
+						<button id="boton3" class="btn btn-danger btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash danger1"></span>Débarqué</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		    </div>
         </div>
-           <!--                  
+           <!--         
            <pre>
             {{ $data }}
            <pre> 
-           -->
+           --> 
         <?php include('modal.php'); ?>
     </div>
     </div>

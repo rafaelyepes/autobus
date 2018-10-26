@@ -19,6 +19,41 @@ header {
   padding: 1em;
 }
 
+/***carrousel vertical**/
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
+.thumbnail {
+    padding: 0;
+    width: 84px;
+}
+
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
+}
+#slider-thumbs {
+    margin-left: 0px;
+    margin-top: -17px;
+
+    height: 420px;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.anchop{
+width: 100%; 
+margin-left: 0px;
+
+}
+
+
+/***FINNN CARROUSEL VERTICAL **/
+
 header .headline {
   max-width: 640px;
   margin: 0 auto;
@@ -56,7 +91,7 @@ footer {
 
 #interactive.viewport canvas, video {
   float: center;
-  margin-left: 35px;
+  margin-left: -15%;
   margin-right: 0px;
   padding: 0;
   width: 530px;
@@ -106,10 +141,13 @@ footer {
 
 #result_strip {
   margin: 0px 0;
-  border-top: 1px solid #EEE;
+  border-top: 5px solid #EEE;
   border-bottom: 5px solid #EEE;
   padding: 0px 0;
-  height: 90px;
+  /*height: 90px;*/
+  width: 65px;
+  height: 300px; 
+
 }
 
 #result_strip > ul {
@@ -117,8 +155,12 @@ footer {
   margin: 0;
   list-style-type: none;
   width: auto;
-  overflow-x: auto;
-  overflow-y: hidden;
+/*  overflow-x: auto;
+  overflow-y: hidden;*/
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+
   white-space: nowrap;
 }
 
@@ -127,6 +169,7 @@ footer {
   vertical-align: middle;
   width: 110px;
  
+  height: auto;
 }
 
 /*tamano del cuadro respuesta*/
@@ -236,11 +279,12 @@ i.icon-24-scan {
 /*orientacion vertical ipads*/
 @media (max-width: 603px) {*/
 
-.img2{
-width: 420px; 
-max-width: 420px; 
-height: 50%;
-}
+
+
+
+
+
+
 
 
   .reader-config-group {
@@ -257,9 +301,10 @@ height: 50%;
 
   #interactive.viewport {
     margin-top: 2px;
-    width: 340px;
+    width: 360px;
     height: 300px;
     overflow: hidden;
+    margin-left: -40px;
   }
 
 
@@ -269,6 +314,35 @@ height: 50%;
     width: 320px;
     height: 300px;
   }
+
+
+.thumbnail{
+  width: 74px;
+}
+
+#slider-thumbs {
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-top: -20px;
+    height: 325px;
+    width: 85px;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.anchop{
+width: 135%; 
+margin-left: -38px;
+
+}
+
+.hide-bullets{
+  width: 120px;
+  
+
+}
+
+
 
   #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
     margin-left: -300px;
@@ -344,14 +418,18 @@ height: 50%;
 
 #interactive.viewport canvas, video {
   float: left;
-  margin-left: 5%;
+  margin-left: -10px;
   margin-right: 0px;
   padding: 0;
   width: 530px;
   height: 300px;
-
-
 }
+
+#slider-thumbs {
+    margin-top: -19px;
+    height: 300px;
+}
+
 
 #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
   margin-left: -600px;

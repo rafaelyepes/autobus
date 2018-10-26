@@ -24,15 +24,50 @@ var app = new Vue({
 	},
 
 	mounted: function(){
-		this.getAllMembers();
+		this.getAllMembersinicio();
 	},
 	methods:{
-		getAllMembers: function(){
+		getAllMembersinicio: function(){
+		docmov = document.getElementById("documento").value;
+		
+		if (docmov != ''){
+			//alert ("Adicionando :"+docmov);	
+			crud="read-1";
+			const formData = new FormData();
+			formData.append('crud', crud);
+			formData.append('docmov', docmov);
+		    console.log("Documento inicial-verifica");
+			axios({
+	              method: 'POST',
+	              url: 'api.php',
+	              responseType: 'json',
+	              data: formData
+	        })
+			//esta esta bien//
+			.then(function(response){
+						console.log("Respueta grabados-todos los miembros documento inicial");
+						console.log(response);
+						if(response.data.error){
+							app.errorMessage = response.data.message;
+						}
+						else{
+							app.members = response.data.results;
+							document.getElementById("fecha").value = response.data.fecin;
+							document.getElementById("chofer").value = response.data.choin;;
+							document.getElementById("bus").value = response.data.busin;;
+							$("#chofer").css("background-color", "#9FF781");
+							$("#bus").css("background-color", "#9FF781");
+						}
+			});
+		} //fin condicion if			
+		},
 
+		getAllMembers: function(){
 		fecmov = document.getElementById("fecha").value;
 		docmov = document.getElementById("documento").value;
 		chofer = document.getElementById("chofer").value;
 		autobus = document.getElementById("bus").value;
+
 		crud="read";
 		const formData = new FormData();
 		formData.append('crud', crud);
@@ -98,6 +133,10 @@ var app = new Vue({
 					}
 				});
 		},
+		ValidaChiffres: function(nummov){
+			alert ("Carte invalide est nécessaire pour le scanner à nouveau:"+nummov);
+		},
+
 		ValidaMembers: function(nummov){
 			//alert (nummov);
 			//nummov = "C0001";
@@ -144,7 +183,8 @@ var app = new Vue({
 					if (nombre == "EXISTE"){
 						app.successMessage = "Respuesta ok-ya existe";
              		   //app.ConsultaMembers();
-               		    $("#result_strip ul.thumbnails li:first-child").remove();
+               		    $("#slider-thumbs ul.hide-bullets li:first-child").remove();
+//            		    $("#result_strip ul.thumbnails li:first-child").remove();
  		     		    alert ("Employé est déjà enregistré");
 						/*$("#respuesta").css({"background-color": "red"});
 						$("#respuesta").text("Employé est déjà enregistré");
@@ -200,7 +240,8 @@ var app = new Vue({
 								app.errorMessage = response.data.message;
 							}else{
 							if (response.data.respuesta =='EMPLEADO NO ACORDE'){
-								$("#result_strip ul.thumbnails li:first-child").remove();
+		               		    $("#slider-thumbs ul.hide-bullets li:first-child").remove();
+//								$("#result_strip ul.thumbnails li:first-child").remove();
 								alert ("SVP scanner la carte du chauffeur et identifier l'autobus");	
 								return false;
 							}
@@ -222,8 +263,21 @@ var app = new Vue({
 							}
 							if (response.data.chofer !='' && response.data.autobus !=''){
 							$(".container-fluid").css("background-color", "#FFFFFF");
-							}
+							  //alert ("Chofer-Autbus Completo");
+						     /*Evita refrescar la pagina*/ 
+				              documentodd=document.getElementById("documento").value
+				              if (documentodd !=''){
+				                refh=window.location.host;
+				                refp=window.location.pathname;
+				                refs=window.location.search.split('?');
+				                nuevourl=refp+"?documento="+documentodd+"&"+refs[1];
+				                history.pushState(null, "", nuevourl);
+				              }
+							 /*Evita refrescar la pagina*/ 
+             				}
 
+
+							
 							app.getAllMembers();
 							}
 						}); // fin then funcion

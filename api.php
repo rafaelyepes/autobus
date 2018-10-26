@@ -119,10 +119,44 @@ $dia = substr($fecha,8,2);
 /*Calculando la fecha de Salida del Autobus*/
 $members = array();
 
+if($crud == 'read-1'){
+	//$documento="abc";
+	//	$sql = "select * from autobusmov where docmov='$documento'";
+ 	$fecin = "";
+   	$busin = "inicial";
+   	$choin = "inicial";
+
+	$sql1 = "select * from autobusmae where docmae='$docmov'";
+	//	$sql = "select * from autobusmov";
+	$query1 = $conn->query($sql1);
+	
+	while($row = $query1->fetch_array()){
+   	  $fecin = $row['datmae'];
+   	  $busin = $row['busmae'];
+   	  $choin = $row['chomae'];
+	}
+
+
+
+	$sql = "select * from autobusmov where docmov='$docmov' order by id DESC";
+	//	$sql = "select * from autobusmov";
+	$query = $conn->query($sql);
+	
+	while($row = $query->fetch_array()){
+		array_push($members, $row);
+	}
+	$res['fecin'] = $fecin;
+	$res['busin'] = $busin;
+	$res['choin'] = $choin;
+
+	$res['results'] = $members;
+	echo json_encode($res);
+}
+
 if($crud == 'read'){
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
-	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov'";
+	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";
 	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
 	
