@@ -456,10 +456,16 @@ function rearrive(){
 
 
 //inicio de las funcion JQUERY
+function Cerrarseccion(){
+alert ("0");
+
+}
+
 $(document).ready(function(){
 
 $(".img2lc").click(function() {
-  window.location.href = "menun.php";
+  alert ("0");
+  window.location.href = "../autobus/menun.php";
 });
 
 
@@ -500,6 +506,13 @@ var $node="hola";
 </script>
 
 <style>
+
+.cerrar2 {
+/*float: right;*/
+float: right;
+margin-right: 15px;
+}
+
 
 .classegris{
 background-color: #F6CED8;
@@ -630,7 +643,7 @@ max-height: 66px;
       <div class="row" >  
 
       <div class="col-xs-3 col-sm-1  col-md-1" >
-      <img class="img2lc" src="./img/logolacroixform.png" alt="Logo Lacroix">
+      <img class="img2lc" onClick("Cerrarseccion()") src="./img/logolacroixform.png" alt="Logo Lacroix">
       </div>
 
       <div class="col-xs-6 col-sm-9  col-md-9 img2autobus" style="text-align: center; ">
@@ -960,6 +973,9 @@ max-height: 66px;
    
     </div>
 </div>
+<div class="cerrar2">
+ <a href="cerrar.php"><img id="span1" class="imglacroixyz" src="./img/logout.png" style="width: 80%; height: 75%"; align="right"></a>
+</div> 
 <div class="controls" style="margin-left: 30%;">
 <audio id="audio" controls>
 <source type="audio/wav" src="beep.mp3">
