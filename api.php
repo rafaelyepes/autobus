@@ -159,6 +159,8 @@ if($crud == 'read-1'){
 	echo json_encode($res);
 }
 
+
+
 if($crud == 'read'){
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";

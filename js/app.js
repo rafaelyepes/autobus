@@ -71,6 +71,7 @@ var app = new Vue({
 		chofer = document.getElementById("chofer").value;
 		autobus = document.getElementById("bus").value;
 
+
 		crud="read";
 		const formData = new FormData();
 		formData.append('crud', crud);

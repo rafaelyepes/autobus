@@ -3,6 +3,7 @@
 date_default_timezone_set("America/Montreal");
 
 
+
 /*Calculando la fecha de Salida del Autobus*/
 $fecha = new DateTime('NOW');
 $hora= $fecha->format('H');
