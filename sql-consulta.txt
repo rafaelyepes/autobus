@@ -1,0 +1,6 @@
+select cu.FirstName, cu.LastName, cu.UDText8b, cu.UDText1b, ug.Nom as OperationName
+from Tracker.dbo.Users tu
+inner join Centaur3Main.dbo.Users cu on cu.UserID = tu.UserID
+inner join Centaur3Main.dbo.UserGroups ug on ug.ID = cu.UserGroupID
+where tu.Status = 1
+order by ug.Nom, cu.LastName, cu.FirstName

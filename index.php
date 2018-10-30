@@ -407,7 +407,7 @@ function depart(){
             //2do axios
             axios({
                   method: 'POST',
-                //  url: 'index01pdf.php',
+                  url: 'index01pdf.php',
                   responseType: 'text',
 //                responseType: 'json',
                   data: formData
