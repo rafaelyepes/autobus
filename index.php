@@ -166,7 +166,13 @@ function validahora(horadepart, horallegada){
     //     $("#arrive").removeAttr("style").hide();
     //     $("#rearrive").removeAttr("style").hide();
          $("#boton1").show();
-           $("#boton1").prop("disabled",false);
+         $("#boton1").prop("disabled",false);
+         $("#boton11").show();
+         $("#boton11").prop("disabled",false);
+         $("#boton12").show();
+         $("#boton12").prop("disabled",false);
+    //   
+
     //     $("#boton1").removeAttr("style").show();
           $("#interactive").show();
 
@@ -178,7 +184,9 @@ function validahora(horadepart, horallegada){
  //           $("#depart").removeAttr("style").hide();
 
             $("#boton1").hide();
-//            $("#boton1").removeAttr("style").hide();
+            $("#boton11").hide();
+            $("#boton12").hide();
+//          $("#boton1").removeAttr("style").hide();
 
             $(".upload1").hide();
 //            $(".upload1").removeAttr("style").hide();
@@ -186,6 +194,9 @@ function validahora(horadepart, horallegada){
          
 
             $("#boton1").prop("disabled",true);
+            $("#boton11").prop("disabled",true);
+            $("#boton12").prop("disabled",true);
+  
             $(".btn-success").prop("disabled",true);
             $(".btn-tt").prop("disabled",true);
            
@@ -240,6 +251,13 @@ function validahora(horadepart, horallegada){
 
             $("#boton1").hide();
             $("#boton1").removeAttr("style").hide();
+
+            $("#boton11").hide();
+            $("#boton11").removeAttr("style").hide();
+ 
+            $("#boton12").hide();
+            $("#boton12").removeAttr("style").hide();
+
 
             $(".upload1").hide();
             $(".upload1").removeAttr("style").hide();
@@ -388,10 +406,9 @@ function depart(){
             //2do axios
             axios({
                   method: 'POST',
-                  url: 'index01pdf.php',
-  //                dataType: "json",
+                //  url: 'index01pdf.php',
                   responseType: 'text',
-//                  responseType: 'json',
+//                responseType: 'json',
                   data: formData
               })
             .then(function(response){
@@ -488,9 +505,18 @@ $("#botonx1" ).click(function() {
 });  //fin del document read ---ADICIONA INFORMACION AL DOCUMENTO
 
 function botonx1(){
+ app.newMember.sexmov= "Homme"; 
  app.showAddModal = "true";
 }  
 
+function botonxx1(){
+ app.newMember.sexmov= "Femme"; 
+ app.showAddModal = "true";
+}  
+
+function botonxx2(){
+ app.showAddModalex = "true";
+}  
 
 function botonx2(){
  app.showAddimagen = "true";
@@ -533,10 +559,24 @@ text-align: center;
 
 
 .upload1img {
-    margin-left: 30px;
+
+    min-height: 400px;
+  
+    background-size: cover;
+    background-position: center;
+
+    
+    /*
     width: 250px;
     height: 280px;
     background: url(./img/acepter.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-style: none;
+    */
+    width: 250px;
+    height: 450px;
+    background: url(./img/crochet.png);
     background-repeat: no-repeat;
     overflow: hidden;
     border-style: none;
@@ -654,11 +694,17 @@ max-height: 66px;
       <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </div>  
 
       </div>
-     
-      <div class="col-xs-12 col-md-12" style="padding-left: 0px;">
+      <!--Nouvel employé-->
+      <div class="col-xs-12 col-md-12" style="padding-left: 0px; margin-left: 0px;">
 
-       <div class="col-xs-3 col-md-3">
-       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" ></span>Nouvel employé</button>
+       <div class="col-sm-3 col-xs-3 col-md-3" >
+       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Nouvel employé H.</button>
+       </div>  
+
+
+       <div class="col-sm-2 col-xs-2 col-md-2">
+       <button id="boton11" onClick="botonxx1()" class="btn btn-warning
+       center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;" ></span>Nouvel employé F.</button>
        </div>  
 
        <div class="col-xs-2 col-md-2" style="margin-left: 0px; padding-left: 0px">
@@ -888,28 +934,33 @@ max-height: 66px;
             <tr v-for="(member array in sortedArray, index) in members">
             -->  
     				<tr v-for="(member, index) in members" > 
-						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ index+1 }}</td>
+						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.row_number }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nummov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nommov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.apemov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.sexmov }}</td>
             <td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.stamov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }" class="trans text-center">
-						<button id="boton2" v-bind:class="{'classegris': index+1 == 1, danger1 }" class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
+						<button id="boton2"  class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
             </td>    
             <td class="trans text-center">
-						<button id="boton3" class="btn btn-danger btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash danger1"></span>Débarqué</button>
+						<button v-if="member.stamov == 'Embarqué'" id="boton3" class="btn  btn-danger  btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash btn-success"></span>Débarqué</button>
+
+            <button v-if="member.stamov == 'Débarqué'" id="boton3" class="btn btn-info btn-tt"@click="showDebarqueModal2 = true; selectMember(member);"><span class="glyphicon  danger1"></span>Embarque</button>
+
+
+
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		    </div>
         </div>
-           <!--         
+           <!--                    --> 
+
            <pre>
             {{ $data }}
            <pre> 
-           --> 
         <?php include('modal.php'); ?>
     </div>
     </div>
@@ -973,6 +1024,10 @@ max-height: 66px;
    
     </div>
 </div>
+<div class="col-sm-3 col-xs-3 col-md-3" >
+       <button id="boton12" onClick="botonxx2()" class="btn btn-primary center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Employé existant.</button>
+</div>  
+
 <div class="cerrar2">
  <a href="cerrar.php"><img id="span1" class="imglacroixyz" src="./img/logout.png" style="width: 80%; height: 75%"; align="right"></a>
 </div> 

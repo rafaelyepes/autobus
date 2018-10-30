@@ -9,16 +9,18 @@
 			</div>
           		
 			 		<div class="form-group">
-						<label>Prénom</label>
+						<label>Prénom - Nom</label>
 						<input type="text" class="form-control" v-model="newMember.nommov">
 	 		 		</div>
+			 		<!--
 			 		<div class="form-group">
 						<label>Nom</label>
 						<input type="text" class="form-control" v-model="newMember.apemov">
 			 		</div>
+			 		-->
 			 		<div class="form-group">
 						<label>Sexe:</label>
- 			<select class="form-control" id="sel1" name="template" v-model="newMember.sexmov">
+ 						<select class="form-control" id="sel1" name="template" v-model="newMember.sexmov">
     					<option v-for="template in templates"
         				:selected="template == category ? 'selected' : ''"
         				:value="template">
@@ -54,13 +56,15 @@
 		</div>
 		<div class="modalBody">
 			<div class="form-group">
-				<label>Prénom</label>
+				<label>Prénom - Nom</label>
 				<input type="text" class="form-control" v-model="clickMember.nommov">
 			</div>
+			<!--
 			<div class="form-group">
 				<label>Nom</label>
 				<input type="text" class="form-control" v-model="clickMember.apemov">
 			</div>
+			-->
 			<div class="form-group">
 				<label>Sexe:</label>
   				<label for="sel1">Sélectionnez la liste (sélectionnez-en une):</label>
@@ -117,7 +121,7 @@
 			<button class="closeDelBtn pull-right" @click="showDebarqueModal = false">&times;</button>
 		</div>
 		<div class="modalBody">
-			<h5 class="text-center">Êtes-vous sûr de vouloir Débarqué</h5>
+			<h5 class="text-center">Êtes-vous sûr de vouloir débarquer</h5>
 			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apemov}}</h2>
 		</div>
 		<hr>
@@ -130,6 +134,29 @@
 </div>
 <!-- FIN Débarque Modal -->
 
+<!-- Débarque Modal -->
+<div class="myModal" v-if="showDebarqueModal2">
+	<div class="modalContainer">
+		<div class="editHeader">
+			<span class="headerTitle">Embarqué employé </span>
+			<button class="closeEditBtn pull-right" @click="showDebarqueModal2 = false">&times;</button>
+		</div>
+		<div class="modalBody">
+			<h5 class="text-center">Êtes-vous sûr de vouloir embarquer</h5>
+			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apemov}}</h2>
+		</div>
+		<hr>
+		<div class="modalFooter">
+			<div class="footerBtn pull-right">
+				<button class="btn btn-default warning" @click="showDebarqueModal2 = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-warning warning" @click="showDebarqueModal2 = false; embarqueMember(); "><span class="glyphicon glyphicon-trash"></span> Yes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FIN Embarque Modal -->
+
+
+
 
 <!-- MOSTRAL Modal -->
 <div class="myModal" v-if="mostrarModal">
@@ -139,7 +166,7 @@
             <button class="closeBtn pull-right" @click="mostrarModal = false">&times;</button>
         </div>
         <div class="modalBody">
-			<h5 class="text-center">Êtes-vous sûr de vouloir Débarqué</h5>
+			<h5 class="text-center">Êtes-vous sûr de vouloir débarquer</h5>
 			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apemov}}</h2>
 		</div>
    	    <hr>
@@ -216,15 +243,51 @@
 
 
 
+	
+
+<!-- Modal showAddModal existente -->
+<div class="myModal" id="myModal" role="dialog" v-if="showAddModalex">
+  <div class="modal-dialog">
+      <!-- Modal content-->
+  	  <div class="modal-header modal-content">
+					<div class="editHeader">
+					<span class="headerTitle col-xs-10 col-md-10">Ajouter un  employé existant</span>
+					<button class="closeEditBtn pull-right col-xs-2 col-md-2" @click="showAddModalex = false">&times;</button>
+					</div>
+	          		
+			 		<div class="form-group">
+				    <label>Prénom - Nom</label>
+					<input type="text" class="form-control" v-model="newMember.nommov">
+	 		 		</div>
+			 	
+					<div class="modal-footer">
+					<div class="footerBtn pull-right">
+					<button class="btn btn-default warning" @click="showAddModalex = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-success warning" @click="showAddModalex = false; saveMemberexistentes();"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+				    </div>
+     		        </div>
+  		</div>
+	</div> 
+</div> 
+<!-- FIN FIN FIN Modal showAddModal-existente -->
+<!-- FIN FIN FIN Modal showAddModal -->
+<!-- FIN FIN FIN Modal showAddModal -->
+
+
+
+
+
 <!-- Modal showAddimagen -->
+
+
 <div class="myModal" id="myModal" role="dialog" v-if="showAddimagen">
   <div class="modal-dialog">
   	  	  <div class="modal-header modal-content">
 			<div class="editHeader">
 				<span class="headerTitle col-xs-2 col-md-2">Employé ajouté</span>
 			</div>
-	        <div class="col-xs-10 col-md-10">
-		    <img class="upload1img" @click="showAddimagen = false">
+			<!-- class="upload1img" -->
+	        <div class="upload1img" style="width: 420px; height: 400px; border: none;" >
+		    <img  style="width: 100%; height: 100%;"  @click="showAddimagen = false">
             </div>
   	        <div class="col-xs-2 col-md-2">
 					<div class="modal-footer">
@@ -260,4 +323,6 @@
   			</div>
 		</div>  
 	</div>  
+
+
 

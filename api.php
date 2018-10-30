@@ -136,15 +136,21 @@ if($crud == 'read-1'){
    	  $choin = $row['chomae'];
 	}
 
+	
+	$sql = "SELECT @row_num := 0"; 
+	$query = $conn->query($sql);
 
-
-	$sql = "select * from autobusmov where docmov='$docmov' order by id DESC";
+	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
+	
+	//$sql = "select * from autobusmov where docmov='$docmov' order by id DESC";
 	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
 	
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
 	}
+
+
 	$res['fecin'] = $fecin;
 	$res['busin'] = $busin;
 	$res['choin'] = $choin;
@@ -156,7 +162,14 @@ if($crud == 'read-1'){
 if($crud == 'read'){
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
-	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";
+
+	$sql = "SELECT @row_num := 0"; 
+	$query = $conn->query($sql);
+
+	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by row_number DESC";
+	
+
+//	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";
 	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
 	
@@ -373,6 +386,26 @@ if($crud == 'create'){
 	echo json_encode($res);
 }
 
+
+if($crud == 'createex'){
+
+	$res['message'] = "Impossible d'ajouter un employé existant";
+	//$out['message'] = "Impossible d'ajouter un employé--222";
+
+	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov', 'ZZZZZ', '$firstname', '$lastname', '$sexe', 'Embarqué')";
+	$query = $conn->query($sql);
+
+	if($query){
+		$res['message'] = "Employé ajouté avec succès existant";
+	}
+	else{
+		$res['error'] = true;
+		$res['message'] = "Impossible d'ajouter un employé existant";
+	}
+	echo json_encode($res);
+}
+
+
 if($crud == 'update'){
 
 	$sql = "UPDATE autobusmov set nommov='$firstname', apemov='$lastname',  sexmov='$sexe' where id='$memid'";
@@ -400,6 +433,21 @@ if($crud == 'debarque'){
 	}
 	echo json_encode($res);
 }
+
+if($crud == 'embarque'){
+	$debar="Embarqué";
+	$sql = "UPDATE autobusmov set stamov='$debar' where id='$memid'";
+	$query = $conn->query($sql);
+	if($query){
+		$res['message'] = "Employé Embarqué";
+	}
+	else{
+		$res['error'] = true;
+		$res['message'] = "Impossible Embarqué l'employé ";
+	}
+	echo json_encode($res);
+}
+
 
 if($crud == 'delete'){
 	$sql = "delete from autobusmov where memid='$memid'";

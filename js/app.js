@@ -6,15 +6,18 @@ var app = new Vue({
 		showAddimagen2: false,
 		showAddimagenX: false,
 		showAddModal: false,
+		showAddModalex: false,
 		showAddModal1: false,
 		showEditModal: false,
 		showDeleteModal: false,
 		showDebarqueModal: false,
+		showDebarqueModal2: false,
 		mostrarModal: false,
 		showQuestion: false,
 		showQuestion2: false,
 		errorMessage: "",
 		successMessage: "",
+		saveMemberex: "",
 		selected: "A",
 		members: [],
 		templates: ['Homme','Femme'],
@@ -133,8 +136,10 @@ var app = new Vue({
 					}
 				});
 		},
+
 		ValidaChiffres: function(nummov){
-			alert ("Carte invalide est nécessaire pour le scanner à nouveau:"+nummov);
+	//	alert ("Carte invalide est nécessaire pour le scanner à nouveau:"+nummov);
+		alert ("SVP: Vérifer si la carte esr enregistrée dans le tableau"+nummov);	
 		},
 
 		ValidaMembers: function(nummov){
@@ -303,10 +308,6 @@ var app = new Vue({
 				});
 		},
 
-
-		
-
-
 		saveMember: function(){
 				fecmov = document.getElementById("fecha").value;
 				docmov = document.getElementById("documento").value;
@@ -345,6 +346,50 @@ var app = new Vue({
 					}
 				});
 		},
+
+		saveMemberexistentes: function(){
+	fecmov = document.getElementById("fecha").value;
+				docmov = document.getElementById("documento").value;
+				chofer = document.getElementById("chofer").value;
+				autobus = document.getElementById("bus").value;
+				crud="createex";
+				const formData = new FormData();
+			    formData.append('crud', crud);
+		        formData.append('fecmov', fecmov);
+		        formData.append('docmov', docmov);
+	            formData.append('autobus', autobus);
+		        formData.append('chofer', chofer);
+		        formData.append('firstname', app.newMember.nommov);
+		        formData.append('lastname', app.newMember.apemov);
+		        formData.append('sexe', app.newMember.sexmov);
+				console.log("Consultando Respuesta GRABANDO existente");
+				console.log(app.newMember);
+				axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+		        })
+				//esta esta bien//
+				.then(function(response){
+					console.log(response);
+					app.newMember = {nommov:'', apemov:'', sexmov:'', fecmov:'', docmov:''};
+					if(response.data.error){
+						app.errorMessage = response.data.message;
+//						app.errorMessage = "Error -01";
+					}
+					else{
+//						app.successMessage = "Si esta buscando en el cruddd";
+						app.successMessage = response.data.message
+						app.getAllMembers();
+					}
+				});
+
+
+				
+
+		},
+
 
 		saveMember1: function(){
 			//console.log(app.newMember);
@@ -453,6 +498,33 @@ var app = new Vue({
 	        })
 			.then(function(response){
 					console.log("Respuesta debarcando Miembro");
+					console.log(response);
+					app.clickMember = {};
+					if(response.data.error){
+						app.errorMessage = response.data.message;
+					}
+					else{
+						app.successMessage = response.data.message
+						app.getAllMembers();
+					}
+				});
+		},
+
+		embarqueMember(){
+			crud="embarque";
+			const formData = new FormData();
+  		    formData.append('crud', crud);
+			formData.append('memid', app.clickMember.id);
+			console.log("embarcando Miembro");
+			console.log(app.clickMember);
+			axios({
+		              method: 'POST',
+		              url: 'api.php',
+		              responseType: 'json',
+		              data: formData
+	        })
+			.then(function(response){
+					console.log("Respuesta embarcando Miembro");
 					console.log(response);
 					app.clickMember = {};
 					if(response.data.error){

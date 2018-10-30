@@ -169,5 +169,10 @@ $output = $dompdf->output();
 file_put_contents($ruta, $output);
 //$dompdf->stream($ruta);
 $dompdf->stream($ruta, array("Attachment" => false));
+
+
+
+
+
 ?>
 
