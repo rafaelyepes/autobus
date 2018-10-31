@@ -451,6 +451,23 @@ if($crud == 'embarque'){
 }
 
 
+if($crud == 'verificacodigo'){
+
+    $res['nombre']="";
+    $res['error'] = true;
+	$res['message'] = "Impossible n'exist pas";
+
+	$sql = "SELECT * from autobusemp WHERE numemp='$memid'";
+	$query = $conn->query($sql);
+	while($row = $query->fetch_array()){
+	 	  $res['message'] = "SI EXISTE";
+	      $res['nombre']= $row['nomemp']."  ".$row['apeemp'];
+		  $res['error'] = false;
+	}
+	echo json_encode($res);
+}
+
+
 if($crud == 'delete'){
 	$sql = "delete from autobusmov where memid='$memid'";
 	$query = $conn->query($sql);

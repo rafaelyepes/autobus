@@ -967,7 +967,7 @@ max-height: 66px;
            <pre>
             {{ $data }}
            <pre> 
--->      
+
           
         <?php include('modal.php'); ?>
     </div>

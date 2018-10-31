@@ -486,6 +486,57 @@ var app = new Vue({
 				});
 		},
 
+		actualizarLista(event){
+			
+			var n = event.length;
+			if (!/^([0-9])*$/.test(event)){
+
+			}else{
+	  		  if ( n == 5){
+
+				console.log(event);
+				console.log("Verificando el codigo");
+				crud="verificacodigo";
+				memid=event;
+				const formData = new FormData();
+	  		    formData.append('crud', crud);
+				formData.append('memid', memid);
+				console.log("verificando codigo");
+				axios({
+						  method: 'POST',
+			              url: 'api.php',
+			              responseType: 'json',
+			              data: formData
+
+		        })
+				.then(function(response){
+						console.log("Respuesta verificando codigo");
+						console.log(response);
+						if(response.data.error){
+							console.log("Respuesta ERROR "+response.data.nombre);
+							app.errorMessage = response.data.message;
+						}
+						else{
+							console.log("Respuesta OK "+response.data.nombre);
+							app.successMessage = response.data.message
+							app.newMember.nommov=app.newMember.nommov+" "+response.data.nombre;
+						}
+				});
+
+
+
+
+
+  			  } //fin n==6
+			} // fin valida si es numerico
+
+
+
+
+
+
+		}, //fin actulizarlista
+
 		debarqueMember(){
 			crud="debarque";
 			const formData = new FormData();
