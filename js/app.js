@@ -18,6 +18,8 @@ var app = new Vue({
 		errorMessage: "",
 		successMessage: "",
 		saveMemberex: "",
+		danger1: "",
+
 		selected: "A",
 		members: [],
 		templates: ['Homme','Femme'],

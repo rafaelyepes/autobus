@@ -161,14 +161,14 @@ if($crud == 'read-1'){
 
 
 
-if($crud == 'read'){
+if($crud == 'read'){   //getAllMembers()
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
 
 	$sql = "SELECT @row_num := 0"; 
 	$query = $conn->query($sql);
 
-	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by row_number DESC";
+	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by row_number DESC";
 	
 
 //	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";

@@ -698,16 +698,7 @@ max-height: 66px;
       <!--Nouvel employé-->
       <div class="col-xs-12 col-md-12" style="padding-left: 0px; margin-left: 0px;">
 
-       <div class="col-sm-3 col-xs-3 col-md-3" >
-       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Nouvel employé H.</button>
-       </div>  
-
-
-       <div class="col-sm-2 col-xs-2 col-md-2">
-       <button id="boton11" onClick="botonxx1()" class="btn btn-warning
-       center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;" ></span>Nouvel employé F.</button>
-       </div>  
-
+     
        <div class="col-xs-2 col-md-2" style="margin-left: 0px; padding-left: 0px">
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
@@ -727,9 +718,23 @@ max-height: 66px;
       <div class="col-xs-1 col-md-1" style="margin-left: 0px;"> 
       <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
       </div>
-     
-
+ 
       </div>
+
+      
+       <div class="row" style="padding-left: 0px; margin-left: 0px;">
+
+       <div class="col-sm-6 col-xs-6 col-md-6" style="text-align: right;">
+       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Nouvel employé H.</button>
+       </div>  
+
+
+       <div class="col-sm-6 col-xs-6 col-md-6">
+       <button id="boton11" onClick="botonxx1()" class="btn btn-warning
+       center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;" ></span>Nouvel employé F.</button>
+       </div>  
+       </div>  
+
 
        <div class="row">
           <div class="col-xs-6 col-md-6" style="text-align: center;  margin-left: 8px;">
@@ -945,9 +950,9 @@ max-height: 66px;
 						<button id="boton2"  class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
             </td>    
             <td class="trans text-center">
-						<button v-if="member.stamov == 'Embarqué'" id="boton3" class="btn  btn-danger  btn-tt"@click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash btn-success"></span>Débarqué</button>
+						<button v-if="member.stamov == 'Embarqué'" id="boton3" class="btn  btn-danger  btn-tt" @click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash btn-success"></span>Débarqué</button>
 
-            <button v-if="member.stamov == 'Débarqué'" id="boton3" class="btn btn-info btn-tt"@click="showDebarqueModal2 = true; selectMember(member);"><span class="glyphicon  danger1"></span>Embarque</button>
+            <button v-if="member.stamov == 'Débarqué'" id="boton3" class="btn btn-info btn-tt" @click="showDebarqueModal2 = true; selectMember(member);"><span class="glyphicon"></span>Embarque</button>
 
 
 
@@ -957,13 +962,13 @@ max-height: 66px;
 			</table>
 		    </div>
         </div>
-           <!--                    
+           <!--                 
 
            <pre>
             {{ $data }}
            <pre> 
-
-           -->  
+-->      
+          
         <?php include('modal.php'); ?>
     </div>
     </div>
