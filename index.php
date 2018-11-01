@@ -408,6 +408,7 @@ function depart(){
               console.log("Respuesta PDF-2");
               console.log(response);
               app.showAddimagen2 = false;
+              validahora(horadepart, horallegada);
               //alert ("Respuesta");
             })
             .catch(function (error) {
