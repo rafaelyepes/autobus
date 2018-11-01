@@ -164,18 +164,19 @@ function validahora(horadepart, horallegada){
          $("#arrive").hide();
          $("#rearrive").hide();
          $("#reouvrir").hide();
-    //     $("#arrive").removeAttr("style").hide();
-    //     $("#rearrive").removeAttr("style").hide();
+    //   $("#arrive").removeAttr("style").hide();
+    //   $("#rearrive").removeAttr("style").hide();
+         chofer = document.getElementById("chofer").value;
+         autobus = document.getElementById("bus").value;
          $("#boton1").show();
          $("#boton1").prop("disabled",false);
          $("#boton11").show();
          $("#boton11").prop("disabled",false);
          $("#boton12").show();
          $("#boton12").prop("disabled",false);
-    //   
 
-    //     $("#boton1").removeAttr("style").show();
-          $("#interactive").show();
+    //   $("#boton1").removeAttr("style").show();
+         $("#interactive").show();
 
       }
       if (horadepart != "00:00:00"){
@@ -479,8 +480,8 @@ alert ("0");
 
 }
 
-$(document).ready(function(){
 
+$(document).ready(function(){
 $(".img2lc").click(function() {
   alert ("0");
   window.location.href = "../autobus/menun.php";
@@ -516,6 +517,7 @@ function botonxx1(){
 }  
 
 function botonxx2(){
+ app.newMember.codmov="ZZZZZ"; 
  app.showAddModalex = "true";
 }  
 

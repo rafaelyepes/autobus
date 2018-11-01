@@ -21,6 +21,7 @@ $reg_time = '';
 $horatotal = '';
 $horatotaldif=0;
 
+$codigoname = 'ZZZZZ';
 $firstname = '';
 $lastname = '';
 $memid = '';
@@ -72,6 +73,10 @@ if(isset($_GET['firstname'])){
 }
 if(isset($_POST['firstname'])){
 	$firstname = $_POST['firstname'];
+}
+
+if(isset($_POST['codigoname'])){
+	$codigoname = $_POST['codigoname'];
 }
 
 
@@ -394,7 +399,7 @@ if($crud == 'createex'){
 	$res['message'] = "Impossible d'ajouter un employé existant";
 	//$out['message'] = "Impossible d'ajouter un employé--222";
 
-	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov', 'ZZZZZ', '$firstname', '$lastname', '$sexe', 'Embarqué')";
+	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov', '$codigoname', '$firstname', '$lastname', '$sexe', 'Embarqué')";
 	$query = $conn->query($sql);
 
 	if($query){
@@ -453,6 +458,7 @@ if($crud == 'embarque'){
 
 if($crud == 'verificacodigo'){
 
+    $res['codigoname']="";
     $res['nombre']="";
     $res['error'] = true;
 	$res['message'] = "Impossible n'exist pas";
@@ -461,6 +467,7 @@ if($crud == 'verificacodigo'){
 	$query = $conn->query($sql);
 	while($row = $query->fetch_array()){
 	 	  $res['message'] = "SI EXISTE";
+	 	  $res['codigoname']=$row['numemp'];
 	      $res['nombre']= $row['nomemp']."  ".$row['apeemp'];
 		  $res['error'] = false;
 	}

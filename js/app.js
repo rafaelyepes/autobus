@@ -24,7 +24,7 @@ var app = new Vue({
 		members: [],
 		templates: ['Homme','Femme'],
         category: 'Homme',
-		newMember: {nummov:'',nommov: '', apemov: '', sexmov: '',documento: ''},
+		newMember: {codmov:'ZZZZZ', nummov:'',nommov: '', apemov: '', sexmov: '',documento: ''},
 		clickMember: {}
 	},
 
@@ -362,6 +362,7 @@ var app = new Vue({
 		        formData.append('docmov', docmov);
 	            formData.append('autobus', autobus);
 		        formData.append('chofer', chofer);
+		        formData.append('codigoname', app.newMember.codmov);
 		        formData.append('firstname', app.newMember.nommov);
 		        formData.append('lastname', app.newMember.apemov);
 		        formData.append('sexe', app.newMember.sexmov);
@@ -520,6 +521,7 @@ var app = new Vue({
 							console.log("Respuesta OK "+response.data.nombre);
 							app.successMessage = response.data.message
 							app.newMember.nommov=app.newMember.nommov+" "+response.data.nombre;
+							app.newMember.codmov=response.data.codigoname;
 						}
 				});
 

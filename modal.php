@@ -260,6 +260,7 @@
 			 		<div class="form-group">
 				    <label>Prénom - Nom</label>
 					<input type="text" class="form-control" v-model="newMember.nommov"  v-on:keyup="actualizarLista($event.target.value)">
+					<input type="hiden" class="form-control" v-model="newMember.codmov">
 	 		 		</div>
 			 	
 					<div class="modal-footer">
