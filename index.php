@@ -696,9 +696,6 @@ max-height: 66px;
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
 
-      <div class="col-xs-2 col-md-2"> 
-      <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
-      </div>
 
       
       <!--onClick="depart()"-->
@@ -711,6 +708,11 @@ max-height: 66px;
       <div class="col-xs-1 col-md-1" style="margin-left: 0px;"> 
       <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
       </div>
+
+      <div class="col-xs-2 col-md-2"> 
+      <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
+      </div>
+
  
       </div>
 
