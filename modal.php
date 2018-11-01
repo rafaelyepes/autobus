@@ -311,12 +311,10 @@
   	  	  	<div class="modal-header modal-content">
   	  	  		<pre style="margin: 0; text-align: center; font-size: 14px; white-space: normal">SVP attendre. Création du PDF </pre>
 				<pre style="margin: 0; text-align: center; font-size: 14px; white-space: normal">et envoi du courriel en cours </pre>
-				
 		        <div class="col-xs-10 col-md-10" style="margin: 0; text-align: center;">
                 <img  style="vertical-align: top;" class="form-img" src="./img/ajax-loader.gif"  /> <span style="vertical-align: bottom; margin: 0px; position: left;"></span> 
                 </div>
-
-	            </div>
+	        </div>
 		  	        <div class="col-xs-2 col-md-2">
 					<div class="modal-footer">
 					<div class="footerBtn pull-right">

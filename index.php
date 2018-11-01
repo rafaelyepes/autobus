@@ -21,6 +21,9 @@ $bus="";
 $chofer="";
 $viaje="";
 $documento="";
+///////////////
+
+
 $horadepart="00:00:00";
 $horallegada="00:00:00";
 
@@ -159,125 +162,117 @@ app.ConsultaMembers();
 }
 
 function validahora(horadepart, horallegada){
+ 
       if (horadepart == "00:00:00"){
+
          $("#depart").show();
          $("#arrive").hide();
          $("#rearrive").hide();
          $("#reouvrir").hide();
     //   $("#arrive").removeAttr("style").hide();
     //   $("#rearrive").removeAttr("style").hide();
-         chofer = document.getElementById("chofer").value;
+
+         chofer  = document.getElementById("chofer").value;
          autobus = document.getElementById("bus").value;
-         $("#boton1").show();
-         $("#boton1").prop("disabled",false);
-         $("#boton11").show();
-         $("#boton11").prop("disabled",false);
-         $("#boton12").show();
-         $("#boton12").prop("disabled",false);
 
-    //   $("#boton1").removeAttr("style").show();
-         $("#interactive").show();
-
+         if (chofer == '' && autobus==''){
+           $("#boton1").hide();
+           $("#boton1").prop("disabled",true);
+           $("#boton11").hide();
+           $("#boton11").prop("disabled",true);
+           $("#boton12").hide();
+           $("#boton12").prop("disabled",true);
+         }else{       
+           $("#boton1").show();
+           $("#boton1").prop("disabled",false);
+           $("#boton11").show();
+           $("#boton11").prop("disabled",false);
+           $("#boton12").show();
+           $("#boton12").prop("disabled",false);
+      //   $("#boton1").removeAttr("style").show();
+         } //fin if chofer
+           $("#interactive").show();
       }
       if (horadepart != "00:00:00"){
-          
-
             $("#depart").hide();
- //           $("#depart").removeAttr("style").hide();
-
             $("#boton1").hide();
             $("#boton11").hide();
             $("#boton12").hide();
-//          $("#boton1").removeAttr("style").hide();
-
-            $(".upload1").hide();
-//            $(".upload1").removeAttr("style").hide();
-
-         
-
             $("#boton1").prop("disabled",true);
             $("#boton11").prop("disabled",true);
             $("#boton12").prop("disabled",true);
-  
-            $(".btn-success").prop("disabled",true);
-            $(".btn-tt").prop("disabled",true);
-           
-
-          //  $("#boton3").prop("disabled",true);
-
+        
+            $(".upload1").hide();
+            //  $("#boton3").prop("disabled",true);
             /*captura de la camara*/
             $("#interactive").hide();
+            $("#reouvrir").hide();
+           //  $("#arrive").hide();
 
-        if (horallegada == "00:00:00"){
-          inicio = document.getElementById("horadepart").value;
-          //$reg_time=strtotime($reg_time);
+          //   $("#rearrive").hide();
+
+
+            if (horallegada == "00:00:00"){
+             inicio = document.getElementById("horadepart").value;
+             //$reg_time=strtotime($reg_time);
+             fin = <?php echo json_encode($horatotal)?>;
+
+             inicioMinutos = parseInt(inicio.substr(3,2));
+             inicioHoras = parseInt(inicio.substr(0,2));
           
-          fin = <?php echo json_encode($horatotal)?>;
+             finMinutos = parseInt(fin.substr(3,2));
+             finHoras = parseInt(fin.substr(0,2));
 
-          inicioMinutos = parseInt(inicio.substr(3,2));
-          inicioHoras = parseInt(inicio.substr(0,2));
-          
-          finMinutos = parseInt(fin.substr(3,2));
-          finHoras = parseInt(fin.substr(0,2));
-
-          transcurridoMinutos = finMinutos - inicioMinutos;
-          transcurridoHoras = finHoras - inicioHoras;
+             transcurridoMinutos = finMinutos - inicioMinutos;
+             transcurridoHoras = finHoras - inicioHoras;
   
-          if (transcurridoMinutos < 0) {
-            transcurridoHoras--;
-            transcurridoMinutos = 60 + transcurridoMinutos;
-          }
+             if (transcurridoMinutos < 0) {
+              transcurridoHoras--;
+              transcurridoMinutos = 60 + transcurridoMinutos;
+             }
   
-          horas = transcurridoHoras.toString();
-          minutos = transcurridoMinutos.toString();
-  
-         // alert (horas+"  "+minutos);
+             horas = transcurridoHoras.toString();
+             minutos = transcurridoMinutos.toString();
+             //alert (horas+"  "+minutos);
+             if (horas <= 1){
+              $("#arrive").show();
+             }
+             $("#rearrive").show();
+                         
+            }else{ //horallegada si ya llego entra aqui
+             $("#reouvrir").show();
+             $("#depart").hide();
+             $("#depart").removeAttr("style").hide();
+             $("#arrive").hide();
+             $("#arrive").removeAttr("style").hide();
 
-        if (horas <= 1){
- //         if (horas >= 1){
-             $("#arrive").show();
-          }
-          $("#rearrive").show();
-        } //horallegada
-        else{
-            $("#reouvrir").show();
-            $("#depart").hide();
-            $("#depart").removeAttr("style").hide();
+             $("#rearrive").hide();
+             $("#rearrive").removeAttr("style").hide();
 
+             $("#boton1").hide();
+             $("#boton1").removeAttr("style").hide();
 
-            $("#arrive").hide();
-            $("#arrive").removeAttr("style").hide();
-
-            $("#rearrive").hide();
-            $("#rearrive").removeAttr("style").hide();
-
-            $("#boton1").hide();
-            $("#boton1").removeAttr("style").hide();
-
-            $("#boton11").hide();
-            $("#boton11").removeAttr("style").hide();
+             $("#boton11").hide();
+             $("#boton11").removeAttr("style").hide();
  
-            $("#boton12").hide();
-            $("#boton12").removeAttr("style").hide();
+             $("#boton12").hide();
+             $("#boton12").removeAttr("style").hide();
 
-
-            $(".upload1").hide();
-            $(".upload1").removeAttr("style").hide();
-
-
-        }
-      } //horadepart
+             $(".upload1").hide();
+             $(".upload1").removeAttr("style").hide();
+            } // fin horallegada
+      } //fin horadepart
 
 
 
 
-}
+} //fin validahora
 
 function inicio(){
       var documentog = <?php echo json_encode($documento)?>;
       var horadepart = "00:00:00";
       var horallegada = "00:00:00";;
-      validahora(horadepart, horallegada);
+      //validahora(horadepart, horallegada);
 }
 
 function arrive(){
@@ -348,6 +343,7 @@ function reouvrir(){
           }
           else{
             document.getElementById("horadepart").value = response.data.horadepart;
+            document.getElementById("horallegada").value = response.data.horadearrive;
             horadepart=response.data.horadepart;
             horallegada=document.getElementById("horallegada").value;
             validahora(horadepart, horallegada);
@@ -376,6 +372,7 @@ function depart(){
         formData.append('docmov', docmov);
         formData.append('autobus', autobus);
         formData.append('chofer', chofer);
+
         console.log("Depart Autobus");
         axios({
                   method: 'POST',
@@ -383,9 +380,9 @@ function depart(){
                   responseType: 'json',
                   data: formData
           })
-       .then(function(response){
+         .then(function(response){
           console.log(response);
-          app.clickMember = {};
+         // app.clickMember = {};
           if(response.data.error){
             app.errorMessage = response.data.message;
           }
@@ -393,18 +390,12 @@ function depart(){
             document.getElementById("horadepart").value = response.data.horadepart;
             horadepart=response.data.horadepart;
             horallegada=document.getElementById("horallegada").value;
-            validahora(horadepart, horallegada);
+           
             app.showAddimagen2 = "true";
-
-            //docmov="121"
             console.log("Genernado PDF-1");
-
-            
-            //app.showAddimagen2 = false;
-           // alert (docmov);
             const formData = new FormData();
             formData.append('docmov', docmov);
-             formData.append('chomae', chofer);
+            formData.append('chomae', chofer);
             //2do axios
             axios({
                   method: 'POST',
@@ -412,13 +403,13 @@ function depart(){
                   responseType: 'text',
 //                responseType: 'json',
                   data: formData
-              })
+            })
             .then(function(response){
               console.log("Respuesta PDF-2");
               console.log(response);
               app.showAddimagen2 = false;
               //alert ("Respuesta");
-             })
+            })
             .catch(function (error) {
               //alert ("Error");
               alert ("Error-Courriel");
@@ -426,12 +417,11 @@ function depart(){
               app.showAddimagen2 = false;
               // handle error
               console.log(error);
-           
+              validahora(horadepart, horallegada);
             }); //fin 2di=o axios
-          }
-        });
+          }//fin if principal
+          }); //fin axios principal
     } //vou voulez depart
-
     } //fin if vacios
 }  //fin funcion depart
 
@@ -730,7 +720,6 @@ max-height: 66px;
        <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Nouvel employé H.</button>
        </div>  
 
-
        <div class="col-sm-6 col-xs-6 col-md-6">
        <button id="boton11" onClick="botonxx1()" class="btn btn-warning
        center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;" ></span>Nouvel employé F.</button>
@@ -980,7 +969,7 @@ max-height: 66px;
 -->
 
     
-    <div style="display: none" class="panel panel-primary" style="margin:20px;">
+    <div style="display: none " class="panel panel-primary" style="margin:20px;">
    
     <div class="panel-heading">
             <h3 class="panel-title">R.F</h3>

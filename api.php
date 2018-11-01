@@ -124,6 +124,9 @@ $dia = substr($fecha,8,2);
 /*Calculando la fecha de Salida del Autobus*/
 $members = array();
 
+$hr2mae="";
+$hr3mae="";
+
 if($crud == 'read-1'){
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
@@ -139,9 +142,10 @@ if($crud == 'read-1'){
    	  $fecin = $row['datmae'];
    	  $busin = $row['busmae'];
    	  $choin = $row['chomae'];
+   	  $hr2mae= $row['hr2mae'];
+	  $hr3mae= $row['hr3mae'];
 	}
 
-	
 	$sql = "SELECT @row_num := 0"; 
 	$query = $conn->query($sql);
 
@@ -159,6 +163,8 @@ if($crud == 'read-1'){
 	$res['fecin'] = $fecin;
 	$res['busin'] = $busin;
 	$res['choin'] = $choin;
+	$res['horadepart'] =  $hr2mae;
+	$res['horallegada'] = $hr3mae;
 
 	$res['results'] = $members;
 	echo json_encode($res);

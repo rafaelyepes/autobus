@@ -58,22 +58,36 @@ var app = new Vue({
 						else{
 							app.members = response.data.results;
 							document.getElementById("fecha").value = response.data.fecin;
-							document.getElementById("chofer").value = response.data.choin;;
-							document.getElementById("bus").value = response.data.busin;;
+							document.getElementById("chofer").value = response.data.choin;
+							document.getElementById("bus").value = response.data.busin;
+							document.getElementById("horadepart").value = response.data.horadepart;
+							document.getElementById("horallegada").value = response.data.horallegada;
+						
+							horadepart = response.data.horadepart;
+							horallegada = response.data.horallegada;
+
 							$("#chofer").css("background-color", "#9FF781");
 							$("#bus").css("background-color", "#9FF781");
+							validahora(horadepart, horallegada);
 						}
 			});
+		} else {
+
+			horadepart = document.getElementById("horadepart").value;
+			horallegada = document.getElementById("horallegada").value;
+			//alert (horadepart+"  "+horallegada);	
+			validahora(horadepart, horallegada);
 		} //fin condicion if			
 		},
 
 		getAllMembers: function(){
+
 		fecmov = document.getElementById("fecha").value;
 		docmov = document.getElementById("documento").value;
 		chofer = document.getElementById("chofer").value;
 		autobus = document.getElementById("bus").value;
 
-
+		if (docmov !=''){
 		crud="read";
 		const formData = new FormData();
 		formData.append('crud', crud);
@@ -99,6 +113,10 @@ var app = new Vue({
 						app.members = response.data.results;
 					}
 			});
+
+		} //fin if docmov
+
+
 		},
 
 		ConsultaMembers: function(){
@@ -283,9 +301,7 @@ var app = new Vue({
 				              }
 							 /*Evita refrescar la pagina*/ 
              				}
-
-
-							
+						
 							app.getAllMembers();
 							}
 						}); // fin then funcion
