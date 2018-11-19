@@ -59,13 +59,16 @@
         $fechai = date('Y-m-d', strtotime('-360 day'));
       }
     }
-    echo ("Codigo Producto");
+
   //  echo ($tipoc);
      mysql_query ("SET NAMES 'utf8'");
      $fechai="2018-11-01";
      $fechaf="2018-11-30";
      $i=0;
      $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
+     echo ("</br>");
+     echo ("Codigo Producto");
+     echo ("</br>");
 
      $query = $conn->query($sql);
       if ($query->num_rows > 0) {
@@ -79,6 +82,11 @@
         $control08  = $row['hr2mae'];
         $control09  = $row['datmae'];
         $i=$i+1;
+        echo ($control02);
+        echo ("</br>");
+
+
+
       ?>
       <tr id="mostrardatos" class="member">
           Mostrando otra linea
