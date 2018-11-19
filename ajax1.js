@@ -31,21 +31,44 @@ function Pagina(nropagina){
     // 	codigo="plantill086a.php";
     //  alert (tipoc);
 		//alert ("Numero de Pagina:"+nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
+		/*
 	  $('table#your-table-id tr#item').remove();
 
-	ajax.open("GET", "paginador.php?pag="+nropagina+"&c="+fechai+"&d="+fechaf+"&tipoc="+tipoc+"&b="+codigo);
+		let data = new FormData();
+	  data.append('pag', nropagina);
+		data.append('b', codigo);
+	  data.append('c', fechai);
+		data.append('d', fechaf);
+		data.append('tipoc', tipoc);
+    */
+		var dataString = '&pag=' + nropagina;
 
 
-
-	divContenido.innerHTML= '<img src="anim.gif">';
-	ajax.onreadystatechange=function() {
-		if (ajax.readyState==4) {
-			//mostrar resultados en esta capa
-			divContenido.innerHTML = ajax.responseText
-		}
-	}
+		console.log("iniciando proceso");
+		$.ajax({
+					type: "GET",
+					url: "paginador.php",
+					data: dataString,
+					dataType: "html",
+					beforeSend: function(){
+								console.log("BeforeSend");
+								//imagen de carga
+								$("#resultado").html("<p align='center'><img src='ajax-loader.gif' /></p>");
+					},
+					error: function(){
+								console.log("ERROR");
+								alert("error petición ajax");
+					},
+					success: function(data){
+								console.log("Recibe el data");
+	 						  console.log(data);
+								$("#ProSelected1").show();
+								$("#ProSelected1").empty();
+								$("#ProSelected1").append(data);
+					}
+		});
 	//como hacemos uso del metodo GET
 	//colocamos null ya que enviamos
 	//el valor por la url ?pag=nropagina
-	ajax.send()
+
 }
