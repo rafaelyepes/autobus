@@ -180,7 +180,11 @@ $dompdf->stream($ruta, array("Attachment" => false));
 //include "./php/enviaradjunto.php";
 //$res = array('error' => false);
 //$res['results'] = $d2;
+
+
 //echo json_encode($res);
+
+
 
 header('Content-Type: text/html; charset=ISO-8859-1');
 // para evitar que se nos detenga la ejecucion del script (en caso de que el servidor tarde en responder) definimos un intervalo de 5 minutos de inactividad

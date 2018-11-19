@@ -1,11 +1,13 @@
 
-<?php 
+<?php
 require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 // Introducimos HTML de prueba
-include ("./conectar4.php"); 
+include ("./conectar4.php");
 $informe="Rapport Global Autobus";
 $docmae = "117";
-$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
+$fcons=date();
+//$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
+
 
 $busmae="xxxx";
 $firstname = "NA";
@@ -26,7 +28,10 @@ if(isset($_POST['fecha'])){ //
     $datmae = $_POST['fecha'];
 }
 
-
+if(isset($_GET['fecha'])){ //
+    $datmae = $_GET['fecha'];
+}
+$ruta = "./archivos/pdf/"."Autob".$datmae.".pdf";
 
 $codigoHTML = '
 <title></title>
@@ -45,11 +50,11 @@ $codigoHTML = '
         <th height="45" valign ="middle" align="left" style="font-size:12px">Date</th>
         <th height="45" colspan="3"  align="left"  style="font-size:11px">'.$datmae.'</th>
         </tr>
-        
-        
+
+
         </table>
         <br>
-        
+
         <table class="tablat" id="tablat" border=2 cellspacing=0 cellpadding=0>
 
          <tr style="text-align: center; font-size:13px">
@@ -82,7 +87,7 @@ $codigoHTML = '
               $firstname = $row1['nomemp'];
               $lastname = $row1['apeemp'];
               }
-              $nombreauto=$firstname."  ".$lastname;  
+              $nombreauto=$firstname."  ".$lastname;
 
 
               $lin1 = 0;
@@ -110,15 +115,15 @@ $codigoHTML = '
                     }else{
                      $cont1 = $cont1+1;
                      $cont1t = $cont1t+1;
-                    }                  
-                    $codigoHTML.=' 
+                    }
+                    $codigoHTML.='
                     ';
               }
 
-        $codigoHTML.=' 
-         
-         
-        
+        $codigoHTML.='
+
+
+
          <tr style="text-align: center; font-size:13px">
 
          <td>'.$chomae.'</td>
@@ -133,7 +138,7 @@ $codigoHTML = '
          ';
 
       }
-        $codigoHTML.=' 
+        $codigoHTML.='
          <tr style="text-align: center; font-size:13px">
          <td colspan="4">Total</td>
          <td>'.$cont2t.'</td>
@@ -160,13 +165,13 @@ $codigoHTML = '
          <td>'.$conta4.'</td>
          </tr>
          </table>
-        '; 
+        ';
 $codigoHTML=utf8_encode($codigoHTML);
 
 $dompdf=new DOMPDF();
 //$paper_size = (25,15,760,590);
 //$dompdf->set_paper($paper_size);
-$dompdf->set_paper("letter","portrait");  //tiene que ser horizontal y lo deja en vertical 
+$dompdf->set_paper("letter","portrait");  //tiene que ser horizontal y lo deja en vertical
 $dompdf->load_html(utf8_decode($codigoHTML));
 ini_set("memory_limit","128M");
 $dompdf->render();
@@ -175,9 +180,6 @@ file_put_contents($ruta, $output);
 //$dompdf->stream($ruta);
 $dompdf->stream($ruta, array("Attachment" => false));
 
-
-
-
+//include ('accueilc.php');
 
 ?>
-
