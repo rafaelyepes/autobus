@@ -1,5 +1,5 @@
-<?php 
-//include ("./conectar4.php"); 
+<?php
+//include ("./conectar4.php");
 date_default_timezone_set("America/Montreal");
 
 
@@ -59,7 +59,7 @@ $rs_tabla=mysqli_query($conexion, $consulta);
          $viaje = mysqli_result($rs_tabla,$i,"viamae");
          $horadepart=mysqli_result($rs_tabla,$i,"hr2mae");
          $horallegada=mysqli_result($rs_tabla,$i,"hr3mae");
-    }        
+    }
 
 */
 include ("autentican.php");
@@ -75,11 +75,11 @@ include ("autentican.php");
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  
+
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="./js/jquery.js"></script>
-   
+
     <link rel="stylesheet" type="text/css" href="./QuaggaJS/css/modalcss.css">
     <link rel="stylesheet" type="text/css" href="./QuaggaJS/css/alert.css">
 
@@ -96,11 +96,11 @@ include ("autentican.php");
 
   /*carrousel jquery*/
   jQuery(document).ready(function($) {
- 
+
         $('#myCarousel').carousel({
                 interval: 5000
         });
- 
+
         //Handles the carousel thumbnails
         $('[id^=carousel-selector-]').click(function () {
         var id_selector = $(this).attr("id");
@@ -113,7 +113,7 @@ include ("autentican.php");
         }
     });
       /*FIN carrousel jquery*/
-    
+
 
 
         // When the carousel slides, auto update the text
@@ -125,28 +125,28 @@ include ("autentican.php");
 
 function validachofer(){
   app.ValidaMembers('10014');
-} 
+}
 function validaautobus(){
   app.ValidaMembers('10656');
-} 
+}
 function empleado1(){
   app.ValidaMembers('10366');
-} 
+}
 function empleado2(){
   app.ValidaMembers('50097');
-} 
+}
 function empleado3(){
   app.ValidaMembers('41393');
-} 
+}
 function empleado4(){
   app.ValidaMembers('22006');
-} 
+}
 function empleado5(){
   app.ValidaMembers('41251');
-} 
+}
 
 
-function sonido(){ 
+function sonido(){
 
 var audio = document.getElementById("audio");
 audio.play();
@@ -155,14 +155,14 @@ audio.play();
 
 
 
-function nombre(id){ 
+function nombre(id){
 numero=id;
 app.consultaMember = {nummov:numero};
 app.ConsultaMembers();
 }
 
 function validahora(horadepart, horallegada){
- 
+
       if (horadepart == "00:00:00"){
 
          $("#depart").show();
@@ -182,7 +182,7 @@ function validahora(horadepart, horallegada){
            $("#boton11").prop("disabled",true);
            $("#boton12").hide();
            $("#boton12").prop("disabled",true);
-         }else{       
+         }else{
            $("#boton1").show();
            $("#boton1").prop("disabled",false);
            $("#boton11").show();
@@ -201,7 +201,7 @@ function validahora(horadepart, horallegada){
             $("#boton1").prop("disabled",true);
             $("#boton11").prop("disabled",true);
             $("#boton12").prop("disabled",true);
-        
+
             $(".upload1").hide();
             //  $("#boton3").prop("disabled",true);
             /*captura de la camara*/
@@ -219,18 +219,18 @@ function validahora(horadepart, horallegada){
 
              inicioMinutos = parseInt(inicio.substr(3,2));
              inicioHoras = parseInt(inicio.substr(0,2));
-          
+
              finMinutos = parseInt(fin.substr(3,2));
              finHoras = parseInt(fin.substr(0,2));
 
              transcurridoMinutos = finMinutos - inicioMinutos;
              transcurridoHoras = finHoras - inicioHoras;
-  
+
              if (transcurridoMinutos < 0) {
               transcurridoHoras--;
               transcurridoMinutos = 60 + transcurridoMinutos;
              }
-  
+
              horas = transcurridoHoras.toString();
              minutos = transcurridoMinutos.toString();
              //alert (horas+"  "+minutos);
@@ -238,7 +238,7 @@ function validahora(horadepart, horallegada){
               $("#arrive").show();
              }
              $("#rearrive").show();
-                         
+
             }else{ //horallegada si ya llego entra aqui
              $("#reouvrir").show();
              $("#depart").hide();
@@ -254,7 +254,7 @@ function validahora(horadepart, horallegada){
 
              $("#boton11").hide();
            //  $("#boton11").removeAttr("style").hide();
- 
+
              $("#boton12").hide();
            //  $("#boton12").removeAttr("style").hide();
 
@@ -390,7 +390,7 @@ function depart(){
             document.getElementById("horadepart").value = response.data.horadepart;
             horadepart=response.data.horadepart;
             horallegada=document.getElementById("horallegada").value;
-           
+
             app.showAddimagen2 = "true";
             console.log("Genernado PDF-1");
             const formData = new FormData();
@@ -498,30 +498,30 @@ $("#botonx1" ).click(function() {
 });  //fin del document read ---ADICIONA INFORMACION AL DOCUMENTO
 
 function botonx1(){
- app.newMember.sexmov= "Homme"; 
+ app.newMember.sexmov= "Homme";
  app.showAddModal = "true";
-}  
+}
 
 function botonxx1(){
- app.newMember.sexmov= "Femme"; 
+ app.newMember.sexmov= "Femme";
  app.showAddModal = "true";
-}  
+}
 
 function botonxx2(){
- app.newMember.codmov="ZZZZZ"; 
+ app.newMember.codmov="ZZZZZ";
  app.showAddModalex = "true";
-}  
+}
 
 function botonx2(){
  app.showAddimagen = "true";
 
-}  
+}
 
 function cancelar(){
   window.location="../autobus/index.php";
-}  
+}
 
-var $node="hola"; 
+var $node="hola";
 
 </script>
 
@@ -555,11 +555,11 @@ text-align: center;
 .upload1img {
 
     min-height: 400px;
-  
+
     background-size: cover;
     background-position: center;
 
-    
+
     /*
     width: 250px;
     height: 280px;
@@ -625,7 +625,7 @@ font-size: 16px;
 
 .formcmodal {
 height: 70px;
-font-size:25px; 
+font-size:25px;
 }
 
 .formgroup {
@@ -635,9 +635,9 @@ font-size: 22px;
 
 .img2{
 margin-left: 0px;
-margin-right: 0px; 
+margin-right: 0px;
 width: 100%;
-max-width: 100%; 
+max-width: 100%;
 height: 65px;
 }
 
@@ -647,7 +647,7 @@ height: 65px;
 
 .img2lc{
 margin-left: 0px;
-margin-right: 0px; 
+margin-right: 0px;
 
 max-width: 38px;
 width: 38px;
@@ -668,13 +668,13 @@ max-height: 66px;
 </style>
 </head>
 <body onload="inicio()">
-<!--	
+<!--
 <div class="container-fluid">
 -->
-<div class="container-fluid" id="QR-Code" style="background-color: ;">	
-     
+<div class="container-fluid" id="QR-Code" style="background-color: ;">
+
       <br>
-      <div class="row" >  
+      <div class="row" >
 
       <div class="col-xs-3 col-sm-1  col-md-1" >
       <img class="img2lc" onClick("Cerrarseccion()") src="./img/logolacroixform.png" alt="Logo Lacroix">
@@ -682,10 +682,10 @@ max-height: 66px;
 
       <div class="col-xs-6 col-sm-9  col-md-9 img2autobus" style="text-align: center; ">
       <h1 class="img2autobus">Autobus</h1>
-      </div>  
+      </div>
 
       <div class="col-xs-3 col-sm-2  col-md-2" style="text-align: center; ">
-      <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </div>  
+      <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </div>
 
       </div>
 
@@ -693,15 +693,15 @@ max-height: 66px;
       <!--Linea: depart-arrive-reovrir-ajouter-->
       <div class="row">
 
-     
+
        <div class="col-xs-3 col-md-3" style="text-align: center">
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
 
        <div class="col-xs-5 col-md-5" style="text-align: center">
-       <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button> 
+       <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button>
        </div>
-      
+
       <!--onClick="reouvrir()"-->
       <div class="col-xs-2 col-md-2" style="text-align: center">
       <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
@@ -711,37 +711,37 @@ max-height: 66px;
       <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
       </div>
 
-      
 
- 
+
+
       </div>
       <!--FIN Linea: depart-arrive-reovrir-ajouter-->
       <!--FIN Linea: depart-arrive-reovrir-ajouter-->
       <!--FIN Linea: depart-arrive-reovrir-ajouter-->
 
-      
 
-      
+
+
 
 
        <div class="row">
           <div class="col-xs-5 col-md-5" style="text-align: right;  margin-left: 8px;">
           <input class="borderno" id="bus" style="text-align: center;" name="bus" ></input>
           </div>
-        
+
           <div class="col-xs-5 col-md-5" style="text-align: left;">
           <input class="borderno" value="<?php echo ($chofer)?>" id="chofer" style="text-align: center;" name="chofer"></input>
           </div>
-       </div>      
+       </div>
 
-<!--          
+<!--
         <div class="col-xs-12 col-md-12" style="padding: 0; border-top: 30px;">
 
         <div class="col-xs-9 col-md-9" style="padding-left: 0px; padding-bottom: 0px; text-align: center; border-style: none; width: 100%">
         <span  id="respuesta" style="display: none; text-align: center">xxx</span>
         </div>
         </div>
--->        
+-->
 
          <section id="container" class="container" style="margin-top: -5px;">
          <div class="controls" style="display: none" >
@@ -814,8 +814,8 @@ max-height: 66px;
             </fieldset>
         </div> <!--FIN DIV CONTROL-->
 
-     
-    
+
+
       <!--Espacio de captura de la camara dentro del div -->
       <!--./QuaggaJS/css/styles.css -->
       <div class="row anchop" style="margin-top: -0px; " >
@@ -824,68 +824,68 @@ max-height: 66px;
       <div id="interactive" class="viewport">
 
       </div>
-      </div>  
+      </div>
 
       <div class="col-sm-2 col-xs-3 col-md-3" id="slider-thumbs" >
                 <!-- Bottom switcher of slider -->
                 <ul class="hide-bullets">
-      
+
                 </ul>
             </div>
-          </div>  
-      </div> 
+          </div>
+      </div>
 
 
-         
+
 
 
        <!--Espacio de mostrar la foto tomada -->
 <!--   <div id="result_strip" style="padding: 0;"> -->
-      
+
         <!--Quitado slider horizontal
        <div class="col-sm-12 col-xs-12 col-md-12" style="border: 20px;">
        <div id="result_strip" style="padding: 0;">
         <ul class="thumbnails"></ul>
         <ul class="collector"></ul>
        </div>
-       </div> 
-       --> 
+       </div>
+       -->
     </section>
      <div class="row" style="margin-top: -20px">
           <div class="col-sm-4 col-xs-4 col-md-4" style="padding-left: -40px;">
           <button id="boton1" onClick="botonx1()" class="btn btn-success" style="width: 123px; font-size: 11px;"><span  class="glyphicon " </span>Nouvel employé H.</button>
-          </div>  
+          </div>
 
        <div class="col-sm-4 col-xs-4 col-md-4">
        <button id="boton11" onClick="botonxx1()" class="btn btn-warning
        " style="width: 123px; font-size: 11px;"><span  class="glyphicon "></span>Nouvel employé F.</button>
-       </div> 
+       </div>
 
        <div class="col-sm-4 col-xs-4 col-md-4"  >
        <button id="boton12" onClick="botonxx2()" class="btn btn-primary center-block" style="width: 123px; font-size: 11px;"><span  class="glyphicon " ></span>Employé existant.</button>
-       </div>  
+       </div>
 
 
 
-       </div>   
-             
+       </div>
+
 
 
 
   <script src="./QuaggaJS/vendor/jquery-1.9.0.min.js" type="text/javascript"></script>
 
- 
-  
+
+
   <!--Utilizado para scanner fijo
   <script src="./QuaggaJS/js/file_input.js" type="text/javascript"></script>
   -->
 
-  <!--Utilizado para scanner automatico 
+  <!--Utilizado para scanner automatico
   <script src="./QuaggaJS/js/live_w_locator.js" type="text/javascript"></script>
  -->
 
 
-    
+
     <!--Aqui se encuentra el enlace A el lector de codigo de barras -->
     <!--
     <script src="QuaggaJS/js/adapter-latest.js" type="text/javascript"></script>
@@ -904,7 +904,7 @@ max-height: 66px;
 				<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
 				<span class="glyphicon glyphicon-alert"></span> {{ errorMessage }}
 			</div>
-			
+
 			<div style="display: none" class="alert alert-success text-center" v-if="successMessage">
 				<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
 				<span class="glyphicon glyphicon-ok"></span> {{ successMessage }}
@@ -923,10 +923,10 @@ max-height: 66px;
           <th class="warning">Action</th>
 				</thead>
 				<tbody>
-            <!--  
+            <!--
             <tr v-for="(member array in sortedArray, index) in members">
-            -->  
-    				<tr v-for="(member, index) in members" > 
+            -->
+    				<tr v-for="(member, index) in members" >
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.row_number }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nummov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.nommov }}</td>
@@ -934,8 +934,8 @@ max-height: 66px;
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.sexmov }}</td>
             <td v-bind:class="{'classegris': index+1 == 1, danger1 }">{{ member.stamov }}</td>
 						<td v-bind:class="{'classegris': index+1 == 1, danger1 }" class="trans text-center">
-						<button id="boton2"  class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button> 
-            </td>    
+						<button id="boton2"  class="btn btn-success btn-responsive btninter" @click="showEditModal = true; selectMember(member);" v-if="member.sexmov"><span class="glyphicon glyphicon-edit danger1" ></span> Modifier</button>
+            </td>
             <td class="trans text-center">
 						<button v-if="member.stamov == 'Embarqué'" id="boton3" class="btn  btn-danger  btn-tt" @click="showDebarqueModal = true; selectMember(member);"><span class="glyphicon glyphicon-trash btn-success"></span>Débarqué</button>
 
@@ -949,31 +949,31 @@ max-height: 66px;
 			</table>
 		    </div>
         </div>
-           <!--                  
+           <!--
            <pre>
             {{ $data }}
-           <pre>  
+           <pre>
           -->
-          
+
         <?php include('modal.php'); ?>
     </div>
     </div>
 <!--
- 
+
     <div class="panel panel-primary" >
 -->
 
-    
+
     <div style="display: none " class="panel panel-primary" style="margin:20px;">
-   
+
     <div class="panel-heading">
             <h3 class="panel-title">R.F</h3>
     </div>
     <div class="panel-body">
 
-   
+
     <div class="col-md-12 col-sm-12" >
-    
+
         <div class="row">
           <div class="col-sm-6 form-group">
             <label>Document No</label>
@@ -984,18 +984,18 @@ max-height: 66px;
             <label>Date</label>
             <input type="text" class="form-control" value="<?php echo ($fecha)?>" id="fecha" name="fecha" readonly>
           </div>
-        </div>                  
+        </div>
 
         <div class="row">
-         
+
           <div class="col-sm-4 form-group">
             <label>No</label>
             <input type="text" placeholder="" class="form-control" value="<?php echo ($viaje)?>" id="viaje" name="viaje" readonly>
-          </div>   
+          </div>
           <div class="col-sm-4 form-group">
             <label>Validacion No</label>
             <input type="text" placeholder="" class="form-control" value="0" id="validacion" name="validacion" readonly>
-          </div>    
+          </div>
           <div class="col-sm-4 form-group">
            <input type="text" onclick="validachofer()" value="Chofer"/>
            <input type="text" onclick="validaautobus()" value="Autobus"/>
@@ -1004,24 +1004,24 @@ max-height: 66px;
            <input type="text" onclick="empleado3()" value="Empleado-3"/>
            <input type="text" onclick="empleado4()" value="Empleado-4"/>
            <input type="text" onclick="empleado5()" value="Empleado-5"/>
-          </div>    
-        
+          </div>
+
           <div class="col-sm-4 form-group">
           <input type="text" placeholder="" class="form-control" value="00:00:00" id="horadepart" name="horadepart" readonly>
           <input type="text" placeholder="" class="form-control" value="00:00:00" id="horallegada" name="horallegada" readonly>
-          </div>    
+          </div>
 
-      
+
         </div>
-      </div>   
-   
-   
+      </div>
+
+
     </div>
 </div>
 
 <div class="cerrar2">
  <a href="cerrar.php"><img id="span1" class="imglacroixyz" src="./img/logout.png" style="width: 80%; height: 75%"; align="right"></a>
-</div> 
+</div>
 <div class="controls" style="margin-left: 30%;">
 <audio id="audio" controls>
 <source type="audio/wav" src="beep.mp3">

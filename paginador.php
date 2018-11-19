@@ -3,7 +3,7 @@ include ("./conectar4.php");
 $fechai="2018-09-01";
 $fechaf="2018-11-30";
 $i=0;
-$sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
+$sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC";
 $query = $conn->query($sql);
 while($row = $query->fetch_array()){
    $idb        = $row['id'];

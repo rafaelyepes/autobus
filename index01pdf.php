@@ -1,7 +1,7 @@
-<?php 
+<?php
 require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 // Introducimos HTML de prueba
-include ("./conectar4.php"); 
+include ("./conectar4.php");
 $informe="Rapport Autobus";
 $docmae = "";
 $d2="Sin numero";
@@ -24,8 +24,6 @@ if(isset($_POST['chomae'])){
   $chomae = $_POST['chomae'];
 }
 
-
-
 $d2="Autob".$docmae;
 
 //$ruta = "./php/archivos/pdf/"."Autob".$docmae.".pdf";
@@ -34,8 +32,6 @@ $ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
 $busmae="xxxx";
 $firstname = "NA";
 $lastname = "NA";
-
-
 
 $sql = "SELECT * from autobusmae WHERE docmae='$docmae'";
 $query = $conn->query($sql);
@@ -53,7 +49,7 @@ while($row = $query->fetch_array()){
   $firstname = $row['nomemp'];
   $lastname = $row['apeemp'];
 }
-$nombreauto=$firstname."  ".$lastname;    
+$nombreauto=$firstname."  ".$lastname;
 
 
 $codigoHTML = '
@@ -66,10 +62,10 @@ $codigoHTML = '
       <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
         <tr>
         <th rowspan="5" width="16" height="80" ><img  src="./img/logolacroix.png" width="13" height="70"  ></th>
-        
+
         <td align="Center" colspan="4" style="font-size:16px">'.$informe.'</td>
         </tr>
-        
+
         <tr>
         <th align="left" style="font-size:12px">Numéro Document</th>
         <th colspan="3" align="left" style="font-size:11px; padding-left: 10px;">'.$docmae.'</th>
@@ -79,13 +75,13 @@ $codigoHTML = '
         <th valign ="middle" align="left" style="font-size:12px">Date</th>
         <th colspan="3"  align="left"  style="font-size:11px; padding-left: 10px;">'.$datmae.'</th>
         </tr>
-        
+
         <tr>
         <th align="left" style="font-size:12px">Autobus</th>
         <th align="left"  style="font-size:11px; padding-left: 10px;">'.$busmae.'</th>
         <th colspan="2" align="left" style="font-size:12px">Heure départ  : '.$horadepart.'</th>
         </tr>
-        
+
         <tr>
         <th align="left" style="font-size:12px">Chauffeur</th>
         <th align="left"  style="font-size:11px; padding-left: 10px;">'.$chomae.'</th>
@@ -127,13 +123,13 @@ $codigoHTML = '
                     if ($cod4 == 'Femme'){
                      $cont3 = $cont3+1;
                     }
-            
+
                 }else{
                  $cont1 = $cont1+1;
-                
 
-                }                  
-                $codigoHTML.=' 
+
+                }
+                $codigoHTML.='
                 <tr style="font-size:12px; text-align: center;">
                 <td>'.$lin1.'</td>
                 <td>'.$cod1.'</td>
@@ -142,10 +138,10 @@ $codigoHTML = '
                 <td>'.$cod4.'</td>
                 </tr>
                 ';
-               
+
           }
 
-         $codigoHTML.=' 
+         $codigoHTML.='
          <tr>
          <td colspan="5"></td>
          </tr>
@@ -164,16 +160,14 @@ $codigoHTML = '
          <td>'.$lin1.'</td>
          </tr>
 
-
          </table>
-        
          ';
 
 $codigoHTML=utf8_encode($codigoHTML);
 $dompdf=new DOMPDF();
 //$paper_size = (25,15,760,590);
 //$dompdf->set_paper($paper_size);
-$dompdf->set_paper("letter","portrait");  //tiene que ser horizontal y lo deja en vertical 
+$dompdf->set_paper("letter","portrait");  //tiene que ser horizontal y lo deja en vertical
 $dompdf->load_html(utf8_decode($codigoHTML));
 ini_set("memory_limit","128M");
 $dompdf->render();
@@ -195,11 +189,9 @@ include ("php/class.phpmailer.php");
 //Recibir todos los parámetros del formulario
 
 $para = "rafael.yepes@lacroixmeats.com";
-$para1 = "paula.franco@lacroixmeats.com";
+//$para1 = "paula.franco@lacroixmeats.com";
 
-$para = "";
 $para1 = "";
-
 
 $para2 = "";
 $asunto = "Asunto";
@@ -211,7 +203,7 @@ $password = 'DoLa753?';
 $rutaadic='/archivos/pdf/'.$d2.'.pdf';
 $archivoi=getcwd().$rutaadic;
 
- 
+
 // Enviamos la respuesta
 $mail = new PHPMailer();
 $mail->IsSMTP();
@@ -227,7 +219,7 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = TRUE;
 $mail->Username = $username;
 $mail->Password = $password;
- 
+
 $mail->From = $username;
 $mail->FromName = "Rafael Yepes";
 
@@ -241,8 +233,6 @@ $mail->Subject = $asunto;
 //$mail->Body = $mensaje;
 $mail->Body = $archivoi;
 
-
-
 $d1="rafael.yepes@lacroixmeats.com";
 $ruta="";
 
@@ -251,11 +241,10 @@ $ruta="";
 //$d2=$nomemail;
 
 //$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
-
 //$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
+
+//$rutaadic='/archivos/pdf/'.$d2.'.pdf';
 //$archivoi=getcwd().$rutaadic;
-
-
 
 $d2g=$d2.".pdf";
 
@@ -270,10 +259,10 @@ echo ("Nombre del Archivo No 2 :".$archivoi);
 echo ("<br>");
 
 $mail->AddAttachment($archivoi,$d2g);
- 
+
 $mail->WordWrap = 50;
 $mail->IsHTML(TRUE);
- 
+
 if($mail->Send())
 {
          //enviado
