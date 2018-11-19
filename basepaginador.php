@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC>
 <html lang="es">
-<?php 
-include ("./conectar4.php"); 
+<?php
+include ("./conectar4.php");
 include ("./autentican.php");
 
 $versionactiva="v1";
@@ -11,8 +11,8 @@ $fichero1="../plantilla/archivos/fdc/";
 
 $d1 = "";
 if(!isset($_SESSION)) { session_start(); }
-$nomusu=$_SESSION['nomusu']; 
-$d1 = $nomusu; 
+$nomusu=$_SESSION['nomusu'];
+$d1 = $nomusu;
 ini_set('display_errors', 'On');
 ini_set('display_errors', 1);
 $fechahoy=date("Y-m-d");
@@ -20,7 +20,7 @@ $graba = 'SI';
 $cont1 = array();
 $d1 = "";
 $swpaginador="0";
-include ("./indexg1.php"); 
+include ("./indexg1.php");
 
 $codigo="";
 
@@ -29,7 +29,7 @@ if(isset($_GET['codigo'])){
         $codigo = $_GET['codigo'];
       //  echo ($codigo);
 }
-?>    
+?>
 <head>
 <title>PORTAIL LACROIX</title>
 <meta http-equiv=content-type content=text/html; charset=utf-8>
@@ -50,15 +50,15 @@ if(isset($_GET['codigo'])){
    function  validar2(id,id1){
       leng=id.length;
       dif=leng-5;
-      v2=id.substr(5,dif);  
+      v2=id.substr(5,dif);
       campoy="id"+v2;
       campov="version"+v2;
       document.getElementById("informe").value=document.getElementById(id).value;
       document.getElementById("d1").value=document.getElementById(campoy).value;
       document.getElementById("comp1").value=document.getElementById(id).value;
- 
+
       document.getElementById("vactiva1").value=document.getElementById(campov).value;
-  
+
       document.getElementById("plantilla").value=document.getElementById(campoy).value;
 
       $('#popup').fadeOut('slow');
@@ -78,16 +78,16 @@ $(document).ready(function(){
 $("#myInput").on('input', function () {
     var val = this.value;
     if($('#browsers option').filter(function(){
-        return this.value === val;        
+        return this.value === val;
     }).length) {
         //send ajax request
        (document.getElementById("informe").value)=this.value;
-      
+
         var codigo = this.value;
         var dataString = '&codigo=' + codigo;
 
-      
-        //INICIO DEL AJAX  
+
+        //INICIO DEL AJAX
         $.ajax({
           url: 'conspaginhist.php',
           type: 'POST',
@@ -106,7 +106,7 @@ $("#myInput").on('input', function () {
 });
 //FIN DATALIST CLICK
 
-  
+
 
 
 $(document).ready(function() {
@@ -122,7 +122,7 @@ $(document).ready(function() {
                  $("#d1").val('');
                  $("#informe").val('');
                  $("#vactiva1").val('');
-               
+
 
                  $("#resultado").show();
                  $(".member").hide();
@@ -146,8 +146,8 @@ $(document).ready(function() {
                   $('.popup-overlay').height($(window).height());
 
                //     alert ("0");
-                
-                 
+
+
                   $.ajax({
                         type: "POST",
                         url: "./busquedarapp.php",
@@ -160,8 +160,8 @@ $(document).ready(function() {
                         error: function(){
                               alert("error petición ajax");
                         },
-                        success: function(data){      
-                              $("#resultado").show();                                                 
+                        success: function(data){
+                              $("#resultado").show();
                               $("#resultado").empty();
                               $("#resultado").append(data);
                         }
@@ -174,7 +174,7 @@ $(document).ready(function() {
                 }
             });
 
-             $("#resultado").find('a').on('click', setBusqueda);              
+             $("#resultado").find('a').on('click', setBusqueda);
 
 
 
@@ -220,13 +220,13 @@ function chequear(id){
  // if (s){
    //alert ("SIIII");
   }
-  else{ 
+  else{
    document.getElementById(id).value="NO";
 
    //alert ("NO");
   }
-  //document.getElementById(id).value="SI"; 
-}  //fin de la funcion     
+  //document.getElementById(id).value="SI";
+}  //fin de la funcion
 
 //AQUI SE GENERAN TODOS LOS PDF
 function consultar1(){
@@ -247,7 +247,7 @@ function consultar1(){
     if (swct == 0){
  //   alert ("2");
    plantilla1=((document.getElementById("d1").value).substr(0,13))+"pdf.php";
-  // alert (plantilla1); 
+  // alert (plantilla1);
    }
    }
 
@@ -257,15 +257,15 @@ function consultar1(){
    {
    // alert (ins[i].value);
     dins=(ins[i].value);
-    //points = points + (d2[i].value)+","; 
+    //points = points + (d2[i].value)+",";
     if (dins == "SI"){
      // alert ("0");
       points ="poid20"+i;
      // alert ("1");
       points = document.getElementById(points).value;
     // alert ("2");
-     
-      var informe=document.getElementById("informe").value; 
+
+      var informe=document.getElementById("informe").value;
   //    alert (d2);
   // alert (plantilla1 + "  "+informe);
   //    alert (points);
@@ -274,8 +274,8 @@ function consultar1(){
    //   alert ("3");
       d2s=plantilla1;
       version01="versionx"+i;
-      version01=document.getElementById(version01).value; 
-      version02=document.getElementById("vactiva1").value; 
+      version01=document.getElementById(version01).value;
+      version02=document.getElementById("vactiva1").value;
      //alert (version01+"  "+version02);
       if (version01 != "NO"){
       if (version01 != version02){
@@ -290,13 +290,13 @@ function consultar1(){
 
       window.open(d2s+"?d2="+points+"&fichero1="+fichero1+"&informe="+informe);
    } //Fin del if
-  } //fin del For 
+  } //fin del For
 }  //fin de la Funcion
 
 //consulta todos los pdf
 function consultarpdf(id){
 //alert (id);
-  sl=id.substr(10,4); 
+  sl=id.substr(10,4);
   //alert (sl)
   docu="poid20"+sl;
 
@@ -311,11 +311,11 @@ function consultar1e(){
 
    ins=document.getElementsByName('mitexto12e[]');
    ins2=document.getElementsByName('mitexto11[]');
-      
+
 //  plantilla1="php/enviar3.php";
   plantilla1="select.php";
 
-  //plantilla1=((document.getElementById("d1").value).substr(0,12))+"pdf.php"; 
+  //plantilla1=((document.getElementById("d1").value).substr(0,12))+"pdf.php";
   ruta = document.getElementById("fichero1").value;
  // alert (ruta);
   ruta="C:/wamp/www/plantilla/archivos/fdc/";
@@ -332,7 +332,7 @@ function consultar1e(){
      var docu=document.getElementById(docu).value;
 
      points1=points1+docu+";";
-  
+
      // alert (docu);
      //    alert ("Pendient Courriel");
      //    window.open(plantilla1+"?d2="+points+"&ruta="+ruta);
@@ -344,7 +344,7 @@ function consultar1e(){
  // alert (ruta+"   "+points1);
 // window.open(plantilla1+"?d2="+points1+"&ruta="+ruta);
 // window.location=(plantilla1+"?d2="+points+"&d01="+d01),'_blank';
-}  //fin de 
+}  //fin de
 
 function enviaremail(points1,ruta){
    //  alert (ruta+"   "+points1);
@@ -359,18 +359,18 @@ function marcar(){
   for(i=0;i<=ins.length;i++)
   {
    id="poid26"+i;
-   document.getElementById(id).value="SI"; 
+   document.getElementById(id).value="SI";
    ins[i].checked=true;
   }
   }else{
   for(i=0;i<=ins.length;i++)
   {
    id="poid26"+i;
-   document.getElementById(id).value="NO"; 
+   document.getElementById(id).value="NO";
    ins[i].checked=false;
   }
   }
-}  //fin de la funcion     
+}  //fin de la funcion
 
 
 // FUNCION MARCAR-2
@@ -382,24 +382,24 @@ function marcar2(){
   for(i=0;i<=ins.length;i++)
   {
    id="poid29e"+i;
-   document.getElementById(id).value="SI"; 
+   document.getElementById(id).value="SI";
    ins[i].checked=true;
   }
   }else{
   for(i=0;i<=ins.length;i++)
   {
    id="poid29e"+i;
-   document.getElementById(id).value="NO"; 
+   document.getElementById(id).value="NO";
    ins[i].checked=false;
   }
   }
-}  //fin de la funcion     
+}  //fin de la funcion
 
 
 
 function cancelar()
 {
-          location.href="./indexg1.php";     
+          location.href="./indexg1.php";
 }
 
 function chequeare(id1,id2,id3){
@@ -407,73 +407,60 @@ function chequeare(id1,id2,id3){
 
   var s=id1.checked;
   if (s){
-  
+
    if (cont>=10){
     id1.checked=false;
     alert ("Maximun 10");
    }else{
-     cont=cont+1; 
+     cont=cont+1;
    // alert (cont);
    }
   }
-  else{ 
-   cont=cont-1; 
+  else{
+   cont=cont-1;
    //alert (cont);
   }
-  //document.getElementById(id).value="SI"; 
+  //document.getElementById(id).value="SI";
 }  //fin de la funcio
 
 function generarpdf(){
 //   alert (id);
 //  d2=id;
-//  var plantilla=document.getElementById("d1").value; 
+//  var plantilla=document.getElementById("d1").value;
 //  window.location=(plantilla+"?d2="+d2),'_self';
-}  //fin de 
+}  //fin de
 
 
 // aqui se generan todos los PDF
 function consultar(id){
- 
   d2=id;
-  sl=d2.substr(7,4); 
+  sl=d2.substr(7,4);
   docu="poid20"+sl;
- 
   d2=docu;
   var plantilla="index.php";
-  var d2=document.getElementById(docu).value; 
-  var informe=document.getElementById("informe").value; 
- 
-
+  var d2=document.getElementById(docu).value;
   /****************/
   d2s=d2;
   version01="versionx"+sl;
-  
-  version01=document.getElementById(version01).value; 
- // alert ("version1  :"+version01);
-  
-
   /****************/
   /****************/
-
-
   miPopup = window.open(plantilla+"?documento="+d2s+"&plantilla="+d2,'_blank');
-
-//  window.location=(d2+"?d2="+plantilla+"&informe="+informe+"&plantilla="+d2),'_self';
+  //  window.location=(d2+"?d2="+plantilla+"&informe="+informe+"&plantilla="+d2),'_self';
 }  //fin de la funcion
 
 // consultar vista
 function consultarvista(id){
   d2=id;
-  sl=d2.substr(7,4); 
+  sl=d2.substr(7,4);
   docu="poid20"+sl;
   d2=docu;
-  
+
 
 //  alert (id+"   "+d2);
   var voir="OUI";
   var plantilla=document.getElementById(d2).value;
-  var d2=document.getElementById("d1").value; 
-  var informe=document.getElementById("informe").value; 
+  var d2=document.getElementById("d1").value;
+  var informe=document.getElementById("informe").value;
   if (d2 == "plantill038a.php"){
     d2="plantill038b.php"
   }
@@ -481,10 +468,10 @@ function consultarvista(id){
   /****************/
   d2s=d2;
   version01="versionx"+sl;
-  version01=document.getElementById(version01).value; 
-  version02=document.getElementById("vactiva1").value; 
+  version01=document.getElementById(version01).value;
+  version02=document.getElementById("vactiva1").value;
  // alert (version01+"   "+version02);
-    
+
   if (version01 != "NO"){
   if (version01 != version02){
    d2s=d2.split(".",1);
@@ -494,7 +481,7 @@ function consultarvista(id){
   /****************/
   /****************/
 
-  
+
   // window.location=(d2+"?d2="+plantilla+"&informe="+informe+"&plantilla="+d2+"&voir="+voir),'_blank';
 
  miPopup = window.open(d2s+"?d2="+plantilla+"&informe="+informe+"&plantilla="+d2+"&voir="+voir,'_blank');
@@ -507,10 +494,10 @@ function buscar2(id){
 id=id-1;
 idx="groupb"+id;
 var x = document.getElementById("div3");
-bb=x.getElementsByClassName("child")[id].getElementsByTagName("a")[0].innerHTML;       
+bb=x.getElementsByClassName("child")[id].getElementsByTagName("a")[0].innerHTML;
 alert(bb);
 
-cc=document.getElementById(idx).value;       
+cc=document.getElementById(idx).value;
 alert(cc);
 
 
@@ -528,13 +515,13 @@ function buscar1(id1){
   (document.getElementById("informe").value)=resultado;
   //miPopup = window.open("basehistoc.php?codigo="+codigo);
   //setTimeout(function(){verifica1()}, 300);
-}  //fin de la funcion 
+}  //fin de la funcion
 
 
 function buscar3(tipc){
   //alert ("0");
   Pagina("1");
-}  //fin de la funcion 
+}  //fin de la funcion
 
 function inicio(){
             //  $('#contenido').hide(); // Lo oculta
@@ -561,10 +548,10 @@ function inicio(){
             if (minuto<10) {;
                         minuto=minuto;
             }
-            var horita = hora + ":" + minuto; 
-            
+            var horita = hora + ":" + minuto;
+
             var docu = ano + mes + dia + hora + minuto + segundos ;
-            
+
             $("#agregarCampo1").css('pointer-events', 'none');
             document.getElementById("favis1").value=d;
             document.getElementById("favis2").value=d;
@@ -587,12 +574,12 @@ $(document).ready(function() {
 
   /*FORMATO PARA CONTEDIO DE LA TABLA */
   .form-control:focus {
-    width: 80%;  
+    width: 80%;
    font-size: 14px;
    /*  background: -webkit-linear-gradient(top, #9bc3f2 1%,#77d1ef 90%,#207cca 81%,#7db9e8 50%); /* Chrome10+,Safari5.1+ */
    background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
   }
- 
+
   .form-control {
    text-align: center;
    border-radius: 0px 0px 0px 0px;
@@ -602,13 +589,13 @@ $(document).ready(function() {
 
  .imgpdf{
   width: 100%;
-  height: 50%; 
+  height: 50%;
   }
 
   .fechaid{
-  width: 170px; 
-  height: 34px; 
-  font-size: 23px; 
+  width: 170px;
+  height: 34px;
+  font-size: 23px;
   text-align: center;
   }
 
@@ -627,14 +614,14 @@ $(document).ready(function() {
 
 .content-popup {
   border: 1px solid #BFBFBF;
- 
+
   border-style: groove;
   margin: 3px 0px 10px 37px;
   position: relative;
   padding: 10px;
   width: 70%;
   height: auto;
- 
+
   border-radius:4px;
   background-color:#FFFFFF;
   box-shadow: 0 2px 5px #666666;
@@ -648,13 +635,13 @@ $(document).ready(function() {
   padding-bottom: 4px;
 }
 
-.combo{   /* para el despliegue de la informacion */ 
+.combo{   /* para el despliegue de la informacion */
   display: block !important;
   font-family: Tahoma, Verdana, Arial;
   color: #707070;
   background-color: #FFFFFF;
   border-width:0;
-  width: 97%;  
+  width: 97%;
   height: 38px;
   border: 1px solid #DBE1EB;
   font-size: 18px;
@@ -680,18 +667,18 @@ $(document).ready(function() {
 /* FIN FIN FIN FORMATO PARA CONTEDIO DE LA TABLA FIN FIN FIN*/
 
 
-/* iPads (Orientacion HORIZONTAL) medianos----------- */  
-@media only screen  
-and (min-width : 781px)  
+/* iPads (Orientacion HORIZONTAL) medianos----------- */
+@media only screen
+and (min-width : 781px)
 and (max-width : 1050px) {
 
 .form-control:focus {
-   width: 80%;  
+   width: 80%;
    font-size: 11px;
    /*  background: -webkit-linear-gradient(top, #9bc3f2 1%,#77d1ef 90%,#207cca 81%,#7db9e8 50%); /* Chrome10+,Safari5.1+ */
    background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
   }
- 
+
   .form-control {
    text-align: center;
    border-radius: 0px 0px 0px 0px;
@@ -705,19 +692,19 @@ and (max-width : 1050px) {
 
 
 
-/* iPads (Orientacion VERTICAL) ----------- */    
-@media only screen  
-and (min-width : 320px)  
-and (max-width : 780px) {  
+/* iPads (Orientacion VERTICAL) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 780px) {
 
 
 .form-control:focus {
-   width: 80%;  
+   width: 80%;
    font-size: 9px;
    /*  background: -webkit-linear-gradient(top, #9bc3f2 1%,#77d1ef 90%,#207cca 81%,#7db9e8 50%); /* Chrome10+,Safari5.1+ */
    background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
   }
- 
+
   .form-control {
    text-align: center;
    border-radius: 0px 0px 0px 0px;
@@ -739,7 +726,7 @@ and (max-width : 780px) {
 </style>
   </head>
   <body lang=FR-CA onload="inicio()">
-    <section class="formulario1">    
+    <section class="formulario1">
       <form name="formulario" id="formulario" method="post" action="" onsubmit="return false" autocomplete="off">
         <input type="hidden" name="graba" id="graba" value="<?php echo $graba?>">
         <input type="hidden" name="d1" id="d1" value="<?php echo $d1?>">
@@ -759,15 +746,15 @@ and (max-width : 780px) {
     <td>
     <div class="content-popup1">
         <div class="resultado1">
-         <input NAME="comp1" type="hidden" class="form-control1" id="comp1" onblur="fococodigoq(this.id)" onFocus="fococodigoa(this.id)" autocompete="off" style="text-transform:uppercase; width: 70%; max-width: 70%; text-align: left; height: 52px; padding: 5px; " placeholder="Rechercher des noms.."> 
+         <input NAME="comp1" type="hidden" class="form-control1" id="comp1" onblur="fococodigoq(this.id)" onFocus="fococodigoa(this.id)" autocompete="off" style="text-transform:uppercase; width: 70%; max-width: 70%; text-align: left; height: 52px; padding: 5px; " placeholder="Rechercher des noms..">
          </div>
     </div>
 
-    
+
   </td>
   </tr>
 
-                
+
                  <tr>
                  <td align="left" >
                  <SELECT NAME="cate" id="cate" SIZE=1 onChange="" style="width:260px; height:60px; font-size:26px">
@@ -789,11 +776,11 @@ and (max-width : 780px) {
                   <a><input  style="background-color: #FAA2A2; border: 1px solid black; width: 100px; height: 100%;" onclick="buscar3('NON')" name="boton3" id="boton3" type="button" value="Valider"></a>
                  </td>
                   </tr>
-              
-                
-                 
+
+
+
         </table>
- 
+
 
 
 
@@ -802,11 +789,11 @@ and (max-width : 780px) {
           <td>
 
 
-         
 
 
-          </td>  
-          </tr>  
+
+          </td>
+          </tr>
           <tr align="center">
           <td width="1%"></td>
           <td width="15%">Date</td>
@@ -816,21 +803,21 @@ and (max-width : 780px) {
           <td width="8%">Editer</td>
                <!--  <td width="13%">Effacer</td> -->
           </tr>
-          
+
           <tr style="font-size:16px; font-weight: bold;">
           <tbody id="ProSelected1"><!--Ingreso un id al tbody-->
           <tr>
           </tr>
           </tbody>
-        
+
           <tr>
           <td colspan="11" align="right">
           <a href="javascript:void(0);" onclick="cancelar()"><img  src="./img/close.png" alt="Editer" width="25px" height="30px;"></a>
-          </td> 
+          </td>
           </tr>
 
         </table>
-            <!-- RESULTADO --> 
+            <!-- RESULTADO -->
     <div id="popup" style="display: none;">
     <div class="content-popup">
        <div class="close"><a href="#" id="close"><img src="./img/close.png"/></a></div>
@@ -844,12 +831,12 @@ and (max-width : 780px) {
     </section>
 
     <div>
-        
-      
-        
-       
-        
-       
+
+
+
+
+
+
     </div>
 </div>
 

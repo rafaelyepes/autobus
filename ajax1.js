@@ -61,7 +61,7 @@ function Pagina(nropagina){
 					},
 					success: function(data){
 								console.log("Recibe el data");
-	 						  console.log(data);
+	 						  //console.log(data);
 								$("#ProSelected1").show();
 								$("#ProSelected1").empty();
 								$("#ProSelected1").append(data);

@@ -28,7 +28,7 @@ while($row = $query->fetch_array()){
    echo '<td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid22'.($i).'"  readonly  value="'.($control07).'"/></td>';
    echo '<td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid23'.($i).'"  readonly value="'.($control09).'"/></td>';
    echo '<td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid24'.($i).'" readonly  value="'.($control08).'"/></td>';
-   echo '<td align="center"><button type="button" border="0" id="poid27e'.($i).'"  onmouseout="salir_del_hover()" onmouseover="hacer_hover()" onclick="consultar(this.id)" class="button" value=""><img width="90%" height="11%" src="./img/editer.png"></button></td>';
+   echo '<td align="center"><button type="button" border="0" id="poid27e'.($i).'" onclick="consultar(this.id)" class="button" value=""><img width="90%" height="11%" src="./img/editer.png"></button></td>';
    echo '</tr>';
   }
 ?>
