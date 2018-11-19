@@ -7,12 +7,7 @@ $tipoc="";
 include ("./conectar4.php");
 $codigo="plantill011a.php";
 $RegistrosAMostrar=25;
-
-//  $fechai=($_GET['c']);
-//  $fechaf=($_GET['d']);
-
-//  $tipoc="0";
-
+$tipoc="1";
 //estos valores los recibo por GET
 if(isset($_GET['pag'])){
   $RegistrosAEmpezar=($_GET['pag']-1)*$RegistrosAMostrar;
@@ -21,11 +16,7 @@ if(isset($_GET['pag'])){
 }else{
   $RegistrosAEmpezar=0;
   $PagAct=1;
-
 }
-
-$nombre_fichero1="../plantilla/archivos/fdc/";
-
 if(isset($_GET['b'])) {
     $codigo = $_GET["b"];
 }
@@ -35,7 +26,6 @@ if(isset($_GET['c'])) {
 if(isset($_GET['d'])) {
     $fechaf = $_GET["d"];
 }
-
 if(isset($_GET['tipoc'])) {
     $tipoc= $_GET["tipoc"];
 }
@@ -56,8 +46,8 @@ if ($tipoc!="0") {
     $fechai = date('Y-m-d', strtotime('-360 day'));
   }
 }
-$fechai="2018-09-01";
-$fechaf="2018-11-30";
+//$fechai="2018-09-01";
+//$fechaf="2018-11-30";
 $i=0;
 $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
 $query = $conn->query($sql);
