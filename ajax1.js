@@ -17,12 +17,12 @@ function objetoAjax(){
 }
 
 function Pagina(nropagina){
-	//donde se mostrará los registros
+	//donde se mostrarï¿½ los registros
 	divContenido = document.getElementById('ProSelected1');
-	
+
 	ajax=objetoAjax();
 	//uso del medoto GET
-	//indicamos el archivo que realizará el proceso de paginar
+	//indicamos el archivo que realizarï¿½ el proceso de paginar
 	//junto con un valor que representa el nro de pagina
     fechai=document.getElementById("favis1").value;
     fechaf=document.getElementById("favis2").value;
@@ -30,8 +30,9 @@ function Pagina(nropagina){
     codigo=(document.getElementById("d1").value);
     // 	codigo="plantill086a.php";
     //  alert (tipoc);
-    //  alert (nropagina+"  "+fehcai+"  "+fechaf+"  "+codigo+"  "+tipoc);
-	$('table#your-table-id tr#item').remove(); 
+		alert ("0");
+		alert (nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
+	$('table#your-table-id tr#item').remove();
 
 	ajax.open("GET", "paginador.php?pag="+nropagina+"&c="+fechai+"&d="+fechaf+"&tipoc="+tipoc+"&b="+codigo);
 
@@ -45,7 +46,7 @@ function Pagina(nropagina){
 		}
 	}
 	//como hacemos uso del metodo GET
-	//colocamos null ya que enviamos 
+	//colocamos null ya que enviamos
 	//el valor por la url ?pag=nropagina
 	ajax.send(null)
 }

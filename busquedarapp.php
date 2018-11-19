@@ -1,7 +1,7 @@
 <?php
-      include ("./conectar1.php"); 
+      include ("./conectar4.php");
       $buscar = $_POST['b'];
-      
+
        if(!empty($buscar)) {
             $buscar=mysql_real_escape_string($buscar); //decodifica el texto
             buscar($buscar);
@@ -9,7 +9,7 @@
       function buscar($b) {
             mysql_query ("SET NAMES 'utf8'");
             $consulta = "SELECT * FROM baseinfor WHERE baseinfor02 LIKE '%$b%' order by baseinfor02 asc";
-          
+
             $rs_tabla=mysql_query($consulta);
             $nrs=mysql_num_rows($rs_tabla);
             $contar = mysql_num_rows($rs_tabla);
@@ -19,7 +19,7 @@
             }else{
                    if($contar >= 1){
 
-                    $combo="combo";  
+                    $combo="combo";
                     $cl=1;
                     for ($i = 0; $i < mysql_num_rows($rs_tabla); $i++) {
                           $nombre=trim(mysql_result($rs_tabla,$i,"baseinfor02"));
@@ -35,8 +35,7 @@
                           } //fin $cl
                    } //fin for
                  }  //fin contar
-              }  //fin contar    
+              }  //fin contar
       } //fin funcion buscar
-    
-?>
 
+?>

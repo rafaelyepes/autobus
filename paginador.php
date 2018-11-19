@@ -1,21 +1,21 @@
 <script>
 function myFunction(id){
   d2=id;
-/* 
+/*
   alert (id);
   alert ("xx");
-*/ 
-  location.href="http://www.google.com";  
+*/
+  location.href="http://www.google.com";
 }  //fin de l
-	
+
 
 
 </script>
 <table class="tablat" border=1 id ="your-table-id" cellspacing=0 cellpadding=0>
 <?php
 	 //header("Content-Type: text/html;charset=utf-8");
-    include ("./conectar4.php"); 
-    $codigo="plantill011a.php"; 
+    include ("./conectar4.php");
+    $codigo="plantill011a.php";
   	$RegistrosAMostrar=25;
 
 	//  $fechai=($_GET['c']);
@@ -31,28 +31,28 @@ function myFunction(id){
 	}else{
 			$RegistrosAEmpezar=0;
 			$PagAct=1;
-			
+
 	}
 
 	$nombre_fichero1="../plantilla/archivos/fdc/";
-     
+
     if(isset($_GET['b'])) {
         $codigo = $_GET["b"];
-    }  
+    }
     if(isset($_GET['c'])) {
         $fechai = $_GET["c"];
-    }  
+    }
     if(isset($_GET['d'])) {
         $fechaf = $_GET["d"];
-    }  
+    }
 
     if(isset($_GET['tipoc'])) {
         $tipoc= $_GET["tipoc"];
-    }  
+    }
 
     if ($tipoc!="0") {
       $fechai = date('Y-m-d');
-      $fechaf = date('Y-m-d');    
+      $fechaf = date('Y-m-d');
       if ($tipoc == "1"){
         $fechai = date('Y-m-d', strtotime('-720 day'));
       }
@@ -76,14 +76,14 @@ function myFunction(id){
      $query = $conn->query($sql);
       if ($query->num_rows > 0) {
        while($row = $query->fetch_array()){
-        $idb        = $row['id']; 
+        $idb        = $row['id'];
         $control01  = $row['docmae'];
-        $control02  = $row['busmae'];  
-        $control06  = $row['chomae'];   
+        $control02  = $row['busmae'];
+        $control06  = $row['chomae'];
         $control07  = $row['reg_time'];
-        $control09  = $row['hr1mae'];   
-        $control08  = $row['hr2mae']; 
-        $control09  = $row['datmae']; 
+        $control09  = $row['hr1mae'];
+        $control08  = $row['hr2mae'];
+        $control09  = $row['datmae'];
         $i=$i+1;
       ?>
       <tr id="mostrardatos" class="member">
@@ -112,17 +112,17 @@ function myFunction(id){
    </td>
 
 
-   
+
 
  </tr>
-   <?php          
+   <?php
    }  //fin del FOR
-   } //FIN DEL IF NRS>0  
+   } //FIN DEL IF NRS>0
 		//******--------determinar las páginas---------******//
 
     $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
     $query = $conn->query($sql);
- 	
+
   	$NroRegistros=($query->num_rows);
 
 		$PagAnt=$PagAct-1;
@@ -136,7 +136,7 @@ function myFunction(id){
 		// una unidad para obtener la ultima pagina
 
 		echo "<tr>";
-		echo "<td colspan='10' align='center'>";	
+		echo "<td colspan='10' align='center'>";
    	    if($Res>0) $PagUlt=floor($PagUlt)+1;
 		 //desplazamiento
 		 echo "<a onclick=\"Pagina('1')\">Pemier</a> ";
@@ -145,12 +145,12 @@ function myFunction(id){
 		 if($PagAct<$PagUlt)  echo " <a onclick=\"Pagina('$PagSig')\">Suivant --></a> ";
 		 echo "<a onclick=\"Pagina('$PagUlt')\">  Derni&#233re</a>";
      echo "<tr>";
-		
+
 /*
 		echo "</td>";
 	    echo "</tr>";
 	    echo "<tr>";
-		echo "<td colspan='10' align='center'>";	
+		echo "<td colspan='10' align='center'>";
    	    echo ($PagAct);
    	    echo ("<br>");
    	    echo ($PagUlt);
@@ -166,7 +166,6 @@ function myFunction(id){
    	    echo "</td>";
 	    echo "</tr>";
 */
-	    
+
 ?>
 </table>
-
