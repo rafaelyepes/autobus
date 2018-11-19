@@ -69,7 +69,8 @@ function myFunction(id){
 
   //  echo ($tipoc);
      mysql_query ("SET NAMES 'utf8'");
-
+     $fechai="2018-11-01";
+     $fechaf="2018-11-30";
      $i=0;
      $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
 
