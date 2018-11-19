@@ -8,7 +8,8 @@
       }
       function buscar($b) {
             mysql_query ("SET NAMES 'utf8'");
-            $consulta = "SELECT * FROM baseinfor WHERE baseinfor02 LIKE '%$b%' order by baseinfor02 asc";
+            $sql2 = "SELECT * FROM baseinfor WHERE baseinfor02 LIKE '%$b%' order by baseinfor02 asc";
+
 
             $rs_tabla=mysql_query($consulta);
             $nrs=mysql_num_rows($rs_tabla);
@@ -21,6 +22,15 @@
 
                     $combo="combo";
                     $cl=1;
+
+
+
+                    $query2 = $conn->query($sql2);
+                    while($row2 = $query2->fetch_array()){
+
+
+
+
                     for ($i = 0; $i < mysql_num_rows($rs_tabla); $i++) {
                           $nombre=trim(mysql_result($rs_tabla,$i,"baseinfor02"));
                           $id=trim(mysql_result($rs_tabla,$i,"baseinfor01"));
