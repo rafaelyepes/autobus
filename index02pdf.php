@@ -180,6 +180,98 @@ file_put_contents($ruta, $output);
 //$dompdf->stream($ruta);
 $dompdf->stream($ruta, array("Attachment" => false));
 
-//include ('accueilc.php');
+header('Content-Type: text/html; charset=ISO-8859-1');
+// para evitar que se nos detenga la ejecucion del script (en caso de que el servidor tarde en responder) definimos un intervalo de 5 minutos de inactividad
+ini_set('max_execution_time', 300);
+include ("php/class.phpmailer.php");
+//Recibir todos los parámetros del formulario
+
+$para = "rafael.yepes@lacroixmeats.com";
+
+//$para1 = "paula.franco@lacroixmeats.com";
+
+$para1 = "";
+
+$para2 = "";
+$asunto = "Asunto";
+$mensaje = "Mensaje";
+
+$username = 'docs@lacroixmeats.com';
+$password = 'DoLa753?';
+
+$d2="Autob".$datmae;
+
+$rutaadic='/archivos/pdf/'.$d2.'.pdf';
+$archivoi=getcwd().$rutaadic;
+
+// Enviamos la respuesta
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->SMTPDebug = 2;//$mail->SMTPDebug = 1; // Degug. Valores 1 -> errores y mensajes // 2 solo mensajes // 0 no informa nada
+
+//$mail->Host = "smtp.aol.com";
+//$mail->Host = "stmp.yahoo.com";
+//$mail->Host = "smtp.gmail.com";
+
+$mail->Host = "smtp.office365.com";
+$mail->Port = "587";
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = TRUE;
+$mail->Username = $username;
+$mail->Password = $password;
+
+$mail->From = $username;
+$mail->FromName = "Rafael Yepes";
+
+
+//Agregar destinatario
+$mail->AddAddress($para);
+$mail->AddAddress($para1);
+$mail->AddAddress($para2);
+
+$mail->Subject = $asunto;
+//$mail->Body = $mensaje;
+$mail->Body = $archivoi;
+
+$d1="rafael.yepes@lacroixmeats.com";
+$ruta="";
+
+//$d2="Autob124";
+
+//$d2=$nomemail;
+
+//$archivoi='C:\xampp\htdocs\autobus\archivos\pdf\Autob117.pdf';
+//$rutaadic='/php/archivos/pdf/'.$d2.'.pdf';
+
+//$rutaadic='/archivos/pdf/'.$d2.'.pdf';
+//$archivoi=getcwd().$rutaadic;
+
+$d2g=$d2.".pdf";
+
+echo ("Nombre del Archivo No 1 :".$d2);
+echo ("    .     ");
+echo ("<br>");
+echo ("Correo Electronico :".$d1);
+echo ("<br>");
+echo ("Ruta Real   :".$ruta);
+echo ("<br>");
+echo ("Nombre del Archivo No 2 :".$archivoi);
+echo ("<br>");
+
+$mail->AddAttachment($archivoi,$d2g);
+
+$mail->WordWrap = 50;
+$mail->IsHTML(TRUE);
+
+if($mail->Send())
+{
+         //enviado
+}
+else{
+         //no enviado
+}
+
+
+
 
 ?>
