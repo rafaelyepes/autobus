@@ -1,5 +1,10 @@
 <table class="tablat" border=1 id ="your-table-id" cellspacing=0 cellpadding=0>
+  <tr id="mostrardatos" class="member">
+  <td align="center">Texto a Mostrar en el programa</td>
+
 <?php
+
+
     $tipoc="";
 	 //header("Content-Type: text/html;charset=utf-8");
     include ("./conectar4.php");
