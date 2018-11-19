@@ -59,7 +59,7 @@
         $fechai = date('Y-m-d', strtotime('-360 day'));
       }
     }
-
+    echo ("Codigo Producto");
   //  echo ($tipoc);
      mysql_query ("SET NAMES 'utf8'");
      $fechai="2018-11-01";
@@ -80,6 +80,9 @@
         $control09  = $row['datmae'];
         $i=$i+1;
       ?>
+      <tr id="mostrardatos" class="member">
+          Mostrando otra linea
+      </tr>
       <tr id="mostrardatos" class="member">
       <td align="center" width="1%"><input class="form-control" type="hidden" id="poid<?php echo ($i)?>"  name="mitextoid[]"  required value="<?php echo ($idb)?>" />
       </td>
