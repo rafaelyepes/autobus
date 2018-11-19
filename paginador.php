@@ -65,13 +65,14 @@
      $fechai="2018-11-01";
      $fechaf="2018-11-30";
      $i=0;
-     $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
+//     $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
+     $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC";
      echo ("</br>");
      echo ("Codigo Producto");
      echo ("</br>");
 
+
      $query = $conn->query($sql);
-      if ($query->num_rows > 0) {
        while($row = $query->fetch_array()){
         $idb        = $row['id'];
         $control01  = $row['docmae'];
@@ -122,7 +123,6 @@
  </tr>
    <?php
    }  //fin del FOR
-   } //FIN DEL IF NRS>0
 		//******--------determinar las páginas---------******//
 
     $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
