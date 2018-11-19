@@ -1,18 +1,6 @@
-<script>
-function myFunction(id){
-  d2=id;
-/*
-  alert (id);
-  alert ("xx");
-*/
-  location.href="http://www.google.com";
-}  //fin de l
-
-
-
-</script>
 <table class="tablat" border=1 id ="your-table-id" cellspacing=0 cellpadding=0>
 <?php
+    $tipoc="";
 	 //header("Content-Type: text/html;charset=utf-8");
     include ("./conectar4.php");
     $codigo="plantill011a.php";
@@ -146,27 +134,5 @@ function myFunction(id){
 		 if($PagAct<$PagUlt)  echo " <a onclick=\"Pagina('$PagSig')\">Suivant --></a> ";
 		 echo "<a onclick=\"Pagina('$PagUlt')\">  Derni&#233re</a>";
      echo "<tr>";
-
-/*
-		echo "</td>";
-	    echo "</tr>";
-	    echo "<tr>";
-		echo "<td colspan='10' align='center'>";
-   	    echo ($PagAct);
-   	    echo ("<br>");
-   	    echo ($PagUlt);
-   	    echo ("<br>");
-   	    echo ("Fecha Inicial".$fechai);
-   	    echo ("<br>");
-   	    echo ("Fecha Final ".$fechaf);
-   	    echo ("<br>");
-   	    echo ("Plantilla ".$codigo);
-   	    echo ("<br>");
-   	    echo ("Tipo C ".$tipoc);
-   	    echo ("<br>");
-   	    echo "</td>";
-	    echo "</tr>";
-*/
-
 ?>
 </table>
