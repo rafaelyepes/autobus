@@ -21,13 +21,18 @@ while($row = $query->fetch_array()){
    $control09  = $row['hr1mae'];
    $control08  = $row['hr2mae'];
    $control09  = $row['datmae'];
-   echo ("</br>");
    ?>
    <tr id="mostrardatos" class="member">
    <td align="center" width="1%"><input class="form-control" type="hidden" id="poid<?php echo ($i)?>"  name="mitextoid[]"  required value="<?php echo ($idb)?>" />
    </td>
    <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid29<?php echo ($i)?>" readonly   value="<?php echo ($control09)?>"/>
    </td>
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid20<?php echo ($i)?>" readonly   value="<?php echo ($control01)?>"/>
+   </td>
+
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid21<?php echo ($i)?>" readonly   value="<?php echo ($control02)?>"/>
+   </td>
+
    </tr>
   <?php
   }
