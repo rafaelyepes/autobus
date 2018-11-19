@@ -250,13 +250,13 @@ function validahora(horadepart, horallegada){
              $("#rearrive").removeAttr("style").hide();
 
              $("#boton1").hide();
-             $("#boton1").removeAttr("style").hide();
+           //  $("#boton1").removeAttr("style").hide();
 
              $("#boton11").hide();
-             $("#boton11").removeAttr("style").hide();
+           //  $("#boton11").removeAttr("style").hide();
  
              $("#boton12").hide();
-             $("#boton12").removeAttr("style").hide();
+           //  $("#boton12").removeAttr("style").hide();
 
              $(".upload1").hide();
              $(".upload1").removeAttr("style").hide();
@@ -688,70 +688,62 @@ max-height: 66px;
       <img class="img2"  src="./img/autobus.png" alt="Autobus" onClick="cancelar()">   </div>  
 
       </div>
-      <!--Nouvel employé-->
-      <div class="col-xs-12 col-md-12" style="padding-left: 0px; margin-left: 0px;">
+
+
+      <!--Linea: depart-arrive-reovrir-ajouter-->
+      <div class="row">
 
      
-       <div class="col-xs-2 col-md-2" style="margin-left: 0px; padding-left: 0px">
+       <div class="col-xs-3 col-md-3" style="text-align: center">
        <button  class="btn btn-warning center-block"  onClick="arrive()" id="arrive"><span class="glyphicon glyphicon-home danger1"></span>Arrivé</button>
        </div>
 
-
+       <div class="col-xs-5 col-md-5" style="text-align: center">
+       <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button> 
+       </div>
       
-      <!--onClick="depart()"-->
-
-      <div class="col-xs-2 col-md-2">
-      <button  id="depart" class="btn btn-primary  center-block confirm" onClick="depart()"><span class="glyphicon glyphicon-ok danger1"></span>Départ</button> 
-      </div>
-
       <!--onClick="reouvrir()"-->
-      <div class="col-xs-1 col-md-1" style="margin-left: 0px;"> 
+      <div class="col-xs-2 col-md-2" style="text-align: center">
       <button   class="btn btn-info center-block"  onClick="reouvrir()" id="reouvrir"><span class="glyphicon glyphicon-barcode  btn-info"></span>Re-Ouvrir</button>
       </div>
 
-      <div class="col-xs-2 col-md-2"> 
+      <div class="col-xs-3 col-md-3" style="text-align: center">
       <button   class="btn btn-danger center-block"  onClick="rearrive()" id="rearrive"><span class="glyphicon glyphicon-barcode danger1"></span>Ajouter</button>
       </div>
 
+      
+
  
       </div>
+      <!--FIN Linea: depart-arrive-reovrir-ajouter-->
+      <!--FIN Linea: depart-arrive-reovrir-ajouter-->
+      <!--FIN Linea: depart-arrive-reovrir-ajouter-->
 
       
-       <div class="row" style="padding-left: 0px; margin-left: 0px;">
 
-       <div class="col-sm-6 col-xs-6 col-md-6" style="text-align: right;">
-       <button id="boton1" onClick="botonx1()" class="btn btn-success center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Nouvel employé H.</button>
-       </div>  
-
-       <div class="col-sm-6 col-xs-6 col-md-6">
-       <button id="boton11" onClick="botonxx1()" class="btn btn-warning
-       center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;" ></span>Nouvel employé F.</button>
-       </div>  
-       </div>  
+      
 
 
        <div class="row">
-          <div class="col-xs-6 col-md-6" style="text-align: center;  margin-left: 8px;">
-          <input class="borderno" id="bus" name="bus" ><?php echo ($bus)?></input>
+          <div class="col-xs-5 col-md-5" style="text-align: right;  margin-left: 8px;">
+          <input class="borderno" id="bus" style="text-align: center;" name="bus" ></input>
           </div>
         
           <div class="col-xs-5 col-md-5" style="text-align: left;">
-          <input class="borderno" value="<?php echo ($chofer)?>" id="chofer" name="chofer"><?php echo ($chofer)?></input>
+          <input class="borderno" value="<?php echo ($chofer)?>" id="chofer" style="text-align: center;" name="chofer"></input>
           </div>
        </div>      
 
-     
-      <div class="col-xs-12 col-md-12" style="padding: 0; border-top: 30px;">
+<!--          
+        <div class="col-xs-12 col-md-12" style="padding: 0; border-top: 30px;">
 
         <div class="col-xs-9 col-md-9" style="padding-left: 0px; padding-bottom: 0px; text-align: center; border-style: none; width: 100%">
         <span  id="respuesta" style="display: none; text-align: center">xxx</span>
         </div>
+        </div>
+-->        
 
-     
-         </div>
-
-         <section id="container" class="container">
-        
+         <section id="container" class="container" style="margin-top: -5px;">
          <div class="controls" style="display: none" >
             <fieldset class="reader-config-group" >
                 <label>
@@ -826,39 +818,25 @@ max-height: 66px;
     
       <!--Espacio de captura de la camara dentro del div -->
       <!--./QuaggaJS/css/styles.css -->
-      <div class="row anchop" >
+      <div class="row anchop" style="margin-top: -0px; " >
       <div class="col-sm-12 col-xs-12 col-md-12">
-
       <div class="col-sm-10 col-xs-9 col-md-9">
+      <div id="interactive" class="viewport">
 
-        <div id="interactive" class="viewport">
-          
-
-        </div>
-
+      </div>
       </div>  
+
       <div class="col-sm-2 col-xs-3 col-md-3" id="slider-thumbs" >
                 <!-- Bottom switcher of slider -->
                 <ul class="hide-bullets">
-                    <!--
-                    <li class="col-sm-12" >
-                        <a class="thumbnail" id="carousel-selector-0">
-                            <img src="http://placehold.it/150x150&text=zero">
-                        </a>
-                    </li>
-
-                    <li class="col-sm-12">
-                        <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/150x150&text=1"></a>
-                    </li>
-                  -->
-
+      
                 </ul>
             </div>
-
           </div>  
-          </div>  
+      </div> 
 
 
+         
 
 
        <!--Espacio de mostrar la foto tomada -->
@@ -872,9 +850,24 @@ max-height: 66px;
        </div>
        </div> 
        --> 
-
-
     </section>
+     <div class="row" style="margin-top: -20px">
+          <div class="col-sm-4 col-xs-4 col-md-4" style="padding-left: -40px;">
+          <button id="boton1" onClick="botonx1()" class="btn btn-success" style="width: 123px; font-size: 11px;"><span  class="glyphicon " </span>Nouvel employé H.</button>
+          </div>  
+
+       <div class="col-sm-4 col-xs-4 col-md-4">
+       <button id="boton11" onClick="botonxx1()" class="btn btn-warning
+       " style="width: 123px; font-size: 11px;"><span  class="glyphicon "></span>Nouvel employé F.</button>
+       </div> 
+
+       <div class="col-sm-4 col-xs-4 col-md-4"  >
+       <button id="boton12" onClick="botonxx2()" class="btn btn-primary center-block" style="width: 123px; font-size: 11px;"><span  class="glyphicon " ></span>Employé existant.</button>
+       </div>  
+
+
+
+       </div>   
              
 
 
@@ -956,12 +949,11 @@ max-height: 66px;
 			</table>
 		    </div>
         </div>
-           <!--                 
-
+           <!--                  
            <pre>
             {{ $data }}
-           <pre> 
-
+           <pre>  
+          -->
           
         <?php include('modal.php'); ?>
     </div>
@@ -1026,9 +1018,6 @@ max-height: 66px;
    
     </div>
 </div>
-<div class="col-sm-3 col-xs-3 col-md-3" >
-       <button id="boton12" onClick="botonxx2()" class="btn btn-primary center-block"><span  class="glyphicon glyphicon-plus" style="font-size: 10px; padding-left: 0px;"></span>Employé existant.</button>
-</div>  
 
 <div class="cerrar2">
  <a href="cerrar.php"><img id="span1" class="imglacroixyz" src="./img/logout.png" style="width: 80%; height: 75%"; align="right"></a>

@@ -13,6 +13,7 @@ $docmov = '';
 $sexe = '';
 $autobus = '';
 $chofer = '';
+$usuario = '';
 $chofernuevo='';
 $autobusnuevo = '';
 $horadepart = '00:00:00';
@@ -25,6 +26,18 @@ $codigoname = 'ZZZZZ';
 $firstname = '';
 $lastname = '';
 $memid = '';
+
+
+if(isset($_GET['usuario'])){
+	$usuario = $_GET['usuario'];
+}
+if(isset($_POST['usuario'])){
+	$usuario = $_POST['usuario'];
+}
+
+if(isset($_POST['crud'])){
+	$crud = $_POST['crud'];
+}
 
 if(isset($_GET['crud'])){
 	$crud = $_GET['crud'];
@@ -149,7 +162,7 @@ if($crud == 'read-1'){
 	$sql = "SELECT @row_num := 0"; 
 	$query = $conn->query($sql);
 
-	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
+	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
 	
 	//$sql = "select * from autobusmov where docmov='$docmov' order by id DESC";
 	//	$sql = "select * from autobusmov";
@@ -290,7 +303,7 @@ if($crud == 'validaautobus'){
 
 				if ($docmov == ""){
 						$res['respuesta5'] = "INSERTANDO EN autobusmae";
-					$sql = "INSERT INTO autobusmae (datmae, busmae, chomae, reg_time) VALUES ('$fecmov', '$autobus', '$chofer', '$horatotal')";
+						$sql = "INSERT INTO autobusmae (datmae, busmae, chomae, reg_time, usuario) VALUES ('$fecmov', '$autobus', '$chofer', '$horatotal', '$usuario')";
 						$query = $conn->query($sql);
 						$res['respuesta'] = "ONINS OK";
 						$docmov = $conn->insert_id;
@@ -405,7 +418,7 @@ if($crud == 'createex'){
 	$res['message'] = "Impossible d'ajouter un employé existant";
 	//$out['message'] = "Impossible d'ajouter un employé--222";
 
-	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov', '$codigoname', '$firstname', '$lastname', '$sexe', 'Embarqué')";
+	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov, eximov) values ('$docmov','$fecmov', '$codigoname', '$firstname', '$lastname', '$sexe', 'Embarqué', 'AAAA')";
 	$query = $conn->query($sql);
 
 	if($query){
@@ -434,8 +447,11 @@ if($crud == 'update'){
 }
 
 if($crud == 'debarque'){
+    mysql_query ("SET NAMES 'utf8'");
 	$debar="Débarqué";
-	$sql = "UPDATE autobusmov set stamov='$debar' where id='$memid'";
+	$debar =mysql_real_escape_string($debar);
+	$docmov=$docmov+"-debr";
+	$sql = "UPDATE autobusmov set docmov='$docmov', stamov='$debar' where id='$memid'";
 	$query = $conn->query($sql);
 	if($query){
 		$res['message'] = "Employé Débarqué";

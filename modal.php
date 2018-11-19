@@ -90,31 +90,6 @@
 <!-- FIN FIN FIN EDIT Modal EDIT MODAL -->
 <!-- FIN FIN FIN EDIT Modal EDIT MODAL -->
 
-
-
-<!-- Delete Modal 
-<div class="myModal" v-if="showDeleteModal">
-	<div class="modalContainer">
-		<div class="deleteHeader">
-			<span class="headerTitle">Delete Member</span>
-			<button class="closeDelBtn pull-right" @click="showDeleteModal = false">&times;</button>
-		</div>
-		<div class="modalBody">
-			<h5 class="text-center">Are you sure you want to Delete</h5>
-			<h2 class="text-center">{{clickMember.nommov}} {{clickMember.apenom}}</h2>
-		</div>
-		<hr>
-		<div class="modalFooter">
-			<div class="footerBtn pull-right">
-				<button class="btn btn-default" @click="showDeleteModal = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button> <button class="btn btn-danger" @click="showDeleteModal = false; deleteMember(); "><span class="glyphicon glyphicon-trash"></span> Yes</button>
-			</div>
-		</div>
-	</div>
-</div>
--->
-
-
-
 <!-- Débarque Modal -->
 <div class="myModal" v-if="showDebarqueModal">
 	<div class="modalContainer">

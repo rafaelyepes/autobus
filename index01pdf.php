@@ -8,7 +8,7 @@ $d2="Sin numero";
 $chomae = "";
 $busmae = "";
 $datmae = "";
-
+$horadepart = "";
 
 if(isset($_GET['docmov'])){
   $docmae = $_GET['docmov'];
@@ -72,29 +72,28 @@ $codigoHTML = '
         
         <tr>
         <th align="left" style="font-size:12px">Numéro Document</th>
-        <th colspan="3" align="left" style="font-size:11px">'.$docmae.'</th>
+        <th colspan="3" align="left" style="font-size:11px; padding-left: 10px;">'.$docmae.'</th>
         </tr>
 
         <tr>
         <th valign ="middle" align="left" style="font-size:12px">Date</th>
-        <th colspan="3"  align="left"  style="font-size:11px">'.$datmae.'</th>
+        <th colspan="3"  align="left"  style="font-size:11px; padding-left: 10px;">'.$datmae.'</th>
         </tr>
         
         <tr>
         <th align="left" style="font-size:12px">Autobus</th>
-        <th colspan="3" align="left"  style="font-size:11px">'.$busmae.'</th>
-        
+        <th align="left"  style="font-size:11px; padding-left: 10px;">'.$busmae.'</th>
+        <th colspan="2" align="left" style="font-size:12px">Heure départ  : '.$horadepart.'</th>
         </tr>
         
         <tr>
         <th align="left" style="font-size:12px">Chauffeur</th>
-        <th   align="left"  style="font-size:11px">'.$chomae.'</th>
-        <th colspan="2"  align="left"  style="font-size:11px">'.$nombreauto.'</th>
+        <th align="left"  style="font-size:11px; padding-left: 10px;">'.$chomae.'</th>
+        <th colspan="2" align="left"  style="font-size:11px; padding-left: 10px; ">'.$nombreauto.'</th>
         </tr>
-
         </table>
 
-          <table class="tablat" id="tablat" border=2 cellspacing=0 cellpadding=0>
+          <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
           <tr style="text-align: center; font-size:13px">
           <td>Item</td>
           <td>Numéro</td>
@@ -197,7 +196,11 @@ include ("php/class.phpmailer.php");
 
 $para = "rafael.yepes@lacroixmeats.com";
 $para1 = "paula.franco@lacroixmeats.com";
+
+$para = "";
 $para1 = "";
+
+
 $para2 = "";
 $asunto = "Asunto";
 $mensaje = "Mensaje";

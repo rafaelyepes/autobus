@@ -1,4 +1,5 @@
-
+//   $(".btn-success").prop("disabled",true);
+//    $(".btn-tt").prop("disabled",true);
 var app = new Vue({
 	el: '#members',
 	data:{
@@ -243,6 +244,7 @@ var app = new Vue({
 					//Validando si el BUS YA FUE ABIERTO O CERRADO//
 					//alert ("Validacion Carta Autobus o Carta Conductor");
 					crud="validaautobus";
+					usuario='autobus';
 					const formData = new FormData();
 			        formData.append('crud', crud);
 			        formData.append('nummov', nummov);
@@ -250,6 +252,7 @@ var app = new Vue({
 			        formData.append('docmov', docmov);
                     formData.append('autobus', autobus);
 			        formData.append('chofer', chofer);
+			        formData.append('usuario', usuario);
 			       // alert ("0");
 			        console.log("Consultando Respuesta AL SERVIDOR-CARTA AUTOBUS");
 					axios({
@@ -367,7 +370,7 @@ var app = new Vue({
 		},
 
 		saveMemberexistentes: function(){
-	fecmov = document.getElementById("fecha").value;
+				fecmov = document.getElementById("fecha").value;
 				docmov = document.getElementById("documento").value;
 				chofer = document.getElementById("chofer").value;
 				autobus = document.getElementById("bus").value;
@@ -557,9 +560,12 @@ var app = new Vue({
 
 		debarqueMember(){
 			crud="debarque";
+			docmov = document.getElementById("documento").value;
 			const formData = new FormData();
   		    formData.append('crud', crud);
 			formData.append('memid', app.clickMember.id);
+	//		alert (app.clickMember.id)
+	//		formData.append('docmov', docmov);
 			console.log("Debarcando Miembro");
 			console.log(app.clickMember);
 			axios({

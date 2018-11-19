@@ -1,3 +1,4 @@
+
 <?php 
 require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 // Introducimos HTML de prueba
@@ -20,7 +21,11 @@ $conta2 = 0;
 $conta3 = 0;
 $conta4 = 0;
 
-$datmae ="2018-09-26";
+$datmae =date();
+if(isset($_POST['fecha'])){ //
+    $datmae = $_POST['fecha'];
+}
+
 
 
 $codigoHTML = '

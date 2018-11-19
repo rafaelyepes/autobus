@@ -60,11 +60,13 @@ if ($total <= 0){
 $menu="S";
 if(isset($_POST['menu'])) {
 $menu=$_POST['menu'];
-}  
-if ($menu == "S"){
- echo "<script>window.location.href=\"index.php\"</script>"; 
+} 
+if ($usuario == "Autobus" || $usuario == "autobus"){
+//if ($menu == "S"){
+ echo "<script>window.location.href=\"principal.php\"</script>";	
+ //echo "<script>window.location.href=\"index.php\"</script>"; 
 }else{
- echo "<script>window.location.href=\"index.php\"</script>"; 
+ echo "<script>window.location.href=\"indexg1.php\"</script>"; 
 }
 ?>
 </head>

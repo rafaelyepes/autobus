@@ -1,0 +1,411 @@
+
+/*Fijando la cabecera*/
+#main-header {
+  /*background: #333;
+  color: white;*/
+
+  background: #FDFBFB;
+  color: black;
+  
+  height: 80px;
+  
+  width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+  left: 2px; /* Posicionamos la cabecera al lado izquierdo */
+  right: 2px;
+  top: 0; /* Posicionamos la cabecera pegada arriba */
+  position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+
+
+.centrado{
+margin-top: 80px;
+
+}
+
+ul, .nav{
+display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+   /* margin-bottom: 200px;*/
+}
+
+ nav .nav li a{
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 0.8em;
+
+    }
+
+
+ .navbar-nav{ /*controla el texto en lemnu*/
+ margin-top:10px;
+ margin-left: 20px; 
+ }
+
+.table{
+    width: 99%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.cajamedia{
+text-align: center;
+width: 50%;
+max-width: 50%;
+font-size: 24px;
+
+}
+
+.inputcentrado{
+text-align: center;
+width: 100%;
+max-width: 100%;
+font-size : 17px;
+}
+
+
+.table-fixed-header{
+  width: 99%;
+    
+}
+
+.navbar-default {  /*Menu del Fondo*/ 
+    width: 99%;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    background-color: #C5C2C2; /*color fondo del menu*/
+    border-color: #BBBABA;
+    border-radius: 0;
+    font-size: 18px;
+    height: 68px;
+}
+
+.img-responsive{
+padding-right: 10px;
+
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {  /*hover navegacion del menu principal*/
+   /* background-color: #FF4747;*/
+    height: 68px;
+    margin-top: -10px;
+    padding-top: 24px;
+   /* border-bottom: 5px solid #F13006;*/
+    border-radius: 4px;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 0 0px rgba(0,0,0,.1);
+}
+
+ .boton1{
+    text-decoration: none;
+    /*padding: 10px;*/
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #A1A0A0;
+    border-radius: 3px;
+    border: 1px #F81B1B;
+      }
+
+.dropdown-submenu, .dropdown-menu {
+    font-size: 17px;
+}
+
+.dropdown-submenu {
+    position: relative;
+ 
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+th{  /*imagen inferior de los botones guardar, salir*/
+text-align: center;
+
+}
+.imageninf{  /*imagen inferior de los botones guardar, salir*/
+width: 24%;
+height: 20%;
+}
+
+.form-ajustable{ /*carcateristicas de los inputs pantallas grandes*/
+width: 100%;
+max-width: 100%;
+height: auto;
+max-height: auto;
+}
+
+
+.form-control1{ /*carcateristicas de los inputs pantallas grandes*/
+text-align: center;
+height: 45px;
+font-size: 28px;
+width: 100%;
+max-width: 100%;
+}
+
+.form-control { /*carcateristicas de los inputs pantallas grandes*/
+height: 45px;
+font-size: 28px;
+width: 100%;
+max-width: 100%;
+}
+
+.form-control:focus {
+  font-family: 'Glyphicons Halflings';
+  font-size: 33px;
+  background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
+  width: 100%;
+  max-width: 100%;
+}
+
+.contboton {
+  text-align: center;
+ padding-top: 15px;
+ padding-left: 0px;    
+ line-height: 34px;
+ text-align: center;
+ line-height: 1.42857143;
+ display: block;
+ width: 75%;
+ height: 55%;    
+ padding: 6px 12px;
+ font-size: 14px;
+ color: #555;
+ background-color: #fff;
+ background-image: none;
+ margin: 0 auto;    
+}  
+
+input[type="checkbox"]  {
+  background-position-x: left;
+  display:inline-block;
+  width: 55px;
+  height: 42px;
+  background: -webkit-linear-gradient(#FCFCFC, #DADADA);
+  -webkit-transition: box-shadow 200ms;
+  box-shadow:inset 10px 1px 0 #fff, 0 1px 4px rgba(0,0,0,tr.mode1:hover{background-color: #FCFCFC});
+}   
+
+
+
+
+/* PANTALLA INTERMEDIA PC */
+/* PANTALLA INTERMEDIA PC */
+@media only screen 
+and (min-width : 724px) 
+and (max-width : 1024px) 
+{
+
+ .navbar-nav{ /*controla el texto en lemnu*/
+ margin-top:10px;
+ margin-left: -38px;  
+font-size: 11px;
+
+ }
+
+.usuario{
+display:none;
+visibility: hidden;
+}
+
+span.fermer, .glyphicon-user {
+   display: none;
+}
+
+} 
+
+
+
+/* PANTALLA Portatil horizontal */
+/* PANTALLA Portatil horizontal */
+/* PANTALLA Portatil horizontal */
+/* PANTALLA Portatil horizontal */
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1500px) 
+{
+
+ .navbar-nav{ /*controla el texto en lemnu*/
+ margin-top:10px;
+ margin-left: -18px;  
+ }
+
+.usuario{
+display:none;
+visibility: hidden;
+}
+
+.fermer, .usuario{
+font-size: 15px;
+}
+
+span.fermer, .glyphicon-user {
+   display: none;
+}
+
+
+}
+/* fin pantalla PORTATIL horizontal       */
+
+
+/* PORTRAIT Horientacion horizontal */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+
+
+.navbar-nav{ /*controla el texto en lemnu*/
+ margin-top:5px;
+ margin-left: -60px; 
+ font-size: 16px;
+ }
+
+.form-control1{ /*carcateristicas de los inputs pantallas grandes*/
+text-align: center;
+height: 47px;
+font-size: 18px;
+}
+
+.form-control3{ /*carcateristicas de los inputs pantallas grandes*/
+width: 80px;
+max-width: 80px;
+height: 47px;
+font-size: 12px;
+}
+
+
+
+.form-control{ /*carcateristicas de los inputs pantallas grandes*/
+height: 47px;
+font-size: 18px;
+}
+
+.form-control:focus {
+  font-family: 'Glyphicons Halflings';
+  font-size: 18px;
+  background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
+}
+
+
+}
+/* fin ipad Horientacion horizontal */
+
+
+/* LANDSCAPE Horientacion Vertical */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+.navbar-nav{ /*controla el texto en lemnu*/
+ margin-top:10px;
+ margin-left: -60px;
+ padding-right: -40px; 
+ font-size: 11px;
+}
+
+.imageninf{  /*imagen inferior de los botones guardar, salir*/
+ width: 27%;
+ height: 15%;
+}
+
+.form-control1{ /*carcateristicas de los inputs pantallas grandes*/
+text-align: center;
+height: 47px;
+font-size: 28px;
+}
+
+.form-control{ /*carcateristicas de los inputs pantallas grandes*/
+height: 47px;
+font-size: 28px;
+}
+
+.form-control:focus {
+  font-family: 'Glyphicons Halflings';
+  font-size: 33px;
+  background: -webkit-linear-gradient(top, #FA3324 1%, #F8B7B4 60%, #F88C8C 81%, #FCBDBD 50%); /* Chrome10+,Safari5.1+ */
+}
+
+
+}
+/* fin pantalla ipad vertical      */
+
+
+/* Para 960px   @media only screen and (max-width: 980px) and (min-width: 821px) {  }  */
+  
+/* Para 800px 
+@media only screen and (max-width: 820px) and (min-width: 621px) {   }  */
+  
+/* Para 600px   
+@media only screen and (max-width: 620px) and (min-width: 501px) {   }  */
+  
+/* Para 480px 
+@media only screen and (max-width: 500px) and (min-width: 341px) {   }  */
+  
+/* Para 320px   
+@media only screen and (max-width: 340px) and (min-width: 5px)  {   }  */
+  
