@@ -6,7 +6,8 @@ $tipoc="";
 //header("Content-Type: text/html;charset=utf-8");
 include ("./conectar4.php");
 $codigo="plantill011a.php";
-$RegistrosAMostrar=25;
+$RegistrosAMostrar=15;
+$RegistrosAEmpezar=0;
 $tipoc="1";
 //estos valores los recibo por GET
 if(isset($_GET['pag'])){
@@ -49,7 +50,7 @@ if ($tipoc!="0") {
 //$fechai="2018-09-01";
 //$fechaf="2018-11-30";
 $i=0;
-$sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
+$sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id DESC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
 $query = $conn->query($sql);
 while($row = $query->fetch_array()){
    $idb        = $row['id'];

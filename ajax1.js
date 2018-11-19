@@ -30,8 +30,8 @@ function Pagina(nropagina){
     codigo=(document.getElementById("d1").value);
     // 	codigo="plantill086a.php";
     //  alert (tipoc);
-		alert (nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
-	$('table#your-table-id tr#item').remove();
+		alert ("Numero de Pagina:"+nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
+	  $('table#your-table-id tr#item').remove();
 
 	ajax.open("GET", "paginador.php?pag="+nropagina+"&c="+fechai+"&d="+fechaf+"&tipoc="+tipoc+"&b="+codigo);
 
