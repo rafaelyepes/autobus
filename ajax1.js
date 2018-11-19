@@ -47,5 +47,5 @@ function Pagina(nropagina){
 	//como hacemos uso del metodo GET
 	//colocamos null ya que enviamos
 	//el valor por la url ?pag=nropagina
-	ajax.send(null)
+	//ajax.send(null)
 }
