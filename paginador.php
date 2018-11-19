@@ -1,12 +1,6 @@
 <table class="tablat" border=1 id ="your-table-id" cellspacing=0 cellpadding=0>
 <?php
 include ("./conectar4.php");
-echo ("</br>");
-echo ("Linea-1");
-echo ("</br>");
-echo ("Linea-2");
-echo ("</br>");
-echo ("Linea-3");
 $fechai="2018-09-01";
 $fechaf="2018-11-30";
 $i=0;
@@ -32,6 +26,18 @@ while($row = $query->fetch_array()){
 
    <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid21<?php echo ($i)?>" readonly   value="<?php echo ($control02)?>"/>
    </td>
+
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid21<?php echo ($i)?>" readonly   value="<?php echo ($control02)?>"/>
+   </td>
+
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid22<?php echo ($i)?>"  readonly  value="<?php echo ($control07)?>"/></td>
+
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid23<?php echo ($i)?>"  readonly value="<?php echo ($control09)?>"/></td>
+
+   <td align="left"><input class="form-control" type="text"  style="width: 100%;  min-width: 100%; align: left;"  id="poid24<?php echo ($i)?>" readonly  value="<?php echo ($control08)?>"/></td>
+
+   <td align="center"><button type="button" border="0" id="poid27e<?php echo ($i)?>"  onmouseout="salir_del_hover()" onmouseover="hacer_hover()" onclick="consultar(this.id)" class="button" value=""><img width="90%" height="11%" src="./img/editer.png"></button></td>
+
 
    </tr>
   <?php
