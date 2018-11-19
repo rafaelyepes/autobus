@@ -18,7 +18,7 @@ function objetoAjax(){
 
 function Pagina(nropagina){
 	//donde se mostrar� los registros
-	divContenido = document.getElementById('ProSelected1');
+	divContenido = document.getElementById('ProSpaelected1');
 
 	ajax=objetoAjax();
 	//uso del medoto GET
@@ -30,7 +30,7 @@ function Pagina(nropagina){
     codigo=(document.getElementById("d1").value);
     // 	codigo="plantill086a.php";
     //  alert (tipoc);
-		alert ("Numero de Pagina:"+nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
+		//alert ("Numero de Pagina:"+nropagina+"  "+fechai+"  "+fechaf+"  "+codigo+"  "+tipoc);
 	  $('table#your-table-id tr#item').remove();
 
 	ajax.open("GET", "paginador.php?pag="+nropagina+"&c="+fechai+"&d="+fechaf+"&tipoc="+tipoc+"&b="+codigo);

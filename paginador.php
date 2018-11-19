@@ -87,6 +87,33 @@ while($row = $query->fetch_array()){
 
    </tr>
   <?php
-  }
-  ?>
+}  //fin del FOR
+ //******--------determinar las páginas---------******//
+
+ $sql="SELECT * FROM autobusmae WHERE  datmae>='$fechai' and datmae<='$fechaf' order by id";
+ $query = $conn->query($sql);
+
+ $NroRegistros=($query->num_rows);
+
+ $PagAnt=$PagAct-1;
+ $PagSig=$PagAct+1;
+ $PagUlt=$NroRegistros/$RegistrosAMostrar;
+
+ //verificamos residuo para ver si llevará decimales
+ $Res=$NroRegistros%$RegistrosAMostrar;
+ // si hay residuo usamos funcion floor para que me
+ // devuelva la parte entera, SIN REDONDEAR, y le sumamos
+ // una unidad para obtener la ultima pagina
+
+ echo "<tr>";
+ echo "<td colspan='10' align='center'>";
+     if($Res>0) $PagUlt=floor($PagUlt)+1;
+  //desplazamiento
+  echo "<a onclick=\"Pagina('1')\">Pemier</a> ";
+  if($PagAct>1) echo "<a onclick=\"Pagina('$PagAnt')\"><-- Pr&#233c&#233dent</a> ";
+  echo "<strong>Page ".$PagAct."/".$PagUlt."</strong>";
+  if($PagAct<$PagUlt)  echo " <a onclick=\"Pagina('$PagSig')\">Suivant --></a> ";
+  echo "<a onclick=\"Pagina('$PagUlt')\">  Derni&#233re</a>";
+  echo "<tr>";
+?>
   </table>
