@@ -1,7 +1,7 @@
 <?php
 include ("./indexg1.php");
 $ruta="localhost";
-$clave="";
+$clave="sesamo";
 $conn4 = new mysqli($ruta, "root", $clave, "autobus");
 echo ("</br>");echo ("</br>");
 echo ("</br>");
@@ -25,23 +25,12 @@ while(! feof($fh)){
 		$sql4 = "INSERT INTO autobusemp (numemp, nomemp, gruemp, gruemp1 , actemp) values ('$codigo', '$nombre', '$grupo', '$grupo', '$activo') ON DUPLICATE KEY UPDATE nomemp='$nombre', gruemp1='$grupo', actemp='$activo'";
 		$query4 = $conn4->query($sql4);
 
-		/*
-		echo ($numemp);
+
+		echo ($codigo);
 		echo ("---");
-		echo ($nomemp);
+		echo ($nombre);
 		echo ("///");
-		echo ($apeemp);
-		echo ("***");
-		echo ($sexemp);
-		echo ("---");
-		echo ($actemp);
-		echo ("///");
-		echo ($gruemp);
-		echo ("***");
-		echo ($tomemp);
-		echo ("---");
-		echo ($GRUEMP1);
-		echo ("***");
+		echo ($grupo);
 		echo ("</br>");
 		*/
 }
