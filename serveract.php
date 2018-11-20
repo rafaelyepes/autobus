@@ -32,7 +32,7 @@ while(! feof($fh)){
 		echo ("///");
 		echo ($grupo);
 		echo ("</br>");
-		*/
+	
 }
 echo 'FIN Recorrido Tabla Generada - Actulizado el servidor';
 ?>
