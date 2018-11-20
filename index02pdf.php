@@ -5,7 +5,6 @@ require_once("./fpdf181/dompdf/dompdf_config.inc.php");
 include ("./conectar4.php");
 $informe="Rapport Global Autobus";
 $docmae = "117";
-$fcons=date();
 //$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
 
 
@@ -23,14 +22,12 @@ $conta2 = 0;
 $conta3 = 0;
 $conta4 = 0;
 
-$datmae =date();
-if(isset($_POST['fecha'])){ //
+$datmae ="2018-01-01";
+if(isset($_POST['fecha'])){
     $datmae = $_POST['fecha'];
 }
 
-if(isset($_GET['fecha'])){ //
-    $datmae = $_GET['fecha'];
-}
+
 $ruta = "./archivos/pdf/"."Autob".$datmae.".pdf";
 
 $codigoHTML = '
@@ -69,9 +66,13 @@ $codigoHTML = '
          </tr>
 
         ';
+
+     $m123=array();
+
      $sql = "SELECT * from autobusmae WHERE datmae='$datmae'";
      $query = $conn->query($sql);
      while($row = $query->fetch_array()){
+              $m123[] = $row ["docmae"];
               $docmae = $row['docmae'];
               $datmae = $row['datmae'];
               $busmae = $row['busmae'];
@@ -165,7 +166,139 @@ $codigoHTML = '
          <td>'.$conta4.'</td>
          </tr>
          </table>
+
+
+
         ';
+/*
+         $sql3 = "SELECT * from autobusmov WHERE docmov='$docmae'";
+         $query3 = $conn->query($sql3);
+         while($row3 = $query3->fetch_array()){
+*/
+         foreach ($m123 as &$value) {
+
+            //  $cod1 = $row3['nummov'];
+              $docmae = $value;
+              $datmae = "Temporal";
+              $busmae = "Bus";
+              $horadepart = "sds";
+
+              $chomae= "Chof";
+              $nombreauto="nomaut";
+
+
+              $codigoHTML.='
+              <div style="page-break-before: always;"></div>
+              <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
+              <tr>
+              <th rowspan="5" width="16" height="80" ><img  src="./img/logolacroix.png" width="13" height="70"  ></th>
+
+              <td align="Center" colspan="4" style="font-size:16px">Rapport Autobus</td>
+              </tr>
+
+              <tr>
+              <th align="left" style="font-size:12px; padding-left: 10px;">Numéro Document</th>
+              <th colspan="3" align="left" style="font-size:11px; padding-left: 10px;">'.$docmae.'</th>
+              </tr>
+
+              <tr>
+              <th valign ="middle" align="left" style="font-size:12px; padding-left: 10px;">Date</th>
+              <th colspan="3"  align="left"  style="font-size:11px; padding-left: 10px;">'.$datmae.'</th>
+              </tr>
+
+              <tr>
+              <th align="left" style="font-size:12px; padding-left: 10px;">Autobus</th>
+              <th align="left"  style="font-size:11px; padding-left: 10px;">'.$busmae.'</th>
+              <th colspan="2" align="left" style="font-size:12px; padding-left: 10px;">Heure départ  : '.$horadepart.'</th>
+              </tr>
+
+              <tr>
+              <th align="left" style="font-size:12px; padding-left: 10px;">Chauffeur</th>
+              <th align="left"  style="font-size:11px; padding-left: 10px;">'.$chomae.'</th>
+              <th colspan="2" align="left"  style="font-size:11px; padding-left: 10px; ">'.$nombreauto.'</th>
+              </tr>
+              </table>
+
+
+              <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
+              <tr style="text-align: center; font-size:13px">
+              <td>Item</td>
+              <td>Numéro</td>
+              <td>Prenom de l`employé </td>
+              <td>Nom de l`employé  </td>
+              <td>Genere</td>
+              </tr>
+              ';
+              $lin1 = 0;
+              $cod1= "";
+              $cod2= "";
+              $cod3= "";
+              $cod4= "";
+              $cont1 = 0;
+              $cont2 = 0;
+              $cont3 = 0;
+              $sql = "SELECT * from autobusmov WHERE docmov='$docmae'";
+              $query = $conn->query($sql);
+              while($row = $query->fetch_array()){
+                    $lin1=$lin1+1;
+                    $cod1 = $row['nummov'];
+                    $cod2 = $row['nommov'];
+                    $cod3 = $row['apemov'];
+                    $cod4 = $row['sexmov'];
+
+
+                    if ($cod1 == ''){
+                        if ($cod4 == 'Homme'){
+                         $cont2 = $cont2+1;
+                        }
+                        if ($cod4 == 'Femme'){
+                         $cont3 = $cont3+1;
+                        }
+
+                    }else{
+                     $cont1 = $cont1+1;
+
+
+                    }
+                    $codigoHTML.='
+                    <tr style="font-size:12px; text-align: center;">
+                    <td>'.$lin1.'</td>
+                    <td>'.$cod1.'</td>
+                    <td style="text-align: left; padding-left: 5px;">'.$cod2.'</td>
+                    <td style="text-align: left; padding-left: 5px;">'.$cod3.'</td>
+                    <td>'.$cod4.'</td>
+                    </tr>
+                    ';
+
+              }
+
+              $codigoHTML.='
+              <tr>
+              <td colspan="5"></td>
+              </tr>
+              </table>
+              <table class="tablat" id="tablat" border=2 cellspacing=0 cellpadding=0>
+              <tr style="text-align: center; font-size:13px">
+              <td>Homme nouveau</td>
+              <td>Nouvelles femmes</td>
+              <td>Ancien employé</td>
+              <td>Total</td>
+              </tr>
+              <tr style="text-align: center; font-size:13px">
+              <td>'.$cont2.'</td>
+              <td>'.$cont3.'</td>
+              <td>'.$cont1.'</td>
+              <td>'.$lin1.'</td>
+              </tr>
+
+              </table>
+
+
+
+              ';
+        }
+$codigoHTML.='
+';
 $codigoHTML=utf8_encode($codigoHTML);
 
 $dompdf=new DOMPDF();

@@ -1,4 +1,5 @@
 <?php
+include ("./indexg1.php"); 
 // numeros duplicados */
 /*
 SELECT NUMEMP, COUNT(*) Total
@@ -89,21 +90,42 @@ echo ("</br>");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 $database = 'autobus';
 $tablap = 'autobusemp';
 $user = 'root';
 $pass = '';
 $host = 'localhost';
+
+//Genera .sql Backup de una tabla//
+/*
 $dir = dirname(__FILE__) . '\autobusemp.sql';
 echo "<h3>Backing up database to `<code>{$dir}</code>`</h3>";
-//$list = shell_exec ("C:\xampp\mysql\bin\mysqldump.exe $database  --user=$user--password=$pass > dumpfile.sql");
 exec("C:/xampp\mysql\bin\mysqldump --user={$user} --password={$pass} --host={$host} {$database} {$tablap} --result-file={$dir} 2>&1", $output);
 var_dump($output);
+*/
+//FIN Genera .sql Backup de una tabla//
 
+//Genera .csv  de una tabla//
 echo ("</br>");
 echo ("</br>");
+echo "Generando ARCHIVO .csv";
 
-echo 'Tabla Generada Correctamente';
+$archivo_csv = fopen('backup.csv', 'w');
 
-
+if($archivo_csv)
+{
+	  $sql1 = "SELECT numemp, nomemp, apeemp, sexemp, actemp, gruemp, tomemp, GRUEMP1 FROM autobusemp WHERE 1";
+		$sth = $conn4->query($sql1);
+				while($fila = $sth->fetch_assoc()){
+					fputcsv($archivo_csv, $fila);
+        }
+		    fclose($archivo_csv);
+}else{
+		echo ("</br>");
+    echo "El archivo no existe o no se pudo crear";
+}
+//FIN  Genera .csv  de una tabla//
+echo ("</br>");
+echo "Archivo creado Correctamente";
 ?>

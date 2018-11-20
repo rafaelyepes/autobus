@@ -67,23 +67,23 @@ $codigoHTML = '
         </tr>
 
         <tr>
-        <th align="left" style="font-size:12px">Numéro Document</th>
+        <th align="left" style="font-size:12px; padding-left: 10px;">Numéro Document</th>
         <th colspan="3" align="left" style="font-size:11px; padding-left: 10px;">'.$docmae.'</th>
         </tr>
 
         <tr>
-        <th valign ="middle" align="left" style="font-size:12px">Date</th>
+        <th valign ="middle" align="left" style="font-size:12px; padding-left: 10px;">Date</th>
         <th colspan="3"  align="left"  style="font-size:11px; padding-left: 10px;">'.$datmae.'</th>
         </tr>
 
         <tr>
-        <th align="left" style="font-size:12px">Autobus</th>
+        <th align="left" style="font-size:12px; padding-left: 10px;">Autobus</th>
         <th align="left"  style="font-size:11px; padding-left: 10px;">'.$busmae.'</th>
-        <th colspan="2" align="left" style="font-size:12px">Heure départ  : '.$horadepart.'</th>
+        <th colspan="2" align="left" style="font-size:12px; padding-left: 10px;">Heure départ  : '.$horadepart.'</th>
         </tr>
 
         <tr>
-        <th align="left" style="font-size:12px">Chauffeur</th>
+        <th align="left" style="font-size:12px; padding-left: 10px;">Chauffeur</th>
         <th align="left"  style="font-size:11px; padding-left: 10px;">'.$chomae.'</th>
         <th colspan="2" align="left"  style="font-size:11px; padding-left: 10px; ">'.$nombreauto.'</th>
         </tr>
@@ -207,7 +207,6 @@ $password = 'DoLa753?';
 
 $rutaadic='/archivos/pdf/'.$d2.'.pdf';
 $archivoi=getcwd().$rutaadic;
-
 
 // Enviamos la respuesta
 $mail = new PHPMailer();

@@ -97,19 +97,9 @@ echo ("<br>");
 //$hostname = '{imap.mail.yahoo.com:993/imap/ssl}INBOX';
 $mail->AddAttachment($archivoi,$d2g);
 
-
-
-
-
-
-
-
-
 //Para adjuntar archivo
 
 //$mail->AddAttachment($archivoi,"IQ1708171082.pdf");
-
-
 
 //$name = $_FILES['archivo']['name'];
 //$tmp_name = $_FILES['archivo']['tmp_name'];
@@ -145,9 +135,6 @@ $mail->IsHTML(TRUE);
     ';-*/
 if($mail->Send())
 {
-
-
-
             echo'<script type="text/javascript">
             mensaj="Envoy\u00e9 correctament"
             alert(mensaj);
