@@ -32,7 +32,21 @@ while(! feof($fh)){
 		echo ("///");
 		echo ($grupo);
 		echo ("</br>");
-	
+
 }
 echo 'FIN Recorrido Tabla Generada - Actulizado el servidor';
+
+//SELECT numemp,nomemp,GRUEMP1 FROM autobusemp where autobusemp.GRUEMP1<>"000-INAC" and autobusemp.GRUEMP1<>"9995-arr" and autobusemp.GRUEMP1<>"G1" and autobusemp.GRUEMP1<>"G2" and actemp=""
+
+
+//DEL LISTADO QUE TENEMOS ESOS SE HAN VENIDO EN EL AUTOBUS
+//SELECT numemp,nomemp,GRUEMP1 FROM autobusemp INNER JOIN autobusmov ON autobusemp.numemp=autobusmov.nummov where autobusemp.GRUEMP1<>"000-INAC" and autobusemp.GRUEMP1<>"9995-arr" and autobusemp.GRUEMP1<>"G1" and autobusemp.GRUEMP1<>"G2" and actemp="" GROUP by numemp
+
+//DEL LISTADO QUE TENEMOS ESOS SE DEBEN VENIR EN EL BUS Y NO SE HAN VENID
+//SELECT numemp,nomemp,GRUEMP1 FROM autobusemp LEFT JOIN autobusmov ON autobusemp.numemp=autobusmov.nummov where autobusemp.GRUEMP1<>"000-INAC" and autobusemp.GRUEMP1<>"9995-arr" and autobusemp.GRUEMP1<>"G1" and autobusemp.GRUEMP1<>"G2" and actemp="" GROUP by numemp
+
+//SELECT autobusemp.numemp,autobusemp.nomemp,autobusemp.GRUEMP1,autobusemp.actemp, autobusmov.eximov FROM autobusmov RIGHT JOIN autobusemp ON autobusemp.numemp=autobusmov.nummov where autobusemp.GRUEMP1<>"0-INACTI" and autobusemp.GRUEMP1<>"9000-A" and autobusemp.GRUEMP1<>"9000 - A" and autobusemp.GRUEMP1<>"903 - Co" and autobusemp.GRUEMP1<>"000-INAC" and autobusemp.GRUEMP1<>"9995-arr" and autobusemp.GRUEMP1<>"G1" and autobusemp.GRUEMP1<>"G2" and actemp="" GROUP by numemp
+
+
+
 ?>
