@@ -567,7 +567,7 @@ var app = new Vue({
   		    formData.append('crud', crud);
 			formData.append('memid', app.clickMember.id);
 	//		alert (app.clickMember.id)
-	//		formData.append('docmov', docmov);
+			formData.append('docmov', docmov);
 			console.log("Debarcando Miembro");
 			console.log(app.clickMember);
 			axios({

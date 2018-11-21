@@ -453,19 +453,18 @@ if($crud == 'update'){
 }
 
 if($crud == 'debarque'){
-
 	$debar="Débarqué";
   //	$debar =mysql_real_escape_string($debar);
-	$docmov=$docmov+"-debr";
+	$docmov=$docmov."debr";
 	mysqli_set_charset($conn,'utf8');
 	$sql = "UPDATE autobusmov SET docmov='$docmov', stamov='$debar' where id='$memid'";
 	$query = $conn->query($sql);
 	if($query){
-		$res['message'] = "Employé Débarqué";
+		$res['message'] = "Employé Débarqué--";
 	}
 	else{
 		$res['error'] = true;
-		$res['message'] = "Impossible Débarqué l'employé ";
+		$res['message'] = "Impossible Débarqué l'employé--- ";
 	}
 	echo json_encode($res);
 }
