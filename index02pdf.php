@@ -179,14 +179,17 @@ $codigoHTML = '
 
             //  $cod1 = $row3['nummov'];
               $docmae = $value;
-              $datmae = "Temporal";
-              $busmae = "Bus";
-              $horadepart = "sds";
-
-              $chomae= "Chof";
-              $nombreauto="nomaut";
-
-
+            //  $datmae = "Temporal";
+              $sql3 = "SELECT * from autobusmae WHERE docmae='$docmae'";
+              $query3 = $conn->query($sql3);
+              while($row3 = $query3->fetch_array()){
+                     $docmae = $row3['docmae'];
+                     $datmae = $row3['datmae'];
+                     $busmae = $row3['busmae'];
+                     $chomae = $row3['chomae'];
+                     $horadepart  = $row3['hr2mae'];
+                     $horallegada = $row3['hr3mae'];
+              }
               $codigoHTML.='
               <div style="page-break-before: always;"></div>
               <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
@@ -405,6 +408,7 @@ else{
 }
 
 
+include ('consolidado.php');
 
 
 ?>
