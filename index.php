@@ -856,6 +856,8 @@ max-height: 66px;
           <button id="boton1" onClick="botonx1()" class="btn btn-success" style="width: 123px; font-size: 11px;"><span  class="glyphicon " </span>Nouvel employé H.</button>
           </div>
 
+
+
        <div class="col-sm-4 col-xs-4 col-md-4">
        <button id="boton11" onClick="botonxx1()" class="btn btn-warning
        " style="width: 123px; font-size: 11px;"><span  class="glyphicon "></span>Nouvel employé F.</button>
@@ -953,7 +955,7 @@ max-height: 66px;
            <pre>
             {{ $data }}
            <pre>
-          -->
+					 -->
 
         <?php include('modal.php'); ?>
     </div>

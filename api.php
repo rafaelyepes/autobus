@@ -1,10 +1,8 @@
 <?php
-
-include ("./conectar4.php"); 
-
+header("Content-Type: text/html;charset=utf-8");
+include ("conectar4.php");
 //mysql_query("SET NAMES 'utf8'");
 date_default_timezone_set("America/Montreal");
-
 $res = array('error' => false);
 $crud = '';
 $nummov = '';
@@ -114,7 +112,7 @@ if(isset($_POST['memid'])){
 	$memid = $_POST['memid'];
 }
 
-
+$first = array();
 $autobusact=$autobus;
 $choferact=$chofer;
 
@@ -136,50 +134,51 @@ $mes = substr($fecha,5,2);
 $dia = substr($fecha,8,2);
 /*Calculando la fecha de Salida del Autobus*/
 $members = array();
+$members1 = array();
 
 $hr2mae="";
 $hr3mae="";
 
+mysql_query ("SET NAMES 'utf8'");
 if($crud == 'read-1'){
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
  	$fecin = "";
-   	$busin = "inicial";
-   	$choin = "inicial";
+ 	$busin = "inicial";
+ 	$choin = "inicial";
 
+	mysqli_set_charset($conn,'utf8');
 	$sql1 = "select * from autobusmae where docmae='$docmov'";
-	//	$sql = "select * from autobusmov";
 	$query1 = $conn->query($sql1);
-	
+
 	while($row = $query1->fetch_array()){
-   	  $fecin = $row['datmae'];
-   	  $busin = $row['busmae'];
-   	  $choin = $row['chomae'];
-   	  $hr2mae= $row['hr2mae'];
+	    $fecin = $row['datmae'];
+	    $busin = $row['busmae'];
+	    $choin = $row['chomae'];
+	    $hr2mae= $row['hr2mae'];
 	  $hr3mae= $row['hr3mae'];
 	}
+	mysqli_set_charset($conn,'utf8');
 
-	$sql = "SELECT @row_num := 0"; 
+	$sql = "SELECT @row_num := 0";
 	$query = $conn->query($sql);
+
+	mysqli_set_charset($conn,'utf8');
 
 	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
-	
-	//$sql = "select * from autobusmov where docmov='$docmov' order by id DESC";
-	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
-	
+
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
 	}
-
-
+  //	$res['cespec'] = $stamov;
 	$res['fecin'] = $fecin;
 	$res['busin'] = $busin;
 	$res['choin'] = $choin;
 	$res['horadepart'] =  $hr2mae;
 	$res['horallegada'] = $hr3mae;
-
 	$res['results'] = $members;
+	$res['results1'] = $members1;
 	echo json_encode($res);
 }
 
@@ -188,17 +187,13 @@ if($crud == 'read-1'){
 if($crud == 'read'){   //getAllMembers()
 	//$documento="abc";
 	//	$sql = "select * from autobusmov where docmov='$documento'";
-
-	$sql = "SELECT @row_num := 0"; 
+	mysqli_set_charset($conn,'utf8');
+	$sql = "SELECT @row_num := 0";
 	$query = $conn->query($sql);
 
+	mysqli_set_charset($conn,'utf8');
 	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by row_number DESC";
-	
-
-//	$sql = "select * from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";
-	//	$sql = "select * from autobusmov";
 	$query = $conn->query($sql);
-	
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
 	}
@@ -211,14 +206,15 @@ if($crud == 'grababandolinea'){
 	$firstname = "NA";
 	$lastname = "NA";
 	$sw="0";
-	
+	mysqli_set_charset($conn,'utf8');
 	$sql = "select * from autobusmov WHERE (nummov='$nummov' and fecmov='$fecmov' and docmov='$docmov')";
 	$query = $conn->query($sql);
 	while($row = $query->fetch_array()){
 		//array_push($members, $row);
-		$sw="1";	
+		$sw="1";
 	}
 	if ($sw == "0"){
+		mysqli_set_charset($conn,'utf8');
 		$sql = "SELECT * from autobusemp where numemp='$nummov'";
 		$query = $conn->query($sql);
 		while($row = $query->fetch_array()){
@@ -227,24 +223,28 @@ if($crud == 'grababandolinea'){
 			$firstname = $row['nomemp'];
 			$lastname = $row['apeemp'];
 		}
-		$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$nummov','$firstname', '$lastname', '$sexe', 'Embarqué')";
+		$embarque = "Embarqué";
+		$firstname =  mysqli_real_escape_string($conn,$firstname);
+		$lastname =  mysqli_real_escape_string($conn,$lastname);
+		mysqli_set_charset($conn,'utf8');
+		$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$nummov','$firstname', '$lastname', '$sexe', '$embarque')";
 		$query = $conn->query($sql);
-	    $first_array = array( 
-                 "nummov" => $nummov, 
-                 'nommov' => $firstname, 
-                 'apemov' => $lastname, 
-                 'sexmov' => '', 
+    $first_array = array(
+                 "nummov" => $nummov,
+                 'nommov' => $firstname,
+                 'apemov' => $lastname,
+                 'sexmov' => '',
                  'stamov' => 'Embarqué',
-                  ); 
-		array_push($members, $first_array); 
+                  );
+									array_push($members, $first_array);
 	}else{
-			$first_array = array( 
-                 "nummov" => $nummov, 
-                 'nommov' => 'EXISTE', 
-                 'apemov' => '', 
-                 'sexmov' => '', 
-                 'stamov' => 'Embarqué', 
-            ); 
+			$first_array = array(
+                 "nummov" => $nummov,
+                 'nommov' => 'EXISTE',
+                 'apemov' => '',
+                 'sexmov' => '',
+                 'stamov' => 'Embarqué',
+            );
 			array_push($members, $first_array);
 	}
 	$res['members'] = $members;
@@ -255,12 +255,13 @@ if($crud == 'grababandolinea'){
 if($crud == 'validaautobus'){
 		//$nummov = "41251";
 		$res['respuesta'] = "EMPLEADO NO ACORDE";
-
+		mysqli_set_charset($conn,'utf8');
 		$sql = "select * from autobusemp where numemp='$nummov'";
 		$query = $conn->query($sql);
 
+
 		if ($query->num_rows > 0) {
-			
+
 			while($row = $query->fetch_array()){
 				$firstname = $row['nomemp'];
 				$lastname  = $row['apeemp'];
@@ -280,12 +281,13 @@ if($crud == 'validaautobus'){
 				$res['respuesta3'] = $autobus;
 				$res['respuesta4'] = $chofer;
 
-				
+
  			// if ($autobusact =="" && $choferact =="" ){
  				if ($autobus !="" && $chofer !="" ){
 				$res['respuesta'] = "CHOFER-AUTOBUS";
 				$res['respuesta2'] = "SELECTI-AUTOBUS-MAE VIRIFCA SI EXISTE EL NUMERO  :".$fecmov." : ".$chofer." : ".$autobus;
 				$docmov='';
+				mysqli_set_charset($conn,'utf8');
 				$sql = "SELECT * from autobusmae WHERE (datmae='$fecmov' and chomae='$chofer' and busmae='$autobus')";
 				$query = $conn->query($sql);
 				while($row = $query->fetch_array()){
@@ -318,30 +320,30 @@ if($crud == 'validaautobus'){
 			  }
 			}
 			if ($grupoemp =="G1" || $grupoemp =="G2" ){
-				$grabando="NO";	
+				$grabando="NO";
 				$res['respuesta'] = "ya existe chofer o autobus";
 				if (($grupoemp =="G1" && $chofernuevo==$choferact) && ($grupoemp =="G2" && $autobusnuevo==$autobusact)){
-					$grabando="SI";	
+					$grabando="SI";
 				}
-	
+
 			    if ($grabando == "NO"){
 			   		$res['respuesta'] = "ACTUALIZANDO CHOFER- INSERTANDO LINEA AUTOBUS";
 					//$sql = "UPDATE autobusmae set busmae='$autobus', chomae='$chofer', docmae='$docmov' where id='$docmov'";
 					//$query = $conn->query($sql);
 					//$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$nummov','$firstname', '$lastname', '$sexe', 'Embarqué')";
 					//$query = $conn->query($sql);
-			  	    $first_array = array( 
-		                 "nummov" => $nummov, 
-		                 'nommov' => $firstname, 
-		                 'apemov' => $lastname, 
-		                 'sexmov' => '', 
+			  	    $first_array = array(
+		                 "nummov" => $nummov,
+		                 'nommov' => $firstname,
+		                 'apemov' => $lastname,
+		                 'sexmov' => '',
 		                 'stamov' => 'Embarqué',
-		                  ); 
-					array_push($members,$first_array); 
+		                  );
+					array_push($members,$first_array);
 				} // FIN DEL IF grabando
 			}else{
 				$res['respuesta'] = "EMPLEADO NO ACORDE";
-			}	
+			}
 		}
 				$res['chofer'] = $chofer;
 				$res['autobus'] = $autobus;
@@ -365,7 +367,7 @@ if($crud == 'validaautobus'){
 if($crud == 'consulta'){
 	$numero = $_POST['nummov'];
 //	$numero = "10014";
-	
+
 	$sql = "select * from autobusemp where numemp='$numero'";
 //	$sql = "select * from autobusemp where 1";
 
@@ -376,18 +378,18 @@ if($crud == 'consulta'){
 	//$row = $query->fetch_array();
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
-		$sw="1";	
+		$sw="1";
 	}
 	if ($sw == "1"){
 	 //$members = array();
 	}else{
-		$first_array = array( 
-                 "numemp" => $numero, 
-                 'nomemp' => 'Nom No existe', 
-                 'apeemp' => '', 
-                 'sexemp' => '', 
-                 'staemp' => 'Embarqué', 
-            ); 
+		$first_array = array(
+                 "numemp" => $numero,
+                 'nomemp' => 'Nom No existe',
+                 'apeemp' => '',
+                 'sexemp' => '',
+                 'staemp' => 'Embarqué',
+            );
 		array_push($members,$first_array);
 	}
 //	$out['message'] = "Empleado consultado ok";
@@ -398,12 +400,13 @@ if($crud == 'consulta'){
 if($crud == 'create'){
 	$res['message'] = "Impossible d'ajouter un employé";
 	//$out['message'] = "Impossible d'ajouter un employé--222";
-
-	$sql = "INSERT INTO autobusmov (docmov, fecmov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$firstname', '$lastname', '$sexe', 'Embarqué')";
+	$embarque = "Embarqué";
+	$firstname =  mysqli_real_escape_string($conn,$firstname);
+  mysqli_set_charset($conn,'utf8');
+	$sql = "INSERT INTO autobusmov (docmov, fecmov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$firstname', '$lastname', '$sexe', '$embarque')";
 	$query = $conn->query($sql);
-
 	if($query){
-		$res['message'] = "Employé ajouté avec succès";
+		$res['message'] = "Employé ajouté avec succès-create";
 	}
 	else{
 		$res['error'] = true;
@@ -417,8 +420,10 @@ if($crud == 'createex'){
 
 	$res['message'] = "Impossible d'ajouter un employé existant";
 	//$out['message'] = "Impossible d'ajouter un employé--222";
-
-	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov, eximov) values ('$docmov','$fecmov', '$codigoname', '$firstname', '$lastname', '$sexe', 'Embarqué', 'AAAA')";
+	$embarque = "Embarqué";
+	$firstname =  mysqli_real_escape_string($conn,$firstname);
+	mysqli_set_charset($conn,'utf8');
+	$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov, eximov) values ('$docmov','$fecmov', '$codigoname', '$firstname', '$lastname', '$sexe', '$embarque', 'AAAA')";
 	$query = $conn->query($sql);
 
 	if($query){
@@ -433,7 +438,8 @@ if($crud == 'createex'){
 
 
 if($crud == 'update'){
-
+	$firstname =  mysqli_real_escape_string($conn,$firstname);
+	mysqli_set_charset($conn,'utf8');
 	$sql = "UPDATE autobusmov set nommov='$firstname', apemov='$lastname',  sexmov='$sexe' where id='$memid'";
 	$query = $conn->query($sql);
 	if($query){
@@ -447,12 +453,13 @@ if($crud == 'update'){
 }
 
 if($crud == 'debarque'){
-    mysql_query ("SET NAMES 'utf8'");
+
 	$debar="Débarqué";
-	$debar =mysql_real_escape_string($debar);
+//	$debar =mysql_real_escape_string($debar);
 	$docmov=$docmov+"-debr";
 	$sql = "UPDATE autobusmov set docmov='$docmov', stamov='$debar' where id='$memid'";
 	$query = $conn->query($sql);
+	mysqli_set_charset($conn,'utf8');
 	if($query){
 		$res['message'] = "Employé Débarqué";
 	}
@@ -467,6 +474,7 @@ if($crud == 'embarque'){
 	$debar="Embarqué";
 	$sql = "UPDATE autobusmov set stamov='$debar' where id='$memid'";
 	$query = $conn->query($sql);
+	mysqli_set_charset($conn,'utf8');
 	if($query){
 		$res['message'] = "Employé Embarqué";
 	}
@@ -479,14 +487,15 @@ if($crud == 'embarque'){
 
 
 if($crud == 'verificacodigo'){
-
-    $res['codigoname']="";
-    $res['nombre']="";
-    $res['error'] = true;
+  $res['codigoname']="";
+  $res['nombre']="";
+  $res['error'] = true;
 	$res['message'] = "Impossible n'exist pas";
 
+  mysqli_set_charset($conn,'utf8');
 	$sql = "SELECT * from autobusemp WHERE numemp='$memid'";
 	$query = $conn->query($sql);
+
 	while($row = $query->fetch_array()){
 	 	  $res['message'] = "SI EXISTE";
 	 	  $res['codigoname']=$row['numemp'];
@@ -498,9 +507,9 @@ if($crud == 'verificacodigo'){
 
 
 if($crud == 'delete'){
+	mysqli_set_charset($conn,'utf8');
 	$sql = "delete from autobusmov where memid='$memid'";
 	$query = $conn->query($sql);
-
 	if($query){
 		$out['message'] = "Member Deleted Successfully";
 	}
@@ -545,7 +554,7 @@ if($crud == 'rearrive'){
 
 if($crud == 'reouvrir'){
 			$res['horadepart'] = '00:00:00';
-
+						mysqli_set_charset($conn,'utf8');
             $sql = "UPDATE autobusmae set hr2mae='00:00:00', hr3mae='00:00:00' where id='$docmov'";
 			$query = $conn->query($sql);
 			if($query){
