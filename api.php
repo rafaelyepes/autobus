@@ -141,37 +141,6 @@ $hr3mae="";
 
 mysql_query ("SET NAMES 'utf8'");
 if($crud == 'read-1'){
-	//$documento="abc";
-	//	$sql = "select * from autobusmov where docmov='$documento'";
- 	$fecin = "";
- 	$busin = "inicial";
- 	$choin = "inicial";
-
-	mysqli_set_charset($conn,'utf8');
-	$sql1 = "select * from autobusmae where docmae='$docmov'";
-	$query1 = $conn->query($sql1);
-
-	while($row = $query1->fetch_array()){
-	    $fecin = $row['datmae'];
-	    $busin = $row['busmae'];
-	    $choin = $row['chomae'];
-	    $hr2mae= $row['hr2mae'];
-	  $hr3mae= $row['hr3mae'];
-	}
-	mysqli_set_charset($conn,'utf8');
-
-	$sql = "SELECT @row_num := 0";
-	$query = $conn->query($sql);
-
-	mysqli_set_charset($conn,'utf8');
-
-	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
-	$query = $conn->query($sql);
-
-	while($row = $query->fetch_array()){
-		array_push($members, $row);
-	}
-  //	$res['cespec'] = $stamov;
 	$res['fecin'] = $fecin;
 	$res['busin'] = $busin;
 	$res['choin'] = $choin;

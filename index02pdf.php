@@ -6,17 +6,13 @@ include ("./conectar4.php");
 $informe="Rapport Global Autobus";
 $docmae = "117";
 //$ruta = "./archivos/pdf/"."Autob".$docmae.".pdf";
-
-
 $busmae="xxxx";
 $firstname = "NA";
 $lastname = "NA";
-
 $lin1t = 0;
 $cont1t = 0;
 $cont2t = 0;
 $cont3t = 0;
-
 $conta1 = 0;
 $conta2 = 0;
 $conta3 = 0;
