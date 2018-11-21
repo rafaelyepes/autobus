@@ -455,11 +455,11 @@ if($crud == 'update'){
 if($crud == 'debarque'){
 
 	$debar="Débarqué";
-//	$debar =mysql_real_escape_string($debar);
+  //	$debar =mysql_real_escape_string($debar);
 	$docmov=$docmov+"-debr";
-	$sql = "UPDATE autobusmov set docmov='$docmov', stamov='$debar' where id='$memid'";
-	$query = $conn->query($sql);
 	mysqli_set_charset($conn,'utf8');
+	$sql = "UPDATE autobusmov SET docmov='$docmov', stamov='$debar' where id='$memid'";
+	$query = $conn->query($sql);
 	if($query){
 		$res['message'] = "Employé Débarqué";
 	}
@@ -493,7 +493,7 @@ if($crud == 'verificacodigo'){
 	$res['message'] = "Impossible n'exist pas";
 
   mysqli_set_charset($conn,'utf8');
-	$sql = "SELECT * from autobusemp WHERE numemp='$memid'";
+	$sql = "SELECT * FROM autobusemp WHERE numemp='$memid'";
 	$query = $conn->query($sql);
 
 	while($row = $query->fetch_array()){
@@ -508,14 +508,14 @@ if($crud == 'verificacodigo'){
 
 if($crud == 'delete'){
 	mysqli_set_charset($conn,'utf8');
-	$sql = "delete from autobusmov where memid='$memid'";
+	$sql = "DELETE FROM autobusmov WHERE memid='$memid'";
 	$query = $conn->query($sql);
 	if($query){
-		$out['message'] = "Member Deleted Successfully";
+		$out['message'] = "Member Deleted Successfully-respuesta ok";
 	}
 	else{
 		$out['error'] = true;
-		$out['message'] = "Could not delete Member";
+		$out['message'] = "Could not delete Member-NOOO";
 	}
 }
 
