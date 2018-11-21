@@ -43,6 +43,7 @@ var app = new Vue({
 			formData.append('crud', crud);
 			formData.append('docmov', docmov);
 		    console.log("Documento inicial-verifica");
+
 			axios({
 	              method: 'POST',
 	              url: 'api.php',
