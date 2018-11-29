@@ -105,7 +105,7 @@
 10164,"Flores A. Kenia",,,,9995-Arr,,"608 - Emballage M12M17"
 10166,"Gordillo Elizabeth",,,,000-INAC,,000-INACTIF
 10167,"Dube Dumoulin Jonathan",,,,000-INAC,,000-INACTIF
-10171,"Alba Naranjo Erika Johana",,,,9995-Arr,,"9995-Arrêt Temporaire"
+10171,"Alba Naranjo Erika Johana",,,,9995-Arr,,9995-Arr
 10172,"Allard Joannie",,,,000-INAC,,000-INACTIF
 10173,"Da Silva Andrew",,,,000-INAC,,000-INACTIF
 10174,"Samanica Ricardo",,,,000-INAC,,000-INACTIF
@@ -386,7 +386,7 @@
 10468,"Verville Dimitri",,,,000-INAC,,000-INACTIF
 10469,"St Jacques Kevin",,,,000-INAC,,000-INACTIF
 10470,"Malan Marina",,,1,9995-Arr,,"9995-Arrêt Temporaire"
-10471,"Henri Anne",,,,0-INACTI,,
+10471,"Henri Anne",,,,0-INACTI,,0-INACTI
 10472,"Richard Rapahel",,,,000-INAC,,000-INACTIF
 10473,"Tapp Carole",,,,000-INAC,,000-INACTIF
 10474,"Kavanagh Dominic",,,,000-INAC,,000-INACTIF
@@ -406,7 +406,7 @@
 10488,"Mehri Farahnaz",,,,000-INAC,,000-INACTIF
 10489,"Berthiaume Mireille",,,,000-INAC,,000-INACTIF
 10490,"Vadnais Yvan",,,,000-INAC,,000-INACTIF
-10491,Annie,,,,0-INACTI,,
+10491,Annie,,,,0-INACTI,,0-INACTI
 10492,"Calderon Daniela",,,,000-INAC,,000-INACTIF
 10493,"Demeules Samuel",,,,000-INAC,,000-INACTIF
 10494,"Posada Jorge Ivan",,,1,000-INAC,,000-INACTIF
@@ -572,7 +572,7 @@
 10669,"Bagudy Myrlande",,,,000-INAC,,000-INACTIF
 10670,"Despres Tony",,,1,000-INAC,,000-INACTIF
 10671,"Potrasco Sergio",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
-10672,"Jose Luis",,,,"301 - L?",,
+10672,"Jose Luis",,,,"301 - L?",,"301 - L?"
 10673,"Villegas Doralba",,,1,"608 - Em",,"608 - Emballage M12M17"
 10674,"Roussel Anthony",,,1,000-INAC,,000-INACTIF
 10675,"Boisvert Nancy",,,,000-INAC,,000-INACTIF
@@ -800,7 +800,7 @@
 40147,"Garcia Kevin Antonio",,,,000-INAC,,000-INACTIF
 40153,"Dossous Choumie",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
 40155,"Amezquita Milla Alexandra",,,,000-INAC,,000-INACTIF
-40156,"Hector Daniel",,,,0-INACTI,,
+40156,"Hector Daniel",,,,0-INACTI,,0-INACTI
 40157,"Cuneo Carmona Daniel Yerky",,,,000-INAC,,000-INACTIF
 40160,"Provencher Karine",,,,000-INAC,,000-INACTIF
 40162,"Fajardo Guzman Camilo Alberto",,,,000-INAC,,000-INACTIF
@@ -837,7 +837,7 @@
 40222,"Guerrier Mariette",,,,000-INAC,,000-INACTIF
 40223,"Charlemagne Daniel",,,,000-INAC,,000-INACTIF
 40229,"Aquino Eskarla",,,,000-INAC,,000-INACTIF
-40230,Siomara,,,,0-INACTI,,
+40230,Siomara,,,,0-INACTI,,0-INACTI
 40231,"Martinez Edy Margarita",,,,000-INAC,,000-INACTIF
 40233,"Gonzalez Alejandro",,,,000-INAC,,000-INACTIF
 40237,"Saint Pierre Louloune",,,,"407 - Br",,"407 - Brochette HYBRIDE M16M18"
@@ -885,14 +885,14 @@
 40340,"Odervil Marie Rose",,,,000-INAC,,000-INACTIF
 40342,"Donais Marie Serville",,,,000-INAC,,000-INACTIF
 40343,"Saint Cyr Alianne",,,,"415 - RH",,"415 - RHODOS M12M14"
-40349,Francisco,,,,0-INACTI,,
+40349,Francisco,,,,0-INACTI,,0-INACTI
 40351,"El Melali Mohammed",,,,000-INAC,,000-INACTIF
 40352,"Obdeus Jacqueline",,,,"418 - FA",,"418 - FARCIES M10M13"
 40353,"Joseph Elianie",,,,"407 - Br",,"407 - Brochette HYBRIDE M16M18"
-40355,"Marie Dacosta",,,,0-INACTI,,
+40355,"Marie Dacosta",,,,0-INACTI,,0-INACTI
 40357,"Vilme Jacqueline",,,,000-INAC,,000-INACTIF
 40360,"Elejalde Rodriguez Jorge Luis",,,,000-INAC,,000-INACTIF
-40362,Ignacio,,,,0-INACTI,,
+40362,Ignacio,,,,0-INACTI,,0-INACTI
 40363,"Tchidjo Cedric",,,,000-INAC,,000-INACTIF
 40364,"Fataki Uwera Francoise",,,,000-INAC,,000-INACTIF
 40367,"Alsaint Fanicia",,,,000-INAC,,000-INACTIF
@@ -999,7 +999,7 @@
 40512,"Gonzalez David",,,,000-INAC,,000-INACTIF
 40513,"Marcelus Azgardson",,,,000-INAC,,000-INACTIF
 40514,"Fortune Freud",,,,000-INAC,,000-INACTIF
-40516,Mohammed,,,,0-INACTI,,
+40516,Mohammed,,,,0-INACTI,,0-INACTI
 40519,"St Denis Tommy",,,,000-INAC,,000-INACTIF
 40521,"Gratton Jessy",,,,000-INAC,,000-INACTIF
 40522,"Arelus Madoche",,,,000-INAC,,000-INACTIF
@@ -1019,7 +1019,7 @@
 40537,"Valentin Vernio Junior",,,,000-INAC,,000-INACTIF
 40538,"Estivene Venson Endy",,,,000-INAC,,000-INACTIF
 40539,"Valentin Jean Wesner",,,,000-INAC,,000-INACTIF
-40540,Fequiere,,,,0-INACTI,,
+40540,Fequiere,,,,0-INACTI,,0-INACTI
 40541,"Poussin Olivier",,,,000-INAC,,000-INACTIF
 40542,"Denoye Salas",,,,000-INAC,,000-INACTIF
 40543,"St Vil Ronaldo",,,,000-INAC,,000-INACTIF
@@ -1113,7 +1113,7 @@
 40641,"Bustamante Fabiola",,,,000-INAC,,000-INACTIF
 40642,"Yanez Yuliana",,,,000-INAC,,000-INACTIF
 40643,"Meristil Jesula",,,,000-INAC,,000-INACTIF
-40644,"Gonzalez Christian",,,,000-INAC,,000-INACTIF
+40644,"Gonzalez Christian",,,,000-INAC,,000-INAC
 40645,"Fortier Cristina",,,,000-INAC,,000-INACTIF
 40646,"Tamayo Andrea Carolina",,,,000-INAC,,000-INACTIF
 40647,"Barry Fatoumata",,,,000-INAC,,000-INACTIF
@@ -1631,7 +1631,7 @@
 41211,"Zepeda Roberto",,,,000-INAC,,000-INACTIF
 41212,"Cisse Ousmane",,,,000-INAC,,000-INACTIF
 41213,"Bouhired Abderaouf",,,,000-INAC,,000-INACTIF
-41214,David,,,,0-INACTI,,
+41214,David,,,,0-INACTI,,0-INACTI
 41215,"Guevara Ricardo",,,,000-INAC,,000-INACTIF
 41217,"Jean Isnel 41217",,,,000-INAC,,000-INACTIF
 41218,"Edouard Nadege",,,,000-INAC,,000-INACTIF
@@ -1640,7 +1640,7 @@
 41221,"El Houssini  Laghzai",,,,000-INAC,,000-INACTIF
 41222,"Lazarre Pierre Ernest",,,,000-INAC,,000-INACTIF
 41223,"Munoz Ramirez Sara Mabel",,,,000-INAC,,000-INACTIF
-41224,"Leonce Martial",,,,0-INACTI,,
+41224,"Leonce Martial",,,,0-INACTI,,0-INACTI
 41225,"Mikarukundo Jeanne",,,,000-INAC,,000-INACTIF
 41226,"Saint Phard Dany",,,,000-INAC,,000-INACTIF
 41227,"Figari Luisa Amparo",,,,000-INAC,,000-INACTIF
@@ -1710,7 +1710,7 @@
 41296,"Feristah Cinucer",,,,000-INAC,,000-INACTIF
 41297,"Morales Julio Cesar",,,,000-INAC,,000-INACTIF
 41298,"Kaba Aich",,,,000-INAC,,000-INACTIF
-41299,"Marie Rosale",,,,0-INACTI,,
+41299,"Marie Rosale",,,,0-INACTI,,0-INACTI
 41300,"Castillo Maria Elena",,,,000-INAC,,000-INACTIF
 41301,"Castillo Lucia",,,,000-INAC,,000-INACTIF
 41302,"Durandisse Werley",,,,000-INAC,,000-INACTIF
@@ -1719,7 +1719,7 @@
 41305,"Beauvais Mitchell",,,,000-INAC,,000-INACTIF
 41306,"Jose Ritchnahell",,,,000-INAC,,000-INACTIF
 41307,"Morales Wendy",,,,000-INAC,,000-INACTIF
-41308,"Fils Aimé Fritzner",,,,000-INAC,,000-INACTIF
+41308,"Fils Aimé Fritzner",,,,000-INAC,,"702 - Frigo Poulet JOUR M5M7"
 41310,"Arboleda Edwin",,,,000-INAC,,000-INACTIF
 41311,"Clavijo Angela",,,,000-INAC,,000-INACTIF
 41312,"Cruceta Antonio",,,,000-INAC,,000-INACTIF
@@ -1756,7 +1756,7 @@
 41343,"Martinez Yariel",,,,000-INAC,,000-INACTIF
 41344,"Quetant Yvelene",,,,"414 - Tr",,"414 - Traypack M15M17"
 41345,"Borgellas Mannes",,,,000-INAC,,000-INACTIF
-41346,"Boris Boka",,,,0-INACTI,,
+41346,"Boris Boka",,,,0-INACTI,,0-INACTI
 41347,"Martinez Clara Luz",,,,000-INAC,,000-INACTIF
 41348,"Chatelier Jessen",,,,000-INAC,,000-INACTIF
 41349,"Ortiz Jose Francisco",,,,000-INAC,,000-INACTIF
@@ -1764,7 +1764,7 @@
 41351,"Durosier Wilkin",,,,000-INAC,,000-INACTIF
 41352,"Tasayco Ericka Milagros",,,,000-INAC,,000-INACTIF
 41353,"Belance Louis Egenel",,,,"603 - Em",,"603 - Emballage  M6M7"
-41354,Elisabeth,,,,0-INACTI,,
+41354,Elisabeth,,,,0-INACTI,,0-INACTI
 41355,"Ceide Marie Clotide",,,,000-INAC,,000-INACTIF
 41356,"Louis Sancana",,,,"607 - Em",,"607 - Emballage M7M8"
 41357,"Jean Charles Anderson",,,,"701- Fri",,"701- Frigo Boeuf JOUR M5M7"
@@ -1853,7 +1853,7 @@
 48023,"Zamorano Rodriguez Danner",,,,"9998 - D",,"9998 - Desossage MS"
 48025,"Garcia Roberto",,,,"9998 - D",,"9998 - Desossage MS"
 48027,"Rios Enrique",,,,000-INAC,,000-INACTIF
-48028,"Herrera Olvin",,,,"9998 - D",,"9998 - Desossage MS"
+48028,"Herrera Olvin",,,,"9998 - D",,"9998 - D"
 48029,"Vera Alex",,,,000-INAC,,000-INACTIF
 48030,"Vera Marco",,,,000-INAC,,000-INACTIF
 48031,"Cruz Wilmer",,,,"9998 - D",,"9998 - Desossage MS"
@@ -1936,7 +1936,7 @@
 48115,"Henriquez Oscar",,,,000-INAC,,000-INACTIF
 48116,"Diaz Rosa Maria",,,,"9998 - D",,"9998 - Desossage MS"
 48117,"Davila Jorge Andres",,,,000-INAC,,000-INACTIF
-48118,"Juan Francisco",,,,0-INACTI,,
+48118,"Juan Francisco",,,,0-INACTI,,0-INACTI
 48119,"Reyes Cristina",,,,"9998 - D",,"9998 - Desossage MS"
 48120,"Salazar Jose",,,,"9998 - D",,"9998 - Desossage MS"
 48121,"De Lazarro Jorge",,,,"9998 - D",,"9998 - Desossage MS"
@@ -1997,14 +1997,14 @@
 48178,"Murillo Patrick",,,,000-INAC,,000-INACTIF
 48179,"Nieto Luis Hernan",,,,"9998 - D",,"9998 - Desossage MS"
 48180,"De La Cruz Ma Regina",,,,000-INAC,,000-INACTIF
-48182,Jessica,,,,0-INACTI,,
+48182,Jessica,,,,0-INACTI,,0-INACTI
 48183,"Romero Juan Santos",,,,"9998 - D",,"9998 - Desossage MS"
 48184,"Bernaola Jose Luis",,,,"9998 - D",,"9998 - Desossage MS"
 48185,"Canete Mejia Adela",,,,000-INAC,,000-INACTIF
 48186,"Sanchez Yolanda",,,,000-INAC,,000-INACTIF
 48187,"Milla Sotelo Ana Nelly",,,,000-INAC,,000-INACTIF
 48189,"Ramos Darwin",,,,000-INAC,,000-INACTIF
-48190,"Moscayza Willy",,,,"9998 - D",,"9998 - Desossage MS"
+48190,"Moscayza Willy",,,,"9998 - D",,"9998 - D"
 48191,"Navarro Raul",,,,000-INAC,,000-INACTIF
 48192,"Navarro Raul Damin",,,,000-INAC,,000-INACTIF
 48193,"Richardi Claudio Ivan",,,,"9998 - D",,"9998 - Desossage MS"
@@ -2015,10 +2015,10 @@
 48198,"Bernaola Jose Luis",,,,000-INAC,,000-INACTIF
 48199,"Laval Arnaud",,,,000-INAC,,000-INACTIF
 48200,"Salazar Gustavo",,,,000-INAC,,000-INACTIF
-48201,Maey,,,,0-INACTI,,
+48201,Maey,,,,0-INACTI,,0-INACTI
 48202,"Dieng Ndianko",,,,000-INAC,,000-INACTIF
-48203,Edison,,,,0-INACTI,,
-48204,"Jaime Lenin ",,,,"9998 - D",,
+48203,Edison,,,,0-INACTI,,0-INACTI
+48204,"Jaime Lenin ",,,,"9998 - D",,"9998 - D"
 48206,"Santibanez Juan",,,,000-INAC,,000-INACTIF
 48207,"Timericht Abdellah",,,,"9998 - D",,"9998 - Desossage MS"
 48208,"Mailloux Marie Eve",,,,"9998 - D",,"9998 - Desossage MS"
@@ -2118,7 +2118,7 @@
 50240,"Poitras Herve Mischa",,,,000-INAC,,000-INACTIF
 50245,"Thelusca Shelsea",,,,000-INAC,,000-INACTIF
 50246,"Phanor Anne Rose",,,,000-INAC,,000-INACTIF
-50251,"Konan Ferdinand",,,,0-INACTI,,
+50251,"Konan Ferdinand",,,,0-INACTI,,0-INACTI
 50252,"Tchanga Seigneur",,,,9991-Ass,,"9991-Ass. Temp. Production"
 50254,"Sow Aldiouma",,,,000-INAC,,000-INACTIF
 50255,"Gnimpieba Kenfack Irene",,,,000-INAC,,000-INACTIF
@@ -2138,7 +2138,7 @@
 50287,"Uwimana Nadine",,,,000-INAC,,000-INACTIF
 50288,"Tshilanda Brenda",,,,000-INAC,,000-INACTIF
 50290,"Jean Louis Martha Evelyne",,,,000-INAC,,000-INACTIF
-50291,Samuel,,,,0-INACTI,,
+50291,Samuel,,,,0-INACTI,,0-INACTI
 50293,"Ochoa John Fredy",,,,000-INAC,,000-INACTIF
 50294,"Umubyeyi Isabelle",,,,000-INAC,,000-INACTIF
 50295,"Laporte Fannie",,,,000-INAC,,000-INACTIF
@@ -2310,7 +2310,7 @@
 50543,"Doxy Jennika",,,,000-INAC,,000-INACTIF
 50544,"Desgranges Manouche",,,,000-INAC,,000-INACTIF
 50545,"TSIMEGNE TAGAKOU BERTILLE DIANE",,,,000-INAC,,000-INACTIF
-50546,ALEXANDER,,,,0-INACTI,,
+50546,ALEXANDER,,,,0-INACTI,,0-INACTI
 50547,"ARROYO CONTRERAS LECIS DEL CARMEN",,,,000-INAC,,000-INACTIF
 50548,"BEAUGELIN JEUNE GLADYS",,,,000-INAC,,000-INACTIF
 50549,"BERREHRAH HALIMA",,,,000-INAC,,000-INACTIF
@@ -2398,7 +2398,7 @@
 50635,"Solano Yolanda",,,,000-INAC,,000-INACTIF
 50636,"Cetoute Guerda",,,,000-INAC,,000-INACTIF
 50637,"Nsinga Angele Dorothe",,,,000-INAC,,000-INACTIF
-50638,"Mario Jorge",,,,0-INACTI,,
+50638,"Mario Jorge",,,,0-INACTI,,0-INACTI
 50639,"Louis Charles Valerie",,,,000-INAC,,000-INACTIF
 50640,"Gherieb Walid",,,,000-INAC,,000-INACTIF
 50641,"Plamondon Sandra",,,,000-INAC,,000-INACTIF
@@ -2415,7 +2415,7 @@
 50653,"Langlois Jean Francois",,,,000-INAC,,000-INACTIF
 50654,"Legault Gisele",,,,000-INAC,,000-INACTIF
 50655,"Nderagakura Acqueline",,,,000-INAC,,000-INACTIF
-50656,Acqueline,,,,0-INACTI,,
+50656,Acqueline,,,,0-INACTI,,0-INACTI
 50657,"Camara Mariame",,,,000-INAC,,000-INACTIF
 50658,"Lenfesty Tommy",,,,000-INAC,,000-INACTIF
 50659,"Zephie Thamare",,,,000-INAC,,000-INACTIF
@@ -2458,7 +2458,7 @@
 50696,"Ridore Gregory",,,,000-INAC,,000-INACTIF
 50697,"O` Leary Kevin",,,,000-INAC,,000-INACTIF
 50698,"Smail Lyes",,,,000-INAC,,000-INACTIF
-50699,Yvon,,,,0-INACTI,,
+50699,Yvon,,,,0-INACTI,,0-INACTI
 50700,"Coulibaly Ahoua",,,,000-INAC,,000-INACTIF
 50701,"Laplante Christon",,,,000-INAC,,000-INACTIF
 50702,"Dainys Patricia",,,,000-INAC,,000-INACTIF
@@ -2827,7 +2827,7 @@
 51075,"Lufuluabo Maurice",,,,000-INAC,,000-INACTIF
 51076,"Dusengimana Marcelline",,,,000-INAC,,000-INACTIF
 51077,"Dao  Minh Thuan",,,,000-INAC,,000-INACTIF
-51078,Marilyn,,,,0-INACTI,,
+51078,Marilyn,,,,0-INACTI,,0-INACTI
 51079,"Richer Sylvain",,,,000-INAC,,000-INACTIF
 51080,"Centeno Jose Javier",,,,000-INAC,,000-INACTIF
 51081,"Joseph Celanie",,,,000-INAC,,000-INACTIF
@@ -2871,7 +2871,7 @@
 51120,"Segle Jean Baptiste",,,,000-INAC,,000-INACTIF
 51121,"Polynice Endy",,,,000-INAC,,000-INACTIF
 51122,"Couture Isabelle",,,,000-INAC,,000-INACTIF
-51123,Deserie,,,,0-INACTI,,
+51123,Deserie,,,,0-INACTI,,0-INACTI
 51124,"Delorme Felix",,,,000-INAC,,000-INACTIF
 51125,"Spiegle Dominique",,,,000-INAC,,000-INACTIF
 51127,"Syvilna Sony",,,,"410 - Fo",,"410 - Fondue POULET M12M14"
@@ -2905,7 +2905,7 @@
 51156,"Audate Bendley",,,,000-INAC,,000-INACTIF
 51157,"Fall Mame Ndickou",,,,000-INAC,,000-INACTIF
 51158,"Koffi Ange Marina",,,,000-INAC,,000-INACTIF
-51159,Genaidesi,,,,0-INACTI,,
+51159,Genaidesi,,,,0-INACTI,,0-INACTI
 51160,"Nzayisenga Marie Goretti",,,,000-INAC,,000-INACTIF
 51162,"Ottu Marilyn Audrey",,,,000-INAC,,000-INACTIF
 51163,"El Rhiat Salim",,,,000-INAC,,000-INACTIF
@@ -3074,7 +3074,7 @@
 51329,"Levesque Nicole",,,,000-INAC,,000-INACTIF
 51330,"Lubin Jonathan",,,,000-INAC,,000-INACTIF
 51331,"Maftouh Youssef",,,,000-INAC,,000-INACTIF
-51332,Shammar,,,,0-INACTI,,
+51332,Shammar,,,,0-INACTI,,0-INACTI
 51333,"Labreque Simon",,,,000-INAC,,000-INACTIF
 51334,"Oyie Messelle Therese",,,,000-INAC,,000-INACTIF
 51335,"Kalwahali Mike",,,,000-INAC,,000-INACTIF
@@ -3109,7 +3109,7 @@
 51364,"Karsenty Jeremy",,,,000-INAC,,000-INACTIF
 51365,"Simon Dawensly",,,,000-INAC,,000-INACTIF
 51366,"Mawjidewji Zameer",,,,000-INAC,,000-INACTIF
-51367,Suray,,,,0-INACTI,,
+51367,Suray,,,,0-INACTI,,0-INACTI
 51368,"Roudline Michel",,,,000-INAC,,000-INACTIF
 51369,"Mbuayama Dorcas",,,,000-INAC,,000-INACTIF
 51370,"Kourat Nadia",,,,000-INAC,,000-INACTIF
@@ -3175,14 +3175,14 @@
 51430,"Voltaire Neemie",,,,000-INAC,,000-INACTIF
 51431,"Ouattara Soro Wataha",,,,000-INAC,,000-INACTIF
 51432,"Sun Ryma",,,,000-INAC,,000-INACTIF
-51433,Anthony,,,,0-INACTI,,
+51433,Anthony,,,,0-INACTI,,0-INACTI
 51434,"Shan Damian Alvin",,,,000-INAC,,000-INACTIF
 51435,"Waluona Tite Mano",,,,000-INAC,,000-INACTIF
 51436,"Parry Joseph",,,,000-INAC,,000-INACTIF
 51437,"Gus David",,,,000-INAC,,000-INACTIF
 51438,"Serpa Roman",,,,000-INAC,,000-INACTIF
 51439,"Tackfine Mohammed",,,,000-INAC,,000-INACTIF
-51440,Tamar,,,,0-INACTI,,
+51440,Tamar,,,,0-INACTI,,0-INACTI
 51441,"Abandibakobwa Jacqueline",,,,000-INAC,,000-INACTIF
 51442,"Velasques Ana Paula",,,,000-INAC,,000-INACTIF
 51443,"Oirdache Larisa",,,,000-INAC,,000-INACTIF
@@ -3426,7 +3426,7 @@
 51685,"Ismail Atifa",,,,000-INAC,,000-INACTIF
 51686,"Ismail Gul Badan",,,,000-INAC,,000-INACTIF
 51687,"Gonzalez Barahona Alvin",,,,000-INAC,,000-INACTIF
-51688,Eddy,,,,0-INACTI,,
+51688,Eddy,,,,0-INACTI,,0-INACTI
 51689,"Beaupre Loick",,,,000-INAC,,000-INACTIF
 51690,"Richemonde Jean Mary",,,,000-INAC,,000-INACTIF
 51691,"Thaibou Barrie",,,,000-INAC,,000-INACTIF
@@ -3488,7 +3488,7 @@
 51749,"Rivest Sylvie",,,,000-INAC,,000-INACTIF
 51750,"Joseph Marie Menata",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 51751,"Cenatus Terancia",,,,"407 - Br",,"407 - Brochette HYBRIDE M16M18"
-51752,Dora,,,,"415 - RH",,
+51752,Dora,,,,"415 - RH",,"415 - RH"
 51753,"Lato Vanessa",,,,000-INAC,,000-INACTIF
 51754,"Laramee Karine",,,,000-INAC,,000-INACTIF
 51755,"Jones Jennifer",,,,000-INAC,,000-INACTIF
@@ -3576,7 +3576,7 @@
 51839,"Tshisakamba Therese",,,,000-INAC,,000-INACTIF
 51840,"Mgomba Laeticia",,,,000-INAC,,000-INACTIF
 51841,"De La Cruz Rodriguez Cinthya",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
-51842,Pedro,,,,0-INACTI,,
+51842,Pedro,,,,0-INACTI,,0-INACTI
 51843,"Bleau Samuel",,,,000-INAC,,000-INACTIF
 51844,"El Yakoubi Zakaria",,,,000-INAC,,000-INACTIF
 51845,"Gonzalez Trinidad",,,,000-INAC,,000-INACTIF
@@ -3680,11 +3680,11 @@
 51943,"Pierre Witney",,,,000-INAC,,000-INACTIF
 51944,"Verrilus Mirlande",,,,000-INAC,,000-INACTIF
 51945,"Daigneault Lucie",,,,000-INAC,,000-INACTIF
-51946,Paulin,,,,0-INACTI,,
+51946,Paulin,,,,0-INACTI,,0-INACTI
 51947,"Janvrin Gregory",,,,000-INAC,,000-INACTIF
 51949,"St Gilles Angerica",,,,000-INAC,,000-INACTIF
 51950,"Wanica Coicou Dane",,,,000-INAC,,000-INACTIF
-51952,Laura,,,,0-INACTI,,
+51952,Laura,,,,0-INACTI,,0-INACTI
 51953,"Dakdaki Anas",,,,000-INAC,,000-INACTIF
 51954,"Aye Joseph Alexandre",,,,000-INAC,,000-INACTIF
 51955,"Mavoungou Yola Laomer",,,,000-INAC,,000-INACTIF
@@ -3697,7 +3697,7 @@
 51962,"Perez Yolima",,,,000-INAC,,000-INACTIF
 51963,"Ndje Serena",,,,000-INAC,,000-INACTIF
 51964,"Louissaint Jean",,,,000-INAC,,000-INACTIF
-51965,Marianne,,,,0-INACTI,,
+51965,Marianne,,,,0-INACTI,,0-INACTI
 51966,"Carvajal Derek",,,,000-INAC,,000-INACTIF
 51967,"Guarda Kiara",,,,000-INAC,,000-INACTIF
 51968,"Paul Marceline",,,,000-INAC,,000-INACTIF
@@ -3763,7 +3763,7 @@
 52028,"Dyrogene Nardine",,,,000-INAC,,000-INACTIF
 52029,"Ferdinand Yanique",,,,000-INAC,,000-INACTIF
 52030,"Jourdain Marie Chantal",,,,000-INAC,,000-INACTIF
-52031,Kouassi,,,,0-INACTI,,
+52031,Kouassi,,,,0-INACTI,,0-INACTI
 52032,"Bhatti Kashif Mahmood",,,,000-INAC,,000-INACTIF
 52033,"Nango Brou Anne Floris",,,,000-INAC,,000-INACTIF
 52034,"Daba Sarr",,,,000-INAC,,000-INACTIF
@@ -4132,7 +4132,7 @@
 70182,"Saint Juste Marie Kerlange",,,,000-INAC,,000-INACTIF
 70183,"Herisse Woodeline",,,,000-INAC,,000-INACTIF
 70184,"Jean Derlaine",,,,000-INAC,,000-INACTIF
-70185,Syntia,,,,0-INACTI,,
+70185,Syntia,,,,0-INACTI,,0-INACTI
 70186,"Joseph Micheline",,,,000-INAC,,000-INACTIF
 70187,"Charles Osena",,,,000-INAC,,000-INACTIF
 70188,"Remilien Julaine",,,,000-INAC,,000-INACTIF
@@ -4272,8 +4272,8 @@
 92013,"Landry Michael",,,,000-INAC,,000-INACTIF
 92014,"Parent Kevin",,,1,"912 - Ma",,"912 - Maintenance"
 92016,"Allaire Pierre Luc",,,1,"912 - Ma",,"912 - Maintenance"
-92017,"Jean Louis",,,,0-INACTI,,
-92018,"Jean Gabriel",,,,0-INACTI,,
+92017,"Jean Louis",,,,0-INACTI,,0-INACTI
+92018,"Jean Gabriel",,,,0-INACTI,,0-INACTI
 92019,"Cabot Real",,,,000-INAC,,000-INACTIF
 92020,"Deslieres Leon",,,,000-INAC,,000-INACTIF
 92021,"Tamno Jerome",,,,"912 - Ma",,"912 - Maintenance"
@@ -4289,10 +4289,10 @@
 40416,"Carrion Elio",,,,000-INAC,,000-INACTIF
 40635,"-Grousso Donato",,,,000-INAC,,000-INACTIF
 40637,"Boulahbal Mohamed",,,,000-INAC,,000-INACTIF
-406601,Reidel,,,,0-INACTI,,
+406601,Reidel,,,,0-INACTI,,0-INACTI
 40801,"Franco Johan",,,,000-INAC,,000-INACTIF
 40821,"Argueta Digna Maribel",,,,000-INAC,,000-INACTIF
-48181,Isabel,,,,0-INACTI,,
+48181,Isabel,,,,0-INACTI,,0-INACTI
 50536,"Desgranges David",,,,000-INAC,,000-INACTIF
 50582,"Terkmani Thiziri",,,,000-INAC,,000-INACTIF
 50632,"Haddadi Hakimk",,,,000-INAC,,000-INACTIF
@@ -4301,10 +4301,10 @@
 60068,"Dufault Patrice",,,,000-INAC,,000-INACTIF
 90009,"-Tremblay Marc-André",,,,"9000 - A",,"9000 - Administration"
 90081,"Henrichon Veronique",,,,"9000 - A",,"9000 - Administration"
-C0001,"conductor NO 1",,,,G1,,
-C0002,"conductor NO 1",,,,G1,,
-B0001,Bus-01,,,,G2,,
-B0002,Bus-02,,,,G2,,
+C0001,"conductor NO 1",,,,G1,,G1
+C0002,"conductor NO 1",,,,G1,,G1
+B0001,Bus-01,,,,G2,,G2
+B0002,Bus-02,,,,G2,,G2
 10034,"Bouchard Monica",,,,000-INAC,,000-INACTIF
 10687,"Georges Jean Daniel",,,,000-INAC,,000-INACTIF
 10688,"Vargas Tommy Saul",,,1,000-INAC,,000-INACTIF
@@ -4604,7 +4604,7 @@ B0002,Bus-02,,,,G2,,
 70320,"Macera Jose Gregorio",,,,000-INAC,,000-INACTIF
 70321,"Nica Ion",,,,000-INAC,,000-INACTIF
 70323,"Dikeacos Vassili",,,,000-INAC,,000-INACTIF
-70324,"70324 Ricardy",,,,0-INACTI,,
+70324,"70324 Ricardy",,,,0-INACTI,,0-INACTI
 70325,"Chavannes Marie-Ginale",,,,000-INAC,,000-INACTIF
 70326,"Dieme Aliou",,,,000-INAC,,000-INACTIF
 70327,"Amrouche Yacine",,,,000-INAC,,000-INACTIF
@@ -4657,7 +4657,7 @@ B0002,Bus-02,,,,G2,,
 10690,"Rodriguez Ibrahim",,,,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
 10734,"Denis Fania",,,,000-INAC,,000-INACTIF
 10759,"Labbe Bernadette",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
-30070,"30070 Singh",,,,"""411 - E",,
+30070,"30070 Singh",,,,"""411 - E",,"""411 - E"
 61080,"Goyal Palak",,,,000-INAC,,000-INACTIF
 41460,"Thomas Sonise",,,,"414 - Tr",,000-INACTIF
 40195,"Hernandez Dora",,,,"415 - RH",,"415 - RHODOS M12M14"
@@ -4788,11 +4788,11 @@ B0002,Bus-02,,,,G2,,
 61082,"Toussaint Andy Joseph",,,,"704 - Sa",,"704 - Salle sec M5M6"
 10774,"Arenas Diana Virginia",,,1,000-INAC,,000-INACTIF
 10776,"Cusson Jonathan",,,1,"801 - En",,000-INACTIF
-70822,70822,,,,G2,,
-70808,70808,,,,G2,,
-70825,70825,,,,G2,,
-70829,70829,,,,G2,,
-70885,70885,,,,G2,,
+70822,70822,,,,G2,,G2
+70808,70808,,,,G2,,G2
+70825,70825,,,,G2,,G2
+70829,70829,,,,G2,,G2
+70885,70885,,,,G2,,G2
 10780,"Ricardy Pierre",,,,000-INAC,,000-INACTIF
 23008,"Anita Anita",,,,000-INAC,,000-INACTIF
 23020,"Kaur Parmjeet",,,1,000-INAC,,000-INACTIF
@@ -4860,3 +4860,8 @@ Danna,"):) Danna",,,,"9000 - A",,"9000 - Administration"
 23101,"Singh Jaswinder",,,,"103 - Vi",,"103 - Viande Hachée M2M3"
 23100,"Kaur Satwinder",,,,"605 - Em",,"605 - Emballage SOIR M8M10"
 10789,"Gonzalez Christian",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
+,,,,,,,
+10792,"Serna Adriana",,,1,"608 - Em",,"608 - Emballage M12M17"
+10791,"Joseph Estherfanise",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+10790,"Paul Jacquelin",,,,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
+28026,"Cruz Brayan Samuel",,,1,"9996 - D",,"9996 - DESOSSAGE GC"

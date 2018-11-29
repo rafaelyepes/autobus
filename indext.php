@@ -1,6 +1,7 @@
 <?php
 //include ("./conectar4.php");
 date_default_timezone_set("America/Montreal");
+
 /*Calculando la fecha de Salida del Autobus*/
 $fecha = new DateTime('NOW');
 $hora= $fecha->format('H');
@@ -912,11 +913,11 @@ max-height: 66px;
       <div class="table-responsive">
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
-					<th class="warning">Item {{ contadorgr }}</th>
+					<th class="warning">Item</th>
 					<th class="warning">Numéro</th>
-					<th class="warning">Prénom de l'employé</th>
+					<th class="warning">Prenom de l'employé</th>
 					<th class="warning">Nom de l'employé</th>
-					<th class="warning">Genre</th>
+					<th class="warning">Genere</th>
 					<th class="warning">Statut</th>
           <th class="warning">Action</th>
           <th class="warning">Action</th>
@@ -1034,6 +1035,6 @@ max-height: 66px;
 <script src="./js/alert.js"></script>
 <script src="./js/vue.js"></script>
 <script src="./js/axios.js"></script>
-<script src="./js/app.js?v=<?php echo(rand()); ?>"></script>
+<script src="./js/appt.js?v=<?php echo(rand()); ?>"></script>
 </body>
 </html>

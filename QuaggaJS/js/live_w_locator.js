@@ -242,18 +242,19 @@ $(function() {
     });
 
     Quagga.onDetected(function(result) {
+        app.contadorgr = 0;
         var code = result.codeResult.code;
         console.log("Detectando Imagen");
         if (App.lastResult !== code) {
             App.lastResult = code;
             var $node = null, canvas = Quagga.canvas.dom.image;
 
-          
-            /*VALIDA CARTA*/    
+
+            /*VALIDA CARTA*/
             numero=code;
            // var audio = document.getElementById("audio");
            // audio.play();
-                    
+
             chiffres = numero.replace(/[^0-9]/g, '');
             compteur = chiffres.length;
             if (compteur!=5)
@@ -267,7 +268,6 @@ $(function() {
                 $node1 = $('<li class="col-sm-12"><a class="thumbnail"><img src=""></img></a></li>');
                 $node1.find("img").attr("src", canvas.toDataURL());
                 $("#slider-thumbs ul.hide-bullets").prepend($node1);
-
 
                // $("#result_strip ul.thumbnails").prepend($node);
 

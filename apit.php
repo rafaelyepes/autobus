@@ -163,7 +163,6 @@ if($crud == 'read-1'){
 
 	mysqli_set_charset($conn,'utf8');
 	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by row_number DESC";
-//  $sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov, nommov, apemov, sexmov, stamov from autobusmov WHERE docmov='$docmov' order by id DESC";
 	$query = $conn->query($sql);
 
 	while($row = $query->fetch_array()){
@@ -191,8 +190,6 @@ if($crud == 'read'){   //getAllMembers()
 
 	mysqli_set_charset($conn,'utf8');
 	$sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by row_number DESC";
-//  $sql = "SELECT @row_num:=@row_num + 1 AS row_number, id, docmov, fecmov, nummov,nommov,apemov,sexmov, stamov from autobusmov where fecmov='$fecmov' and docmov='$docmov' order by id DESC";
-
 	$query = $conn->query($sql);
 	while($row = $query->fetch_array()){
 		array_push($members, $row);
@@ -202,7 +199,6 @@ if($crud == 'read'){   //getAllMembers()
 }
 
 if($crud == 'grababandolinea'){
-	$idgenerado = "0";
 	$res['respuesta'] = "Grabando Linea";
 	$firstname = "NA";
 	$lastname = "NA";
@@ -228,13 +224,9 @@ if($crud == 'grababandolinea'){
 		$firstname =  mysqli_real_escape_string($conn,$firstname);
 		$lastname =  mysqli_real_escape_string($conn,$lastname);
 		mysqli_set_charset($conn,'utf8');
-
-
 		$sql = "INSERT INTO autobusmov (docmov, fecmov, nummov, nommov, apemov, sexmov, stamov) values ('$docmov','$fecmov','$nummov','$firstname', '$lastname', '$sexe', '$embarque')";
 		$query = $conn->query($sql);
-		$idgenerado=$conn->insert_id;
-
-		$first_array = array(
+    $first_array = array(
                  "nummov" => $nummov,
                  'nommov' => $firstname,
                  'apemov' => $lastname,
@@ -252,7 +244,6 @@ if($crud == 'grababandolinea'){
             );
 			array_push($members, $first_array);
 	}
-	$res['idgenerado'] = $idgenerado;
 	$res['members'] = $members;
 	echo json_encode($res);
 }

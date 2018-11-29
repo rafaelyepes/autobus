@@ -58,14 +58,11 @@ $codigoHTML = '
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <link href="./estilos/tabla1.css" rel="stylesheet" media="screen" type="text/css">
-
       <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
         <tr>
         <th rowspan="5" width="16" height="80" ><img  src="./img/logolacroix.png" width="13" height="70"  ></th>
-
-        <td align="Center" colspan="4" style="font-size:16px">'.$informe.'</td>
+        <td align="Center" colspan="4" style="font-size:14px">'.$informe.'</td>
         </tr>
-
         <tr>
         <th align="left" style="font-size:12px; padding-left: 10px;">Numéro Document</th>
         <th colspan="3" align="left" style="font-size:11px; padding-left: 10px;">'.$docmae.'</th>
@@ -93,9 +90,9 @@ $codigoHTML = '
           <tr style="text-align: center; font-size:13px">
           <td>Item</td>
           <td>Numéro</td>
-          <td>Prenom de l`employé </td>
+          <td>Prénom de l`employé </td>
           <td>Nom de l`employé  </td>
-          <td>Genere</td>
+          <td>Genre</td>
           </tr>
           ';
           $lin1 = 0;
@@ -142,24 +139,21 @@ $codigoHTML = '
           }
 
          $codigoHTML.='
-         <tr>
-         <td colspan="5"></td>
-         </tr>
-         </table>
-         <table class="tablat" id="tablat" border=2 cellspacing=0 cellpadding=0>
          <tr style="text-align: center; font-size:13px">
-         <td>Homme nouveau</td>
+         <td colspan="2">Nouveaux hommes</td>
          <td>Nouvelles femmes</td>
-         <td>Ancien employé</td>
+         <td>Anciens employés</td>
          <td>Total</td>
          </tr>
          <tr style="text-align: center; font-size:13px">
-         <td>'.$cont2.'</td>
+         <td colspan="2">'.$cont2.'</td>
          <td>'.$cont3.'</td>
          <td>'.$cont1.'</td>
          <td>'.$lin1.'</td>
          </tr>
-
+         <tr>
+         <td colspan="5"></td>
+         </tr>
          </table>
          ';
 
@@ -186,24 +180,28 @@ $dompdf->stream($ruta, array("Attachment" => false));
 
 
 
-header('Content-Type: text/html; charset=ISO-8859-1');
+//header('Content-Type: text/html; charset=ISO-8859-1');
 // para evitar que se nos detenga la ejecucion del script (en caso de que el servidor tarde en responder) definimos un intervalo de 5 minutos de inactividad
 ini_set('max_execution_time', 300);
 include ("php/class.phpmailer.php");
 //Recibir todos los parámetros del formulario
 
-$para = "rafael.yepes@lacroixmeats.com";
-
-//$para1 = "paula.franco@lacroixmeats.com";
-
+$para = "autobus@lacroixmeats.com";
 $para1 = "";
-
 $para2 = "";
+$para3 = "";
+$para4 = "";
+$para5 = "";
+
 $asunto = "Asunto";
 $mensaje = "Mensaje";
 
-$username = 'docs@lacroixmeats.com';
-$password = 'DoLa753?';
+//$username = 'docs@lacroixmeats.com';
+//$password = 'DoLa753?';
+
+$username = 'lacroixnet@lacroixmeats.com';
+$password = 'Yefa7832$';
+
 
 $rutaadic='/archivos/pdf/'.$d2.'.pdf';
 $archivoi=getcwd().$rutaadic;
@@ -232,6 +230,10 @@ $mail->FromName = "Rafael Yepes";
 $mail->AddAddress($para);
 $mail->AddAddress($para1);
 $mail->AddAddress($para2);
+$mail->AddAddress($para3);
+$mail->AddAddress($para4);
+$mail->AddAddress($para5);
+
 
 $mail->Subject = $asunto;
 //$mail->Body = $mensaje;

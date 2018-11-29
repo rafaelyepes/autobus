@@ -20,6 +20,7 @@ var app = new Vue({
 		successMessage: "",
 		saveMemberex: "",
 		danger1: "",
+		contadorgr: 0,
 
 		selected: "A",
 		members: [],
@@ -43,7 +44,6 @@ var app = new Vue({
 			formData.append('crud', crud);
 			formData.append('docmov', docmov);
 		    console.log("Documento inicial-verifica");
-
 			axios({
 	              method: 'POST',
 	              url: 'api.php',
@@ -83,7 +83,6 @@ var app = new Vue({
 		},
 
 		getAllMembers: function(){
-
 		fecmov = document.getElementById("fecha").value;
 		docmov = document.getElementById("documento").value;
 		chofer = document.getElementById("chofer").value;
@@ -95,9 +94,9 @@ var app = new Vue({
 		formData.append('crud', crud);
 		formData.append('fecmov', fecmov);
 		formData.append('docmov', docmov);
-	    formData.append('autobus', autobus);
+	  formData.append('autobus', autobus);
 		formData.append('chofer', chofer);
-	    console.log("Muestra Todos los grabados");
+	  console.log("Muestra Todos los grabados");
 		axios({
               method: 'POST',
               url: 'api.php',
@@ -166,6 +165,8 @@ var app = new Vue({
 		},
 
 		ValidaMembers: function(nummov){
+
+			numerorecibido=nummov;
 			//alert (nummov);
 			//nummov = "C0001";
 			fecmov = document.getElementById("fecha").value;
@@ -191,7 +192,7 @@ var app = new Vue({
 	            formData.append('autobus', autobus);
 		        formData.append('chofer', chofer);
 		        console.log("Consultando Respuesta AL SERVIDOR-validacion-111");
-				axios({
+						axios({
 		              method: 'POST',
 		              url: 'api.php',
 		              responseType: 'json',
@@ -210,35 +211,36 @@ var app = new Vue({
 					nombre=response.data.members[0].nommov;
 					if (nombre == "EXISTE"){
 						app.successMessage = "Respuesta ok-ya existe";
-             		   //app.ConsultaMembers();
-               		    $("#slider-thumbs ul.hide-bullets li:first-child").remove();
-//            		    $("#result_strip ul.thumbnails li:first-child").remove();
- 		     		    alert ("Employé est déjà enregistré");
-						/*$("#respuesta").css({"background-color": "red"});
-						$("#respuesta").text("Employé est déjà enregistré");
-	        		 	$("#respuesta").show();*/
-            		 }else{
+             		   $("#slider-thumbs ul.hide-bullets li:first-child").remove();
+									 alert ("Employé est déjà enregistré");
+					}else{
+									idgenerado=response.data.idgenerado;
             		 	app.successMessage = "Grabado Nuevo";
-            		 	//$("#respuesta").css("background-color","green");
-						//$("#respuesta").text("Employé enregistré");
-	        		 	//$("#respuesta").show();
             		 	console.log("LLamando a todos los miembros getAllMembers");
-            		 	app.getAllMembers();
+								//	alert ("Verifica Si esta grabado el miembro  "+idgenerado);
             		 	console.log("Set Timer-01");
             		 	//contador para cerrar el MODAL AUTOMAQTICAMENTE//
-				  		app.showAddimagen = true;
-				        setTimeout(() => {
-				            app.showAddimagen = false;
-				        }, 1300);
-
-
-
-            		 }
+									if (idgenerado != "0"){
+ 										  app.contadorgr=0;
+											app.getAllMembers();
+									    app.showAddimagen = true;
+						          setTimeout(() => {
+						            app.showAddimagen = false;
+						          }, 1300);
+									}else{
+										 if (app.contadorgr <= 20){
+											 app.contadorgr=app.contadorgr+1;
+											 app.ValidaMembers(numerorecibido);
+										 }
+										 if (app.contadorgr >=21){
+											app.finciclo();
+										 }
+									} //fin if idgenerado
+								} // fin if nombre == "EXISTE"
 					}
 				}); // fin then funcion
 
 				} // FIN VALIDACION chofer-autbous;
-
 				} // FIN VALIDACION =1;
 
 			if (validacion == "0"){
@@ -311,6 +313,14 @@ var app = new Vue({
 						}); // fin then funcion
 			}//fin validacion 0
 		}, //fin funcion valida miembros
+
+		finciclo: function(){
+			$("#slider-thumbs ul.hide-bullets li:first-child").remove();
+			alert ("Erreur de communication CARTE non sauvegardée "+app.contadorgr);
+			return false;
+		//	app.contadorgr=0;
+		},
+
 
 		RevisaMembers: function(){
 			//$('#myModal').modal('show');

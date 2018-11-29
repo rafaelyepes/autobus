@@ -52,12 +52,12 @@ $codigoHTML = '
 
          <tr style="text-align: center; font-size:13px">
          <td>Chauffeur</td>
-         <td>Prenom Chauffeur</td>
+         <td>Prénom Chauffeur</td>
          <td>Autobus</td>
          <td>Heure départ</td>
-         <td>Homme nouveau</td>
+         <td>Nouveaux hommes</td>
          <td>Nouvelles femmes</td>
-         <td>Ancien employé</td>
+         <td>Anciens employés</td>
          <td>Total</td>
          </tr>
 
@@ -83,8 +83,9 @@ $codigoHTML = '
               //$lastname  = "Last Name OK";
               $firstname = $row1['nomemp'];
               $lastname = $row1['apeemp'];
-              }
               $nombreauto=$firstname."  ".$lastname;
+              }
+
 
 
               $lin1 = 0;
@@ -186,6 +187,14 @@ $codigoHTML = '
                      $horadepart  = $row3['hr2mae'];
                      $horallegada = $row3['hr3mae'];
               }
+              $sql4 = "SELECT * from autobusemp where numemp='$chomae'";
+              $query4 = $conn->query($sql4);
+              while($row4 = $query4->fetch_array()){
+                $firstname = $row4['nomemp'];
+                $lastname = $row4['apeemp'];
+              }
+              $nombreauto=$firstname."  ".$lastname;
+
               $codigoHTML.='
               <div style="page-break-before: always;"></div>
               <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
@@ -210,22 +219,19 @@ $codigoHTML = '
               <th align="left"  style="font-size:11px; padding-left: 10px;">'.$busmae.'</th>
               <th colspan="2" align="left" style="font-size:12px; padding-left: 10px;">Heure départ  : '.$horadepart.'</th>
               </tr>
-
               <tr>
               <th align="left" style="font-size:12px; padding-left: 10px;">Chauffeur</th>
               <th align="left"  style="font-size:11px; padding-left: 10px;">'.$chomae.'</th>
               <th colspan="2" align="left"  style="font-size:11px; padding-left: 10px; ">'.$nombreauto.'</th>
               </tr>
               </table>
-
-
               <table class="tablat" id="tablat" border=1 cellspacing=0 cellpadding=0>
               <tr style="text-align: center; font-size:13px">
               <td>Item</td>
               <td>Numéro</td>
-              <td>Prenom de l`employé </td>
+              <td>Prénom de l`employé </td>
               <td>Nom de l`employé  </td>
-              <td>Genere</td>
+              <td>Genre</td>
               </tr>
               ';
               $lin1 = 0;
@@ -272,28 +278,22 @@ $codigoHTML = '
               }
 
               $codigoHTML.='
-              <tr>
-              <td colspan="5"></td>
-              </tr>
-              </table>
-              <table class="tablat" id="tablat" border=2 cellspacing=0 cellpadding=0>
               <tr style="text-align: center; font-size:13px">
-              <td>Homme nouveau</td>
+              <td colspan="2">Nouveaux hommes</td>
               <td>Nouvelles femmes</td>
-              <td>Ancien employé</td>
+              <td>Anciens employés</td>
               <td>Total</td>
               </tr>
               <tr style="text-align: center; font-size:13px">
-              <td>'.$cont2.'</td>
+              <td colspan="2">'.$cont2.'</td>
               <td>'.$cont3.'</td>
               <td>'.$cont1.'</td>
               <td>'.$lin1.'</td>
               </tr>
-
+              <tr>
+              <td colspan="5"></td>
+              </tr>
               </table>
-
-
-
               ';
         }
 $codigoHTML.='
@@ -318,18 +318,21 @@ ini_set('max_execution_time', 300);
 include ("php/class.phpmailer.php");
 //Recibir todos los parámetros del formulario
 
-$para = "rafael.yepes@lacroixmeats.com";
-
-//$para1 = "paula.franco@lacroixmeats.com";
-
+//$para  = "rafael.yepes@lacroixmeats.com";
+$para = "autobus@lacroixmeats.com";
 $para1 = "";
-
 $para2 = "";
+$para3 = "";
+$para4 = "";
+$para5 = "";
+
 $asunto = "Asunto";
 $mensaje = "Mensaje";
 
-$username = 'docs@lacroixmeats.com';
-$password = 'DoLa753?';
+//$username = 'docs@lacroixmeats.com';
+//$password = 'DoLa753?';
+$username = 'lacroixnet@lacroixmeats.com';
+$password = 'Yefa7832$';
 
 $d2="Autob".$datmae;
 
@@ -360,6 +363,10 @@ $mail->FromName = "Rafael Yepes";
 $mail->AddAddress($para);
 $mail->AddAddress($para1);
 $mail->AddAddress($para2);
+$mail->AddAddress($para3);
+$mail->AddAddress($para4);
+$mail->AddAddress($para5);
+
 
 $mail->Subject = $asunto;
 //$mail->Body = $mensaje;

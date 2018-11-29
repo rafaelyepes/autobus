@@ -21,8 +21,10 @@ $para2 = "";
 $asunto = "Asunto";
 $mensaje = "Mensaje";
 
-$username = 'docs@lacroixmeats.com';
-$password = 'DoLa753?';
+//$username = 'docs@lacroixmeats.com';
+//$password = 'DoLa753?';
+$username = 'lacroixnet@lacroixmeats.com';
+$password = 'Yefa7832$';
 
 // Enviamos la respuesta
 $mail = new PHPMailer();
@@ -138,7 +140,7 @@ if($mail->Send())
             echo'<script type="text/javascript">
             mensaj="Envoy\u00e9 correctament"
             alert(mensaj);
-            window.close();
+          //  window.close();
          //   location.href="../novompg1.php";
 
 
