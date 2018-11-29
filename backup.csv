@@ -10,7 +10,7 @@
 10012,"Boyte Nathalie",,,1,"410 - Fo",,"410 - Fondue POULET M12M14"
 10013,"Meneses Rocio",,,,000-INAC,,000-INACTIF
 10014,"Thibodeau France",,,,"410 - Fo",,"410 - Fondue POULET M12M14"
-10015,"Chaput François",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+10015,"Chaput François",,,1,"802 - En",,"802 - Conciergerie  M6M8"
 10017,"Levesque Emilie",,,,000-INAC,,000-INACTIF
 10019,"Dubreuil Denise",,,1,9990-Ass,,"9990-Ass.Temp. hors production"
 10022,"Tessier Benjamin",,,,000-INAC,,000-INACTIF
@@ -29,7 +29,7 @@
 10048,"Forest Claudette",,,1,"603 - Em",,"603 - Emballage  M6M7"
 10049,"Lussier Jacques",,,1,"611 - Em",,"611 - Emballage Fondue M5M6"
 10050,"Ngono Veronique",,,,9995-Arr,,"9995-Arrêt Temporaire"
-10051,"Ducharme Danick",,,1,"701- Fri",,"701- Frigo Boeuf JOUR M5M7"
+10051,"Ducharme Danick",,,1,"701- Fri",,"704 - Salle sec M5M6"
 10053,"Chevrette Serge",,,,000-INAC,,000-INACTIF
 10054,"Laflamme Patricia",,,,000-INAC,,000-INACTIF
 10055,"St-Amand Francis",,,1,000-INAC,,000-INACTIF
@@ -45,7 +45,7 @@
 10065,"Tetreault Pierrette",,,1,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
 10066,"Jouan Root Catherine",,,1,"426 - D�",,"408 - Tubage M16M18"
 10067,"Levesque Marc-Andre",,,1,"704 - Sa",,"704 - Salle sec M5M6"
-10069,"Cordeau Caroline",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
+10069,"Cordeau Caroline",,,1,"202 - Fo",,"202 - Fondue Boeuf M16M18"
 10071,"Cantin Stephanie",,,1,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
 10072,"Bustos Luz Marina",,,1,"301 - L�",,000-INACTIF
 10073,"Streatfield Daniel",,,1,"705 - De",,"705 - Debox Légumes M2M4"
@@ -102,7 +102,7 @@
 10160,"Lopez Maria Del Pilar",,,,000-INAC,,000-INACTIF
 10161,"Chacon Sebastian",,,,000-INAC,,000-INACTIF
 10162,"Lambert Dominique",,,1,"407 - Br",,"407 - Brochette HYBRIDE M16M18"
-10164,"Flores A. Kenia",,,,9995-Arr,,"608 - Emballage M12M17"
+10164,"Flores A. Kenia",,,,9995-Arr,,"605 - Emballage SOIR M8M10"
 10166,"Gordillo Elizabeth",,,,000-INAC,,000-INACTIF
 10167,"Dube Dumoulin Jonathan",,,,000-INAC,,000-INACTIF
 10171,"Alba Naranjo Erika Johana",,,,9995-Arr,,9995-Arr
@@ -134,8 +134,8 @@
 10204,"Aroche Esdras T.E.T",,,1,"418 - FA",,"418 - FARCIES M10M13"
 10205,"Saba Ramirez Erick T.E.T.",,,1,"106 - Ba",,"106 - Barratage M3M5"
 10206,"Mellado Castaneda Juan T.E.T",,,1,"401 - Cr",,"401 - Crapaudine M2M4"
-10207,"Cuevas BENITO T.E.T",,,,"108 - Bo",,"108 - Boeuf/Agneau M5M7"
-10208,"Martinez Candido T.E.T",,,,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
+10207,"Cuevas BENITO T.E.T",,,1,"108 - Bo",,"108 - Boeuf/Agneau M5M7"
+10208,"Martinez Candido T.E.T",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 10209,"SANCHEZ JOSÉ",,,,000-INAC,,000-INACTIF
 10210,"AQUINO JOSÉ",,,,000-INAC,,000-INACTIF
 10211,"Sanz Ospina Mabel Stella",,,,000-INAC,,000-INACTIF
@@ -181,7 +181,7 @@
 10256,"Berriot Cindy",,,,000-INAC,,000-INACTIF
 10257,"Reyes Jose Elmer",,,,000-INAC,,000-INACTIF
 10258,"Perreault Nicholas",,,,000-INAC,,000-INACTIF
-10259,"Cadorette Anthony",,,1,000-INAC,,000-INACTIF
+10259,"Cadorette Anthony",,,1,000-INAC,,"706 -  Frigo Shutdown SOIR M5M7"
 10260,"Tremblay Carol Anne",,,,000-INAC,,000-INACTIF
 10261,"Saravia Karin",,,,000-INAC,,000-INACTIF
 10262,"Chapados Simon",,,,000-INAC,,000-INACTIF
@@ -210,7 +210,7 @@
 10286,"Jean Jean Robert",,,,000-INAC,,000-INACTIF
 10287,"Savoie Alexandre James",,,,000-INAC,,000-INACTIF
 10288,"Ardila Casilda",,,,000-INAC,,000-INACTIF
-10289,"Alba Naranjo Steffania",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+10289,"Alba Naranjo Steffania",,,1,"802 - En",,"802 - Conciergerie  M6M8"
 10290,"Jimenez Valeria",,,,000-INAC,,000-INACTIF
 10291,"Hernandez Dilan",,,,000-INAC,,000-INACTIF
 10292,"Champigny Étienne",,,,000-INAC,,000-INACTIF
@@ -571,7 +571,7 @@
 10668,"Tiguidanke Dianby",,,,000-INAC,,000-INACTIF
 10669,"Bagudy Myrlande",,,,000-INAC,,000-INACTIF
 10670,"Despres Tony",,,1,000-INAC,,000-INACTIF
-10671,"Potrasco Sergio",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+10671,"Potrasco Sergio",,,1,"802 - En",,"706 -  Frigo Shutdown SOIR M5M7"
 10672,"Jose Luis",,,,"301 - L?",,"301 - L?"
 10673,"Villegas Doralba",,,1,"608 - Em",,"608 - Emballage M12M17"
 10674,"Roussel Anthony",,,1,000-INAC,,000-INACTIF
@@ -588,7 +588,7 @@
 10686,"Bachand Myrtho",,,1,000-INAC,,000-INACTIF
 12000,"Landry Mario",,,,000-INAC,,000-INACTIF
 12002,"Corbeil Mario",,,1,"811 - Ex",,"811 - Expédition jour M6M7"
-12004,"Lopez Jose Omar",,,1,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+12004,"Lopez Jose Omar",,,1,"802 - En",,"802 - Conciergerie  M6M8"
 12005,"Hernandez Franklin",,,,000-INAC,,000-INACTIF
 12006,"Rosales Gerson",,,,000-INAC,,000-INACTIF
 12007,"Hebert Luc",,,,000-INAC,,000-INACTIF
@@ -748,11 +748,11 @@
 40030,"Bustamante Agripino",,,,"607 - Em",,"607 - Emballage M7M8"
 40032,"Garcia De La Cruz Jose Armando",,,,000-INAC,,000-INACTIF
 40033,"Hernandez Vasquez Wilfredo Yuniet",,,,000-INAC,,000-INACTIF
-40034,"Ilfrant Elveus Tius",,,,"801 - En",,"801 - Entretien En Prod JOUR M6M9"
+40034,"Ilfrant Elveus Tius",,,,"801 - En",,"801 - En"
 40035,"Valentin Wesley",,,,000-INAC,,000-INACTIF
 40037,"Jovin Figaro Marie Denise",,,,000-INAC,,000-INACTIF
-40038,"Gomez Blanca",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
-40039,"Hernandez Claudia",,,,"202 - Fo",,"301 - Légumes - Équipes jour M9M11"
+40038,"Gomez Blanca",,,,"201 - Fo",,"201 - Fo"
+40039,"Hernandez Claudia",,,,"202 - Fo",,"202 - Fo"
 40040,"Mathieu Zoe",,,,000-INAC,,000-INACTIF
 40041,"Henriquez Sanchez Deyanira Isabel",,,,000-INAC,,000-INACTIF
 40042,"Da Costa Cristina",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
@@ -765,7 +765,7 @@
 40087,"Anglade Lucie Yvonne",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
 40101,"Cancho Jorge Luis",,,,000-INAC,,000-INACTIF
 40102,"Prophile- Corvil Jesula",,,,000-INAC,,000-INACTIF
-40103,"Nyangone Marlyse",,,,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
+40103,"Nyangone Marlyse",,,,"301 - L�",,"301 - L�"
 40107,"Jean-Jacques Yves",,,,000-INAC,,000-INACTIF
 40110,"Tapullima Reategui Juan Tuedle",,,,000-INAC,,000-INACTIF
 40113,"Arruz Gil Jhoana Luisa",,,,000-INAC,,000-INACTIF
@@ -786,7 +786,7 @@
 40129,"Fabius Blondine",,,,000-INAC,,000-INACTIF
 40130,"Bayonne Marie-Claudette",,,,000-INAC,,000-INACTIF
 40131,"Forture Sonia",,,,"415 - RH",,"415 - RHODOS M12M14"
-40132,"Cherubin Soraya",,,,"421 -Pan",,"421 -Panées M7M9"
+40132,"Cherubin Soraya",,,,"421 -Pan",,"421 -Pan"
 40133,"Hidalgo Angel",,,,000-INAC,,000-INACTIF
 40135,"Belmehel Fawzi",,,,000-INAC,,000-INACTIF
 40136,"Jean Bart Sandrine",,,,000-INAC,,000-INACTIF
@@ -1205,7 +1205,7 @@
 40735,"Wabo Francois Guy",,,,000-INAC,,000-INACTIF
 40736,"Frei Alvarez Kevin",,,,000-INAC,,000-INACTIF
 40737,"Akkouche Sarah",,,,000-INAC,,000-INACTIF
-40738,"Darbouze Edouard",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+40738,"Darbouze Edouard",,,,"802 - En",,"802 - Conciergerie  M6M8"
 40739,"Fafard Angela",,,,000-INAC,,000-INACTIF
 40740,"Tchoumnou Patrice",,,,000-INAC,,000-INACTIF
 40741,"Cadet Pierre Richard",,,,000-INAC,,000-INACTIF
@@ -1253,7 +1253,7 @@
 40784,"Tsafack Sorelle",,,,000-INAC,,000-INACTIF
 40785,"Escobar Carlos A.",,,,"414 - Tr",,"414 - Traypack M15M17"
 40786,"Jean Yves Mirline",,,,000-INAC,,000-INACTIF
-40787,"Guerrero Rossy Maria",,,,"410 - Fo",,"410 - Fondue POULET M12M14"
+40787,"Guerrero Rossy Maria",,,,"410 - Fo",,"410 - Fo"
 40788,"Maldonado Leiby",,,,000-INAC,,000-INACTIF
 40789,"Oviedo Henky Joaquin",,,,000-INAC,,000-INACTIF
 40790,"Loum Abdou Aziz",,,,000-INAC,,000-INACTIF
@@ -1835,14 +1835,14 @@
 41438,"Gonzalez Arianna",,,,000-INAC,,000-INACTIF
 42000,"Ramos Lucas",,,,000-INAC,,000-INACTIF
 48002,"Martinez Noemi",,,,000-INAC,,000-INACTIF
-48003,"Bernaola Angelo",,,,"9998 - D",,"9998 - Desossage MS"
+48003,"Bernaola Angelo",,,1,"9998 - D",,"9998 - Desossage MS"
 48006,"Ramirez Vega Wilbert",,,,000-INAC,,000-INACTIF
-48007,"Garcia Jorge",,,,"9998 - D",,"9998 - Desossage MS"
+48007,"Garcia Jorge",,,1,"9998 - D",,"9998 - Desossage MS"
 48008,"Huamanchumo Antony",,,,000-INAC,,000-INACTIF
 48009,"Reyes Vela Rosa Victoria",,,,000-INAC,,000-INACTIF
 48010,"Garcia Christian",,,,000-INAC,,000-INACTIF
 48011,"Taype Erber",,,,000-INAC,,000-INACTIF
-48012,"Sierra Cristian",,,,"9998 - D",,"9998 - Desossage MS"
+48012,"Sierra Cristian",,,1,"9998 - D",,"9998 - Desossage MS"
 48014,"Mendoza Jorge",,,,000-INAC,,000-INACTIF
 48016,"Martinez Fredy",,,,000-INAC,,000-INACTIF
 48018,"Mejia Lucciana",,,,000-INAC,,000-INACTIF
@@ -1850,25 +1850,25 @@
 48020,"Reinoso Elvio",,,,000-INAC,,000-INACTIF
 48021,"Gaecia Maey",,,,000-INAC,,000-INACTIF
 48022,"Villegas Brian",,,,000-INAC,,000-INACTIF
-48023,"Zamorano Rodriguez Danner",,,,"9998 - D",,"9998 - Desossage MS"
+48023,"Zamorano Rodriguez Danner",,,1,"9998 - D",,"9998 - Desossage MS"
 48025,"Garcia Roberto",,,,"9998 - D",,"9998 - Desossage MS"
 48027,"Rios Enrique",,,,000-INAC,,000-INACTIF
-48028,"Herrera Olvin",,,,"9998 - D",,"9998 - D"
+48028,"Herrera Olvin",,,1,"9998 - D",,"9998 - Desossage MS"
 48029,"Vera Alex",,,,000-INAC,,000-INACTIF
 48030,"Vera Marco",,,,000-INAC,,000-INACTIF
-48031,"Cruz Wilmer",,,,"9998 - D",,"9998 - Desossage MS"
+48031,"Cruz Wilmer",,,1,"9998 - D",,"9998 - Desossage MS"
 48032,"Reyes Cristina",,,,000-INAC,,000-INACTIF
 48033,"Rosario Hojael",,,,000-INAC,,000-INACTIF
 48034,"Sedano Torres Renzo Gino",,,,000-INAC,,000-INACTIF
-48036,"Casco Castillo Luis Mauricio",,,,"9998 - D",,"9998 - Desossage MS"
-48037,"Molina Rubianes Alfonso Alfredo",,,,"9998 - D",,"9998 - Desossage MS"
-48038,"Molina Cesar",,,,"9998 - D",,"9998 - Desossage MS"
+48036,"Casco Castillo Luis Mauricio",,,1,"9998 - D",,"9998 - Desossage MS"
+48037,"Molina  Alfredo",,,1,"9998 - D",,"9998 - Desossage MS"
+48038,"Molina Cesar",,,1,"9998 - D",,"9998 - Desossage MS"
 48040,"Umanzor Maynor",,,,000-INAC,,000-INACTIF
-48042,"Zegarra Victor",,,,"9998 - D",,"9998 - Desossage MS"
+48042,"Zegarra Victor",,,1,"9998 - D",,"9998 - Desossage MS"
 48043,"Herrera Kehenverly",,,,000-INAC,,000-INACTIF
-48044,"Turcios Jorge Alexander",,,,"9998 - D",,"9998 - Desossage MS"
-48045,"Sierra Anderson",,,,"9998 - D",,"9998 - Desossage MS"
-48046,"Cruz Brian",,,,"9998 - D",,"9998 - Desossage MS"
+48044,"Turcios Jorge Alexander",,,1,"9998 - D",,"9998 - Desossage MS"
+48045,"Sierra Anderson",,,1,"9998 - D",,"9998 - Desossage MS"
+48046,"Cruz Brian",,,1,"9998 - D",,"9998 - Desossage MS"
 48047,"Cordon Umanzor Cindy",,,,000-INAC,,000-INACTIF
 48048,"Gustavo Salazar",,,,000-INAC,,000-INACTIF
 48049,"Bendezu Juan",,,,000-INAC,,000-INACTIF
@@ -1880,18 +1880,18 @@
 48056,"Tepoz Teodulo",,,,000-INAC,,000-INACTIF
 48057,"Therland Durano",,,1,"9998 - D",,"9998 - Desossage MS"
 48058,"Corrales 4805",,,,000-INAC,,000-INACTIF
-48059,"Benitez Antonio",,,,"9998 - D",,"9998 - Desossage MS"
+48059,"Benitez Antonio",,,1,"9998 - D",,"9998 - Desossage MS"
 48060,"Castillo Ryan",,,,000-INAC,,000-INACTIF
 48061,"Palomino David",,,,000-INAC,,000-INACTIF
-48062,"Lujan Johan",,,,"9998 - D",,"9998 - Desossage MS"
+48062,"Lujan Johan",,,1,"9998 - D",,"9998 - Desossage MS"
 48063,"Villegas Kelvin Paul",,,,000-INAC,,000-INACTIF
-48064,"Mejia Anthony Luis",,,,"9998 - D",,"9998 - Desossage MS"
+48064,"Mejia Anthony Luis",,,1,"9998 - D",,"9998 - Desossage MS"
 48065,"Maestre Editson",,,,000-INAC,,000-INACTIF
 48066,"Villegas Luis",,,,000-INAC,,000-INACTIF
 48067,"Herrera Elmer",,,,000-INAC,,000-INACTIF
 48068,"Toribio Jose Roberto",,,,000-INAC,,000-INACTIF
 48069,"Coral Juan Sebastian",,,,000-INAC,,000-INACTIF
-48070,"Lozano Luis Anthony",,,,"9998 - D",,"9998 - Desossage MS"
+48070,"Lozano Luis Anthony",,,,"9998 - D",,000-INACTIF
 48071,"Arevalo Vilma",,,,000-INAC,,000-INACTIF
 48072,"Artiga Melvin",,,,000-INAC,,000-INACTIF
 48073,"Loum Papa Ibra",,,,000-INAC,,000-INACTIF
@@ -1904,16 +1904,16 @@
 48081,"Gonzalez Eduardo",,,,000-INAC,,000-INACTIF
 48082,"Castilla Oscar",,,,000-INAC,,000-INACTIF
 48083,"Ycocha Ramon",,,,000-INAC,,000-INACTIF
-48084,"Callejas Miguel Angel",,,,"9998 - D",,"9998 - Desossage MS"
+48084,"Callejas Miguel Angel",,,1,"9998 - D",,"9998 - Desossage MS"
 48085,"De Vivanco Oscar",,,,000-INAC,,000-INACTIF
 48086,"Sanchez Fabricio",,,,000-INAC,,000-INACTIF
 48087,"Constanza Saul",,,,000-INAC,,000-INACTIF
 48089,"Oyosi Liz",,,,000-INAC,,000-INACTIF
 48090,"Rodriguez Yunier",,,,000-INAC,,000-INACTIF
-48091,"Humanzor Gerson",,,,"9998 - D",,"9998 - Desossage MS"
+48091,"Humanzor Gerson",,,1,"9998 - D",,"9998 - Desossage MS"
 48092,"Castillo Gomez  Arnaldo Jose",,,,"9998 - D",,"9998 - Desossage MS"
 48093,"Sienna Anderson",,,,000-INAC,,000-INACTIF
-48094,"Moscayza Aragon  Juan Orlando",,,,"9998 - D",,"9998 - Desossage MS"
+48094,"Moscayza Aragon  Juan Orlando",,,,"9998 - D",,000-INACTIF
 48095,"Oropeza René",,,,000-INAC,,000-INACTIF
 48097,"Prado Leonardo",,,,000-INAC,,000-INACTIF
 48098,"Villanueva Israel",,,,000-INAC,,000-INACTIF
@@ -1931,75 +1931,75 @@
 48110,"Moreno Andy",,,,000-INAC,,000-INACTIF
 48111,"Moreno Juan Orlando",,,,000-INAC,,000-INACTIF
 48112,"Lozano Pedro",,,,000-INAC,,000-INACTIF
-48113,"Salazar Luis",,,,"9998 - D",,"9998 - Desossage MS"
+48113,"Salazar Luis",,,1,"9998 - D",,"9998 - Desossage MS"
 48114,"Kim Arman",,,,000-INAC,,000-INACTIF
 48115,"Henriquez Oscar",,,,000-INAC,,000-INACTIF
-48116,"Diaz Rosa Maria",,,,"9998 - D",,"9998 - Desossage MS"
+48116,"Diaz Rosa Maria",,,1,"9998 - D",,"9998 - Desossage MS"
 48117,"Davila Jorge Andres",,,,000-INAC,,000-INACTIF
 48118,"Juan Francisco",,,,0-INACTI,,0-INACTI
-48119,"Reyes Cristina",,,,"9998 - D",,"9998 - Desossage MS"
-48120,"Salazar Jose",,,,"9998 - D",,"9998 - Desossage MS"
-48121,"De Lazarro Jorge",,,,"9998 - D",,"9998 - Desossage MS"
+48119,"Reyes Cristina",,,,"9998 - D",,000-INACTIF
+48120,"Salazar Jose",,,1,"9998 - D",,"9998 - Desossage MS"
+48121,"De Lazarro Jorge",,,1,"9998 - D",,"9998 - Desossage MS"
 48122,"Navarro Orlando",,,,000-INAC,,000-INACTIF
 48123,"Soytuque Brilly",,,,000-INAC,,000-INACTIF
 48124,"Lopez Carlos Manuel",,,,000-INAC,,000-INACTIF
-48125,"Nunez Ely Antonio",,,,"9998 - D",,"9998 - Desossage MS"
+48125,"Nunez Ely Antonio",,,1,"9998 - D",,"9998 - Desossage MS"
 48126,"Placencia Ramon",,,,000-INAC,,000-INACTIF
-48127,"Torres Fredy",,,,"9998 - D",,"9998 - Desossage MS"
+48127,"Torres Fredy",,,1,"9998 - D",,"9998 - Desossage MS"
 48128,"Davila Guevara  Anthony Frank",,,,000-INAC,,000-INACTIF
 48129,"Camacho Yani",,,,000-INAC,,000-INACTIF
-48130,"Silva Oscar",,,,"9998 - D",,"9998 - Desossage MS"
-48131,"Navarro Williams",,,,"9998 - D",,"9998 - Desossage MS"
+48130,"Silva Oscar",,,1,"9998 - D",,"9998 - Desossage MS"
+48131,"Navarro Williams",,,1,"9998 - D",,"9998 - Desossage MS"
 48132,"Fernandez Jalenis",,,,000-INAC,,000-INACTIF
-48133,"Cruz Huball",,,,"9998 - D",,"9998 - Desossage MS"
+48133,"Cruz Huball",,,1,"9998 - D",,"9998 - Desossage MS"
 48134,"Valderrama Pietro",,,,000-INAC,,000-INACTIF
 48135,"Benitez Fernando",,,,000-INAC,,000-INACTIF
 48136,"Dufresne Kelly",,,,000-INAC,,000-INACTIF
 48137,"Vilca Carlos",,,,000-INAC,,000-INACTIF
 48138,"Marin Rivera Lisandro",,,,000-INAC,,000-INACTIF
 48139,"Perez Gabriel",,,,000-INAC,,000-INACTIF
-48140,"Humanchumo Anthony",,,,"9998 - D",,"9998 - Desossage MS"
-48141,"Chinga Carla",,,,"9998 - D",,000-INACTIF
+48140,"Humanchumo Anthony",,,1,"9998 - D",,"9998 - Desossage MS"
+48141,"Chinga Carla",,,1,"9998 - D",,000-INACTIF
 48142,"Marradiaga Karla",,,,000-INAC,,000-INACTIF
 48143,"Cruz Angie",,,,000-INAC,,000-INACTIF
 48144,"Castaneda Rafael",,,,000-INAC,,000-INACTIF
 48145,"Tolentino Ridolfis",,,,000-INAC,,000-INACTIF
 48146,"Blet Luis Angel",,,,000-INAC,,000-INACTIF
-48147,"Vasquez Reyes Luis Miguel",,,,000-INAC,,000-INACTIF
+48147,"Vasquez Reyes Luis Miguel",,,,000-INAC,,"9998 - Desossage MS"
 48148,"Georges Kerby",,,,000-INAC,,000-INACTIF
 48149,"Rezig Salim Sofiane",,,,000-INAC,,000-INACTIF
-48150,"Labrie Maxime",,,,"9998 - D",,"9998 - Desossage MS"
+48150,"Labrie Maxime",,,,"9998 - D",,000-INACTIF
 48151,"Meiggs Oscar",,,,000-INAC,,000-INACTIF
-48152,"Navarro Rosillo",,,,"9998 - D",,"9998 - Desossage MS"
-48153,"Jaime Oscar",,,,"9998 - D",,"9998 - Desossage MS"
-48154,"Zegarra Gerardo",,,,"9998 - D",,"9998 - Desossage MS"
+48152,"Navarro Rosillo",,,1,"9998 - D",,"9998 - Desossage MS"
+48153,"Jaime Oscar",,,1,"9998 - D",,"9998 - Desossage MS"
+48154,"Zegarra Gerardo",,,,"9998 - D",,000-INACTIF
 48155,"Villanueva Carlos Andres",,,,000-INAC,,000-INACTIF
 48156,"Calderon Jhonny",,,,000-INAC,,000-INACTIF
 48157,"Hernandez  Jesus Armando",,,,000-INAC,,000-INACTIF
 48158,"A. Montenegro  Jhon Stiven",,,,000-INAC,,000-INACTIF
-48159,"Reyes Juan Antonio",,,,"9998 - D",,"9998 - Desossage MS"
+48159,"Reyes Juan Antonio",,,,"9998 - D",,000-INACTIF
 48160,"Pajuelo Miguel Angel",,,,000-INAC,,000-INACTIF
 48161,"Tuelde Juan",,,,000-INAC,,000-INACTIF
-48162,"Corona Jaime",,,,"9998 - D",,"9998 - Desossage MS"
-48163,"Santos Luis",,,,"9998 - D",,"9998 - Desossage MS"
+48162,"Corona Jaime",,,1,"9998 - D",,"9998 - Desossage MS"
+48163,"Santos Luis",,,1,"9998 - D",,"9998 - Desossage MS"
 48166,"Burgos Marino",,,,000-INAC,,000-INACTIF
-48167,"Corona Edith",,,,"9998 - D",,"9998 - Desossage MS"
+48167,"Corona Edith",,,,"9998 - D",,000-INACTIF
 48168,"Murillo Javier",,,,000-INAC,,000-INACTIF
 48169,"Alcantara Francis",,,,000-INAC,,000-INACTIF
-48170,"Ogose Luis Alberto",,,,"9998 - D",,"9998 - Desossage MS"
-48171,"Cervantes Leslie",,,,"9998 - D",,"9998 - Desossage MS"
-48172,"Aguilar Rosidalia",,,,"9998 - D",,"9998 - Desossage MS"
-48173,"Callejas Ivan",,,,"9998 - D",,"9998 - Desossage MS"
+48170,"Ogose Luis Alberto",,,1,"9998 - D",,"9998 - Desossage MS"
+48171,"Cervantes Leslie",,,1,"9998 - D",,"9998 - Desossage MS"
+48172,"Aguilar Rosidalia",,,,"9998 - D",,000-INACTIF
+48173,"Callejas Ivan",,,1,"9998 - D",,"9998 - Desossage MS"
 48174,"Reynaga Rafael",,,,000-INAC,,000-INACTIF
-48175,"Guevara Saul",,,,"9998 - D",,"9998 - Desossage MS"
+48175,"Guevara Saul",,,1,"9998 - D",,"9998 - Desossage MS"
 48176,"Castro Magdiel",,,,000-INAC,,000-INACTIF
 48177,"Garrido Astor",,,,000-INAC,,000-INACTIF
 48178,"Murillo Patrick",,,,000-INAC,,000-INACTIF
-48179,"Nieto Luis Hernan",,,,"9998 - D",,"9998 - Desossage MS"
+48179,"Nieto Luis Hernan",,,1,"9998 - D",,"9998 - Desossage MS"
 48180,"De La Cruz Ma Regina",,,,000-INAC,,000-INACTIF
 48182,Jessica,,,,0-INACTI,,0-INACTI
 48183,"Romero Juan Santos",,,,"9998 - D",,"9998 - Desossage MS"
-48184,"Bernaola Jose Luis",,,,"9998 - D",,"9998 - Desossage MS"
+48184,"Bernaola Jose Luis",,,1,"9998 - D",,"9998 - Desossage MS"
 48185,"Canete Mejia Adela",,,,000-INAC,,000-INACTIF
 48186,"Sanchez Yolanda",,,,000-INAC,,000-INACTIF
 48187,"Milla Sotelo Ana Nelly",,,,000-INAC,,000-INACTIF
@@ -2007,11 +2007,11 @@
 48190,"Moscayza Willy",,,,"9998 - D",,"9998 - D"
 48191,"Navarro Raul",,,,000-INAC,,000-INACTIF
 48192,"Navarro Raul Damin",,,,000-INAC,,000-INACTIF
-48193,"Richardi Claudio Ivan",,,,"9998 - D",,"9998 - Desossage MS"
-48194,"Romero Silvia Esperanza",,,,"9998 - D",,"9998 - Desossage MS"
-48195,"Pizarro Julio Cesar",,,,"9998 - D",,"9998 - Desossage MS"
+48193,"Richardi Claudio Ivan",,,1,"9998 - D",,"9998 - Desossage MS"
+48194,"Romero Silvia Esperanza",,,,"9998 - D",,000-INACTIF
+48195,"Pizarro Julio Cesar",,,1,"9998 - D",,"9998 - Desossage MS"
 48196,"Brancho Benjamin",,,,000-INAC,,000-INACTIF
-48197,"Merejo Luciano",,,,"9998 - D",,"9998 - Desossage MS"
+48197,"Merejo Luciano",,,,"9998 - D",,000-INACTIF
 48198,"Bernaola Jose Luis",,,,000-INAC,,000-INACTIF
 48199,"Laval Arnaud",,,,000-INAC,,000-INACTIF
 48200,"Salazar Gustavo",,,,000-INAC,,000-INACTIF
@@ -2020,12 +2020,12 @@
 48203,Edison,,,,0-INACTI,,0-INACTI
 48204,"Jaime Lenin ",,,,"9998 - D",,"9998 - D"
 48206,"Santibanez Juan",,,,000-INAC,,000-INACTIF
-48207,"Timericht Abdellah",,,,"9998 - D",,"9998 - Desossage MS"
-48208,"Mailloux Marie Eve",,,,"9998 - D",,"9998 - Desossage MS"
+48207,"Timericht Abdellah",,,1,"9998 - D",,"9998 - Desossage MS"
+48208,"Mailloux Marie Eve",,,,"9998 - D",,000-INACTIF
 48209,"Cossio Nagdar",,,,000-INAC,,000-INACTIF
-48212,"Hernandez Jimmy",,,,"9998 - D",,"9998 - Desossage MS"
-48213,"Vargas Renato",,,,"9998 - D",,"9998 - Desossage MS"
-48214,"Mata Lenin",,,,"9998 - D",,"9998 - Desossage MS"
+48212,"Hernandez Jimmy",,,,"9998 - D",,000-INACTIF
+48213,"Vargas Renato",,,,"9998 - D",,000-INACTIF
+48214,"Mata Lenin",,,,"9998 - D",,000-INACTIF
 48215,"Lebron Milciades",,,1,"9998 - D",,"9998 - Desossage MS"
 48216,"Solocio Carl",,,1,000-INAC,,000-INACTIF
 48305,"Marcelain Junior",,,,000-INAC,,000-INACTIF
@@ -2040,9 +2040,9 @@
 50007,"Hilaire Augustha",,,,"414 - Tr",,"414 - Traypack M15M17"
 50012,"Lince Pierre Nanncie",,,,000-INAC,,000-INACTIF
 50013,"Ambroise Marie Clauda",,,,"416 - RH",,"416 - RHODOS M12M14"
-50014,"Cordoba Bond Hugo Alexis",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
+50014,"Cordoba Bond Hugo Alexis",,,,"202 - Fo",,"202 - Fo"
 50015,"Le Francois Christina",,,,000-INAC,,000-INACTIF
-50032,"Dessables Guylande",,,,"418 - FA",,"418 - FARCIES M10M13"
+50032,"Dessables Guylande",,,,"418 - FA",,"418 - FA"
 50033,"Fonseca Yurisledy",,,,000-INAC,,000-INACTIF
 50034,"St-Clair Velicia",,,,000-INAC,,000-INACTIF
 50035,"Candio Valmyr Sandra",,,,000-INAC,,000-INACTIF
@@ -2068,13 +2068,13 @@
 50060,"Phounsana Thanongxay",,,,000-INAC,,000-INACTIF
 50064,"Charfi Ahmed",,,,000-INAC,,000-INACTIF
 50076,"Gomez Maria Gloria",,,,000-INAC,,000-INACTIF
-50078,"Ayala Maria Balsamina",,,,"301 - L�",,"408 - Tubage M16M18"
+50078,"Ayala Maria Balsamina",,,,"301 - L�",,"301 - L�"
 50085,"Santana Idania",,,,000-INAC,,000-INACTIF
 50087,"Audet Geraldine",,,,000-INAC,,000-INACTIF
 50088,"Cherrison Attania",,,,000-INAC,,000-INACTIF
 50092,"Gratton Patrick",,,,000-INAC,,000-INACTIF
 50095,"Norelus Samantha",,,,000-INAC,,000-INACTIF
-50097,"Bautista Jose",,,,G1,,"411 - Emballage Sous Vide M8M10"
+50097,"Bautista Jose",,,,G1,,G1
 50098,"Mora Rodriguez Zuly",,,,000-INAC,,000-INACTIF
 50102,"Vasquez Adam",,,,000-INAC,,000-INACTIF
 50103,"Nana Brigitte",,,,000-INAC,,000-INACTIF
@@ -2095,7 +2095,7 @@
 50176,"Barboza Javier",,,,000-INAC,,000-INACTIF
 50178,"Florestal Christianie",,,,000-INAC,,000-INACTIF
 50181,"Dejean Jean Gardy",,,,000-INAC,,000-INACTIF
-50183,"Chahidi Hayat",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
+50183,"Chahidi Hayat",,,,"202 - Fo",,"202 - Fo"
 50184,"Rabel Darline",,,,000-INAC,,000-INACTIF
 50188,"Tubana Bibiana",,,,000-INAC,,000-INACTIF
 50189,"Paul Malide",,,,000-INAC,,000-INACTIF
@@ -2119,7 +2119,7 @@
 50245,"Thelusca Shelsea",,,,000-INAC,,000-INACTIF
 50246,"Phanor Anne Rose",,,,000-INAC,,000-INACTIF
 50251,"Konan Ferdinand",,,,0-INACTI,,0-INACTI
-50252,"Tchanga Seigneur",,,,9991-Ass,,"9991-Ass. Temp. Production"
+50252,"Tchanga Seigneur",,,,9991-Ass,,9991-Ass
 50254,"Sow Aldiouma",,,,000-INAC,,000-INACTIF
 50255,"Gnimpieba Kenfack Irene",,,,000-INAC,,000-INACTIF
 50258,"Ngog Albert",,,,000-INAC,,000-INACTIF
@@ -2410,7 +2410,7 @@
 50648,"Guillaume Miracienne",,,,000-INAC,,000-INACTIF
 50649,"Danowski Mark",,,,000-INAC,,000-INACTIF
 50650,"Chartier Julien",,,,000-INAC,,000-INACTIF
-50651,"Hachemi Said",,,,"702 - Fr",,"702 - Frigo Poulet JOUR M5M7"
+50651,"Hachemi Said",,,,"702 - Fr",,"702 - Fr"
 50652,"Akram Sohail",,,,000-INAC,,000-INACTIF
 50653,"Langlois Jean Francois",,,,000-INAC,,000-INACTIF
 50654,"Legault Gisele",,,,000-INAC,,000-INACTIF
@@ -3486,7 +3486,7 @@
 51747,"Periard Lucie",,,,000-INAC,,000-INACTIF
 51748,"Papadopoulos Margarita",,,,000-INAC,,000-INACTIF
 51749,"Rivest Sylvie",,,,000-INAC,,000-INACTIF
-51750,"Joseph Marie Menata",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
+51750,"Joseph Marie Menata",,,,"107 - Co",,000-INACTIF
 51751,"Cenatus Terancia",,,,"407 - Br",,"407 - Brochette HYBRIDE M16M18"
 51752,Dora,,,,"415 - RH",,"415 - RH"
 51753,"Lato Vanessa",,,,000-INAC,,000-INACTIF
@@ -3535,7 +3535,7 @@
 51798,"Ziauddin Karim",,,,000-INAC,,000-INACTIF
 51799,"Altawed Aysar",,,,000-INAC,,000-INACTIF
 51800,"Rabarisoa Abel",,,,000-INAC,,000-INACTIF
-51801,"Elyse Marie Josline",,,,"301 - L�",,"408 - Tubage M16M18"
+51801,"Elyse Marie Josline",,,,"301 - L�",,"107 - Coupe Poulet M18M22"
 51802,"Petion Greta",,,,"419 - FA",,"419 - FARCIES M7M10"
 51803,"Lussier Jean Guy",,,,000-INAC,,000-INACTIF
 51804,"Pierre Eveline",,,,000-INAC,,000-INACTIF
@@ -3575,7 +3575,7 @@
 51838,"Moreas Lucas",,,,000-INAC,,000-INACTIF
 51839,"Tshisakamba Therese",,,,000-INAC,,000-INACTIF
 51840,"Mgomba Laeticia",,,,000-INAC,,000-INACTIF
-51841,"De La Cruz Rodriguez Cinthya",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
+51841,"De La Cruz Rodriguez Cinthya",,,,"601 - Em",,"601 - Em"
 51842,Pedro,,,,0-INACTI,,0-INACTI
 51843,"Bleau Samuel",,,,000-INAC,,000-INACTIF
 51844,"El Yakoubi Zakaria",,,,000-INAC,,000-INACTIF
@@ -3624,7 +3624,7 @@
 51887,"Joseph Shyni",,,,000-INAC,,000-INACTIF
 51888,"Valde Kettia",,,,000-INAC,,000-INACTIF
 51889,"Bendiajila Wendy",,,,000-INAC,,000-INACTIF
-51890,"Kobor Julianna",,,,"608 - Em",,"608 - Emballage M12M17"
+51890,"Kobor Julianna",,,,"608 - Em",,"608 - Em"
 51891,"Giles Jorge Elioth",,,,000-INAC,,000-INACTIF
 51892,"Boyer Jonathan",,,,000-INAC,,000-INACTIF
 51893,"Brice Christopher",,,,000-INAC,,000-INACTIF
@@ -3789,7 +3789,7 @@
 52054,"Merhbouti Wissem",,,,000-INAC,,000-INACTIF
 52055,"Najac Jean Serge",,,,000-INAC,,000-INACTIF
 52056,"Zerrougi Ahmed",,,,000-INAC,,000-INACTIF
-60001,"Leblanc Stephane",,,,000-INAC,,000-INACTIF
+60001,"Leblanc Stephane",,,,000-INAC,,000-INAC
 60002,"Savoie Bertrand",,,,000-INAC,,000-INACTIF
 60003,"Cardinal Francois",,,,000-INAC,,000-INACTIF
 60004,"Duhamel Mario",,,,000-INAC,,000-INACTIF
@@ -3988,7 +3988,7 @@
 60227,"Michaudville Molly",,,,000-INAC,,000-INACTIF
 60228,"Laforce Marco",,,,000-INAC,,000-INACTIF
 60229,"Charlebois Brandon",,,,000-INAC,,000-INACTIF
-60230,"Meilleur Guillaume",,,,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
+60230,"Meilleur Guillaume",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
 60231,"Lamothe Melissa",,,,000-INAC,,000-INACTIF
 60232,"Houde Vincent",,,,000-INAC,,000-INACTIF
 60233,"Bernier Lydia",,,,000-INAC,,000-INACTIF
@@ -4073,7 +4073,7 @@
 70001,"Gregoire Altanise",,,,000-INAC,,000-INACTIF
 70005,"Charité Charles",,,,"603 - Em",,"603 - Emballage  M6M7"
 70006,"Saint Rose Jean Phanel",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
-70011,"Dulcio Johas",,,,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
+70011,"Dulcio Johas",,,,"301 - L�",,000-INACTIF
 70019,"Wilfrid Belfort",,,,000-INAC,,000-INACTIF
 70024,"Chery Myrtha",,,,000-INAC,,000-INACTIF
 70026,"Pierre Dagma",,,,000-INAC,,000-INACTIF
@@ -4097,7 +4097,7 @@
 70146,"Tony Bernadette",,,,000-INAC,,000-INACTIF
 70147,"Lafortune Ronaldine",,,,000-INAC,,000-INACTIF
 70148,"Jean Marilene",,,,"203 - Fo",,"203 - Fondue Porc  - M10M12"
-70149,"Ngakani Kyala",,,,"203 - Fo",,"203 - Fondue Porc  - M10M12"
+70149,"Ngakani Kyala",,,1,"203 - Fo",,"203 - Fondue Porc  - M10M12"
 70150,"Calixte Marie Maniche",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
 70151,"Michel Nancy",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
 70152,"Paul Gerline",,,,000-INAC,,000-INACTIF
@@ -4112,7 +4112,7 @@
 70161,"Jean Alonge",,,,"203 - Fo",,"203 - Fondue Porc  - M10M12"
 70162,"Dorvil Wiltane",,,,"410 - Fo",,"410 - Fondue POULET M12M14"
 70163,"Erius Dieulene",,,,000-INAC,,000-INACTIF
-70164,"Marcelus Mirleine",,,,"419 - FA",,000-INACTIF
+70164,"Marcelus Mirleine",,,1,"419 - FA",,000-INACTIF
 70165,"Bien Aimé Rose Danise",,,,"419 - FA",,"419 - FARCIES M7M10"
 70166,"Desrir Fritzner",,,,000-INAC,,000-INACTIF
 70167,"Oce Dieuvil",,,,000-INAC,,000-INACTIF
@@ -4204,9 +4204,9 @@
 90048,"Dostie Marie Josée",,,,000-INAC,,000-INACTIF
 90049,"Lopez Nunez Arlon Jose",,,,"9000 - A",,"9000 - Administration"
 90051,"Demers Chauvette Lise",,,,"9000 - A",,"9000 - Administration"
-90052,"Ducharme Jonathan",,,,"914- Cha",,"914- Chauffeurs"
+90052,"Ducharme Jonathan",,,1,"914- Cha",,"914- Chauffeurs"
 90053,"Loyola Atuncar Marco",,,,000-INAC,,000-INACTIF
-90055,"Dandurand Yvon",,,,"914- Cha",,"914- Chauffeurs"
+90055,"Dandurand Yvon",,,1,"914- Cha",,"914- Chauffeurs"
 90056,"Bertrand Alexandre",,,,000-INAC,,000-INACTIF
 90057,"St Martin Chloé",,,,000-INAC,,000-INACTIF
 90058,"Sergerie Celine",,,,"9000 - A",,"9000 - Administration"
@@ -4276,7 +4276,7 @@
 92018,"Jean Gabriel",,,,0-INACTI,,0-INACTI
 92019,"Cabot Real",,,,000-INAC,,000-INACTIF
 92020,"Deslieres Leon",,,,000-INAC,,000-INACTIF
-92021,"Tamno Jerome",,,,"912 - Ma",,"912 - Maintenance"
+92021,"Tamno Jerome",,,1,"912 - Ma",,"912 - Maintenance"
 93000,"Beauregard Michael",,,,"9000 - A",,"9000 - Administration"
 99000,"Duchesne Jacques",,,,"9000 - A",,"9000 - Administration"
 99001,"De Almeida Manuel",,,,"9000 - A",,"9000 - Administration"
@@ -4619,27 +4619,27 @@ B0002,Bus-02,,,,G2,,G2
 10720,"Lopez Fredy TET",,,1,"108 - Bo",,"108 - Boeuf/Agneau M5M7"
 10725,"Estrada Cristian  TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 10728,"Cumes Cumes Nicolas  TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
-10740,"Aroche Carlos Enrique TET",,,,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
+10740,"Aroche Carlos Enrique TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 23022,"Singh Balwinder",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
-23026,"Singh Balinder",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
+23026,"Singh Balinder",,,1,"101 - Tr",,000-INACTIF
 23034,"Singh Jaspal",,,,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 70302,"Valcin Denocles",,,,"103 - Vi",,"103 - Viande Hachée M2M3"
-23030,"Singh Kuldeep",,,,"104 - Pa",,"104 - Parrure M1M3"
+23030,"Singh Kuldeep *",,,,"104 - Pa",,000-INACTIF
 10726,"Vicente Rivera Alan  TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 10742,"Roy Joanie",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
 10766,"Santos Beltran Maria De la Luz",,,1,000-INAC,,000-INACTIF
-10767,"Zhang Bin",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
-10768,"Chen Yan Yu",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
+10767,"Zhang Bin",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+10768,"Chen Yan Yu",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
 23009,"Pardeep  Sonii",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 23010,"Lakhminder Singh",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 23001,"Singh Jagdish",,,1,"603 - Em",,"603 - Emballage  M6M7"
 23025,"Singh Amarjeet",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 23035,"Singh Bhupinder",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 30021,"Singh Baljeet",,,1,000-INAC,,000-INACTIF
-30044,"Kumar Jashwinder",,,,000-INAC,,000-INACTIF
+30044,"Kumar Jashwinder",,,,000-INAC,,"107 - Coupe Poulet M18M22"
 70266,"Chadli Slimane",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 30049,"Singh Lakhwinder",,,1,000-INAC,,000-INACTIF
-70301,"Casimir Gregory",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
+70301,"Casimir Gregory",,,,"112 - Po",,000-INACTIF
 10727,"Tol Raxon Julio TET",,,1,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
 23005,"Kaur Rajwinder",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
 23006,"Kaur Palwinder",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
@@ -4656,17 +4656,17 @@ B0002,Bus-02,,,,G2,,G2
 70272,"Murebwayire Joseline",,,,"203 - Fo",,"203 - Fondue Porc  - M10M12"
 10690,"Rodriguez Ibrahim",,,,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
 10734,"Denis Fania",,,,000-INAC,,000-INACTIF
-10759,"Labbe Bernadette",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+10759,"Labbe Bernadette",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
 30070,"30070 Singh",,,,"""411 - E",,"""411 - E"
 61080,"Goyal Palak",,,,000-INAC,,000-INACTIF
 41460,"Thomas Sonise",,,,"414 - Tr",,000-INACTIF
 40195,"Hernandez Dora",,,,"415 - RH",,"415 - RHODOS M12M14"
-23015,"KAur Mandeep",,,,"416 - RH",,"416 - RHODOS M12M14"
+23015,"KAur Mandeep *",,,,"416 - RH",,"416 - RHODOS M12M14"
 41464,"Darius Wislene",,,,"416 - RH",,"416 - RHODOS M12M14"
 10769,"Lenov Han Sebastien",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
 10770,"Chiang Mei- Li",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
-23045,"Bala Karwal Shashi",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
-23046,"Gill Kaur Navjot",,,,"417 - RO",,000-INACTIF
+23045,"Bala Karwal Shashi *",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
+23046,"Gill Kaur Navjot *",,,,"417 - RO",,000-INACTIF
 23047,"Kaur Amandeep",,,,"417 - RO",,000-INACTIF
 70333,"Celestin Florence",,,,"417 - RO",,"417 - ROTIS DE PORC M12M14"
 41483,"Almonte Maryelin",,,,"418 - FA",,"418 - FARCIES M10M13"
@@ -4674,12 +4674,12 @@ B0002,Bus-02,,,,G2,,G2
 10763,"Lacarte Mimose",,,,"421 -Pan",,"421 -Panées M7M9"
 23027,"Kaur Jaspreet",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23028,"Kaur Harpreet",,,,"421 -Pan",,"421 -Panées M7M9"
-23029,"Kaur Parminder",,,,"421 -Pan",,"421 -Panées M7M9"
-23031,"Kaur Charanjeet",,,,"421 -Pan",,"421 -Panées M7M9"
-23036,"Kaur Rajwant",,,,"421 -Pan",,"421 -Panées M7M9"
+23029,"Kaur Parminder *",,,,"421 -Pan",,"421 -Panées M7M9"
+23031,"Kaur Charanjeet",,,,"421 -Pan",,000-INACTIF
+23036,"Kaur Rajwant *",,,,"421 -Pan",,"421 -Panées M7M9"
 23037,"Kaur Mandeep",,,,"421 -Pan",,"421 -Panées M7M9"
-23038,"Rani Soni",,,,"421 -Pan",,"421 -Panées M7M9"
-23039,"Kaur Sukhwinder",,,1,"421 -Pan",,"421 -Panées M7M9"
+23038,"Rani Soni *",,,,"421 -Pan",,"421 -Panées M7M9"
+23039,"Kaur Sukhwinder *",,,1,"421 -Pan",,"421 -Panées M7M9"
 41488,"Pepin De Mendez Maria Margarita",,,,"421 -Pan",,"421 -Panées M7M9"
 10748,"Ramirez Luciano TET",,,1,"401 - Cr",,"401 - Crapaudine M2M4"
 10746,"Chavez Benjamin TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
@@ -4691,30 +4691,30 @@ B0002,Bus-02,,,,G2,,G2
 23000,"Kumar Ajay",,,,"604 - Em",,000-INACTIF
 23040,"Kaur Swarnjeet",,,,"604 - Em",,"604 - Emballage 4 Viandes M5M7"
 30018,"Randhawa Jashanjot Singh",,,1,000-INAC,,000-INACTIF
-23033,"Singh Sucha",,,,"605 - Em",,"605 - Emballage M2M3"
+23033,"Singh Sucha *",,,,"605 - Em",,"605 - Emballage M2M3"
 23041,"Kaur Manjit",,,,"605 - Em",,"605 - Emballage SOIR M8M10"
 41443,"Charles Amicie",,,,"606 - Em",,"606 - Emballage M5M6"
 70273,"Wistaff Daniel",,,,000-INAC,,000-INACTIF
 10750,"Saint Louis Benjamin",,,,"702 - Fr",,"608 - Emballage M12M17"
-10773,"Gutierrez Bryan",,,,"608 - Em",,000-INACTIF
-23003,"Kaur Sharanjit",,,,"608 - Em",,"606 - Emballage M5M6"
+10773,"Gutierrez Bryan",,,1,"608 - Em",,000-INACTIF
+23003,"Kaur Sharanjit *",,,,"608 - Em",,"604 - Emballage 4 Viandes M5M7"
 23042,"Singh Hardeep",,,,"608 - Em",,"608 - Emballage M12M17"
 41491,"Covaci Mariana",,,1,"608 - Em",,"608 - Emballage M12M17"
-41492,"Covaciu Samuel",,,,"608 - Em",,"608 - Emballage M12M17"
-41493,"Covaciu Rosalinda",,,,"608 - Em",,"608 - Emballage M12M17"
+41492,"Covaciu Samuel",,,1,"608 - Em",,"608 - Emballage M12M17"
+41493,"Covaciu Rosalinda",,,1,"608 - Em",,"608 - Emballage M12M17"
 61079,"Diaz Giovanna",,,,000-INAC,,000-INACTIF
 10721,"Cubule Carlos Yoe TET",,,1,"610 - Em",,"610 - Emballage Traypack M5M6"
 23032,"Singh Jagjit",,,,"610 - Em",,"610 - Emballage Traypack M5M6"
 10718,"Saba Jhonatan TET",,,1,"614 - Sc",,"614 - Scan Emballage M3M4"
 10739,"Gomez Kevin Antonio TET",,,1,"701- Fri",,"701- Frigo Boeuf JOUR M5M7"
 61067,"Fakhreddine Mohamed",,,,"701- Fri",,"701- Frigo Boeuf JOUR M5M7"
-23073,"Sidhu Manjot",,,,"608 - Em",,"608 - Emballage M12M17"
+23073,"Sidhu Manjot *",,,,"608 - Em",,"608 - Emballage M12M17"
 23013,"Singh Harjeet",,,1,"702 - Fr",,"702 - Frigo Poulet JOUR M5M7"
 30022," Sher Singh",,,1,"702 - Fr",,"702 - Frigo Poulet JOUR M5M7"
 10719,"Rios Marco TET",,,1,"703 - Co",,"703 - Congélateur JOUR M4M6"
 61078,"Segun Daniel",,,,"703 - Co",,"703 - Congélateur JOUR M4M6"
 10743,"Hache Danny",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
-10745,"Espinoza Alfonso TET",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
+10745,"Espinoza Alfonso TET",,,1,"706 -  F",,"701- Frigo Boeuf JOUR M5M7"
 10749,"Martinez Oscar TET",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
 70332,"Laforest Christian",,,,000-INAC,,000-INACTIF
 70334,"Aubin Yvenel",,,,000-INAC,,000-INACTIF
@@ -4724,32 +4724,32 @@ B0002,Bus-02,,,,G2,,G2
 10716,"Durandisse Joicin",,,1,"801 - En",,"801 - Entretien En Prod SOIR M5M8"
 10747,"Martinez Martinez Jesua TET",,,1,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
 70329,"Michelot Cleus",,,,"801 - En",,"801 - Entretien En Prod SOIR M5M8"
-61071,"Nadeau Marlene",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
-70322,"Ben Othman Abdallah",,,,"802 - En",,"802 - Entretien Hors Prod  M6M8"
+61071,"Nadeau Marlene",,,,"802 - En",,"802 - Conciergerie  M6M8"
+70322,"Ben Othman Abdallah",,,,"802 - En",,"802 - Conciergerie  M6M8"
 10764,"Moreno Ruiz Enrique",,,1,"811 - Ex",,"811 - Expédition jour M6M7"
 41487,"Villate Henry Mauricio",,,,000-INAC,,000-INACTIF
 90085,"Marin Jose Luis",,,1,"9000 - A",,"9000 - Administration"
-92024,"Bernier AlexP",,,1,"912 - Ma",,"912 - Maintenance"
-92025,"Beauregard  Samuel",,,1,"912 - Ma",,"912 - Maintenance"
-92027,"Viens Gabriel",,,,"912 - Ma",,"912 - Maintenance"
-92028,"Fogang MBA Ulrich Kevin",,,,"912 - Ma",,"912 - Maintenance"
+92024,"Bernier AlexP",,,1,"912 - Ma",,"912 - Ma"
+92025,"Beauregard  Samuel",,,1,"912 - Ma",,"912 - Ma"
+92027,"iens Gabriel",,,1,"912 - Ma",,"912 - Maintenance"
+92028,"ogang MBA Ulrich Kevin",,,1,"912 - Ma",,"912 - Maintenance"
 10752,"Montoya Jose Fernando",,,,G1,,"914- Chauffeurs"
 30061,"Kaur Balvir",,,,9995-Arr,,"9995-Arrêt Temporaire"
 41440,"Mohammed Naranjo Abel",,,,000-INAC,,000-INACTIF
 70268,"Gill Stephane",,,,000-INAC,,000-INACTIF
-48024,"Mejia Jaime Lenin",,,,"9998 - D",,"9998 - Desossage MS"
+48024,"Mejia Jaime Lenin",,,,"9998 - D",,000-INACTIF
 48217,"Portillo Brandon",,,1,"9998 - D",,"9998 - Desossage MS"
 48218,"Lebron Jorge",,,1,"9998 - D",,"9998 - Desossage MS"
 48219,"Cruz Cecilio",,,1,"9998 - D",,"9998 - Desossage MS"
 48220,"Consuegra Yoandri",,,1,"9998 - D",,"9998 - Desossage MS"
-48221,"Quispe Isidoro",,,,"9998 - D",,"9998 - Desossage MS"
+48221,"Quispe Isidoro",,,1,"9998 - D",,"9998 - Desossage MS"
 48222,"Cruz Isidro Grebys Josue",,,,000-INAC,,000-INACTIF
-48223,"Cotes Angulo Henry",,,,"9998 - D",,"9998 - Desossage MS"
+48223,"Cotes Angulo Henry",,,,"9998 - D",,000-INACTIF
 48224,"Lopez Miguel",,,1,"9998 - D",,"9998 - Desossage MS"
 48225,"Rincon Erney",,,1,"9998 - D",,"9998 - Desossage MS"
 48226,"Pannunzio Dominique",,,1,"9998 - D",,"9998 - Desossage MS"
 48227,"Cuevas Robert",,,1,"9998 - D",,"9998 - Desossage MS"
-48228," Ronald Renato",,,,"9998 - D",,"9998 - Desossage MS"
+48228," Ronald Renato",,,1,"9998 - D",,"9998 - Desossage MS"
 48229,"Perez Miguel",,,,"9998 - D",,"9998 - Desossage MS"
 48230,"Rodriguez Melissa Sue",,,,"9998 - D",,"9998 - Desossage MS"
 23050,"Lal Gurmeet",,,,"101 - Tr",,"101 - Trimmage - Ligne 1 M16M24"
@@ -4760,7 +4760,7 @@ B0002,Bus-02,,,,G2,,G2
 41495,"Ben Hassen Tracy",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 23057,"Kaur Kuldeep",,,,"201 - Fo",,000-INACTIF
 23060,"Kaur Gurjit",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
-23048,"Singh Vikramjit",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23048,"Singh Vikramjit *",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
 23058,"Kaur Inderjit",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
 23065,"Buttar Harjeet",,,1,000-INAC,,000-INACTIF
 23066,"Brar Satinderjeet",,,1,000-INAC,,000-INACTIF
@@ -4771,20 +4771,20 @@ B0002,Bus-02,,,,G2,,G2
 23054,"Singh Gurpreet",,,,"416 - RH",,"416 - RHODOS M12M14"
 10775,"Dubeau Gisele",,,1,"417 - RO",,"417 - ROTIS DE PORC M12M14"
 23049,"Suman Suman",,,,"421 -Pan",,000-INACTIF
-23056,"Kaur Mohinder",,,,"421 -Pan",,"421 -Panées M7M9"
-23059,"Mavi Kaur Tanveer",,,,"421 -Pan",,"421 -Panées M7M9"
+23056,"Kaur Mohinder *",,,,"421 -Pan",,"421 -Panées M7M9"
+23059,"Mavi Kaur Tanveer *",,,,"421 -Pan",,000-INACTIF
 23052,"Singh Didar",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 70336,"Soumahoro Sarra Vaness",,,,000-INAC,,000-INACTIF
 23053,"Singh Nishabar",,,,"603 - Em",,"603 - Emballage  M6M7"
 23055,"Rani Sheenu",,,,"603 - Em",,000-INACTIF
-23074,"Pallavi Pallavi",,,,"604 - Em",,"604 - Emballage 4 Viandes M5M7"
+23074,"Pallavi Pallavi",,,,"604 - Em",,000-INACTIF
 23062,"Singh Karamajit",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23063,"Tarlok Sandhu",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23064,"Singh Akashdeep",,,1,000-INAC,,"606 - Emballage M5M6"
 23071,"Singh Simranpreet",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
-70337,"Richard Shelda",,,,"606 - Em",,"606 - Emballage M5M6"
+70337,"Richard Shelda",,,,"606 - Em",,000-INACTIF
 61083,"Desiral Syntia",,,1,000-INAC,,000-INACTIF
-23075,"Kankarwal Mohit",,,,"610 - Em",,"610 - Emballage Traypack M5M6"
+23075,"Kankarwal Mohit *",,,,"610 - Em",,"610 - Emballage Traypack M5M6"
 61082,"Toussaint Andy Joseph",,,,"704 - Sa",,"704 - Salle sec M5M6"
 10774,"Arenas Diana Virginia",,,1,000-INAC,,000-INACTIF
 10776,"Cusson Jonathan",,,1,"801 - En",,000-INACTIF
@@ -4798,34 +4798,34 @@ B0002,Bus-02,,,,G2,,G2
 23020,"Kaur Parmjeet",,,1,000-INAC,,000-INACTIF
 61085,"Makwakala Annie",,,,000-INAC,,000-INACTIF
 SANI1,"LANDA FROYLAN",,,,000-INAC,,000-INACTIF
-28016,"Herrera Kevin",,,1,"106 - Ba",,"9996 - DESOSSAGE GC"
+28016,"Herrera Kevin",,,1,"106 - Ba",,"106 - Ba"
 10779,"Carrera Isabel",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
 41496,"Ayala Juan David",,,,"108 - Bo",,"107 - Coupe Poulet M18M22"
-23092,"Singh Arshdeep",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
-23093,"Singh Harpreet",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
-23082,"Kaur Sukhwinder",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
+23092,"Singh Arshdeep",,,,"112 - Po",,000-INACTIF
+23093,"Singh Harpreet",,,1,"112 - Po",,"411 - Emballage Sous Vide M8M10"
+23082,"Kaur Sukhwinder",,,,"201 - Fo",,000-INACTIF
 23083,"Akram Tazia",,,,"408 - Tu",,000-INACTIF
-23084,"Begum Ripa",,,,"408 - Tu",,"408 - Tubage M16M18"
-23072,"Kaur Simrandeep",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
+23084,"Begum Ripa *",,,,"408 - Tu",,"408 - Tubage M16M18"
+23072,"Kaur Simrandeep *",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 23085,"Sharanjeet Thind",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 23086,"Kaur Kulwinder",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 23087,"Singh Gurveer",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 23088,"Singh Puran",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
 23089,"Singh Balwinder",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
-23077,"Singh Gurjant",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
+23077,"Singh Gurjant",,,1,"605 - Em",,"605 - Emballage M2M3"
 23078,"Singh Harjinder",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23079,"Singh Gagandeep",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23080,"Kaur Jagroop",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 23081,"Kaur Gagneet",,,1,"605 - Em",,"605 - Emballage SOIR M8M10"
 10781,"Dia Elhadjo",,,1,"607 - Em",,000-INACTIF
-23090,"Kumar Paras",,,,"609 - Em",,"609 - Emballage  M2M3"
+23090,"Kumar Paras",,,,"609 - Em",,000-INACTIF
 23091,"Singh Satveer",,,,"609 - Em",,"609 - Emballage  M2M3"
 10777,"Biagcheun Nathalie",,,1,"801 - En",,"801 - Entretien En Prod JOUR M6M9"
 10778,"Aguinsoye Adeyinka",,,,"801 - En",,"801 - Entretien En Prod SOIR M5M8"
 Danna,"):) Danna",,,,"9000 - A",,"9000 - Administration"
 28013,"Lozano Luis Anthony",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
 28014,"Fogno Arnaud",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
-28015,"Herrera Mahynor",,,,"9996 - D",,"9996 - DESOSSAGE GC"
+28015,"Herrera Mahynor",,,,"9996 - D",,"9996 - D"
 28017,"Montufar Jesus Alberto",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
 28018,"Cabrera Edison",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
 28019,"Mendez Luis Gerardo",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
@@ -4836,14 +4836,14 @@ Danna,"):) Danna",,,,"9000 - A",,"9000 - Administration"
 23012,"Kaur Harpreet",,,1,000-INAC,,000-INACTIF
 23018,"Kaur Jasmeen",,,1,000-INAC,,000-INACTIF
 23096,"Kaur Sukhmanpreet",,,,000-INAC,,000-INACTIF
-10787,"Erazo Sara",,,,"608 - Em",,"608 - Emballage M12M17"
+10787,"Erazo Sara",,,1,"608 - Em",,"608 - Emballage M12M17"
 48232,"Calvo Arturo",,,1,"9998 - D",,"9998 - Desossage MS"
 10785,"Brutus Marie Lourdie",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
 10786,"Matilus Merlande",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
 10788,"Otshumba Veronique",,,,"408 - Tu",,"408 - Tubage M16M18"
 23094,"Kaur Gurbax",,,,"408 - Tu",,"408 - Tubage M16M18"
-23097,"Kaur Sharnjit",,,,"408 - Tu",,"408 - Tubage M16M18"
-23098,"Kaur Surinder",,,,"408 - Tu",,"408 - Tubage M16M18"
+23097,"Kaur Sharnjit",,,,"408 - Tu",,"408 - Tu"
+23098,"Kaur Surinder",,,,"408 - Tu",,000-INACTIF
 10784,"Deshommes Maxime",,,,"425 - Ru",,"425 - Runners Production M3M4"
 23095,"Singh Tarlochan",,,,"801 - En",,"801 - Entretien En Prod JOUR M6M9"
 23099,"Singh Surinderpal",,,,"801 - En",,"801 - Entretien En Prod JOUR M6M9"
@@ -4854,14 +4854,72 @@ Danna,"):) Danna",,,,"9000 - A",,"9000 - Administration"
 28023,"Castro Vera Cesar",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
 28021,"Moscayza Willy",,,,"9996 - D",,"9996 - DESOSSAGE GC"
 28022,"Guerra Mejia Francisco",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
-28024,"Herrera Olvin",,,,"9996 - D",,"9996 - DESOSSAGE GC"
+28024,"Herrera Olvin",,,,"9996 - D",,"9996 - D"
 48233,"Gonzalez Juan Luis",,,1,"9998 - D",,"9998 - Desossage MS"
 48234,"Tavarez Miguel",,,,"9998 - D",,"9998 - Desossage MS"
 23101,"Singh Jaswinder",,,,"103 - Vi",,"103 - Viande Hachée M2M3"
 23100,"Kaur Satwinder",,,,"605 - Em",,"605 - Emballage SOIR M8M10"
-10789,"Gonzalez Christian",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
+10789,"Gonzalez Christian",,,1,"112 - Po",,"112 - Poulet en vrac M8M12"
 ,,,,,,,
 10792,"Serna Adriana",,,1,"608 - Em",,"608 - Emballage M12M17"
+10793,"Kaur Sharnjit",,,,000-INAC,,000-INACTIF
 10791,"Joseph Estherfanise",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
 10790,"Paul Jacquelin",,,,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
-28026,"Cruz Brayan Samuel",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
+28026,"Cruz Brayan Samuel",,,1,"9996 - D",,"9996 - D"
+23016,"Kaur Sukhwinder *",,,1,000-INAC,,000-INACTIF
+10810,"Kobor Julianna",,,1,"608 - Em",,"608 - Emballage M12M17"
+23103,"Kanwar Twinkle",,,,"603 - Em",,"603 - Emballage  M6M7"
+23112,"Sani Pardeep",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23113,"Sukhvir Singh Dhillon",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
+23114,"Kumar Naresh",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23115,"Singh Amarjit",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23116,"Nain Jagmohan",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23117,"Singh Vi Kram",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23118,"Multani Hardev",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23119,"Singh Dildar",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23120,"Kumar Sukhdev",,,,"107 - Co",,"107 - Coupe Poulet M18M22"
+23121,"Kumar Anil",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+23122,"Gourav Gourav",,,1,"107 - Co",,"107 - Coupe Poulet M18M22"
+10812,"Cayetano Doroteo",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
+10813,"Villegas Esteban",,,,"112 - Po",,"112 - Poulet en vrac M8M12"
+10799,"Gomez Blanca",,,1,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
+41499,"Gabriel Jeseline",,,,"201 - Fo",,"201 - Fondue - Boeuf  M16M18"
+10804,"Cordoba Bond Hugo Alexis",,,1,"202 - Fo",,"202 - Fondue Boeuf M16M18"
+10807,"Chahidi Hayat",,,,"202 - Fo",,"202 - Fondue Boeuf M16M18"
+10800,"Hernandez Claudia",,,1,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
+10801,"Nyangone Marlyse",,,1,"301 - L�",,"301 - Légumes - Équipes jour M9M11"
+10795,"Godbout Xavier",,,1,"410 - Fo",,"410 - Fondue POULET M12M14"
+10803,"Guerrero Rossy Maria",,,,"410 - Fo",,"410 - Fondue POULET M12M14"
+10806,"Bautista Jose",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23106,"Kaur Manjit",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23107,"Kaur Amarjit",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23108,"Singh Mota",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23109,"Kaur Jaspreet",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23110,"Kaur Baljit",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+23111,"Kaur Satvant",,,1,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+41500,"Cavagnaro Ivan",,,,"411 - Em",,"411 - Emballage Sous Vide M8M10"
+10805,"Dessables Guylande",,,,"418 - FA",,"418 - FARCIES M10M13"
+10802,"Cherubin Soraya",,,,"421 -Pan",,"421 -Panées M7M9"
+10811,"De La Cruz Rodriguez Cinthya",,,1,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
+23105,"Kaur Jaspreet",,,,"601 - Em",,"601 - Emballage HYBRIDE M3M5"
+23104,"Kaur Mandeep",,,,"604 - Em",,"604 - Emballage 4 Viandes M5M7"
+23102,"Kaur Sarabjit",,,,"606 - Em",,"606 - Emballage M5M6"
+10794,"Abou Danaf Asheq",,,1,"701- Fri",,"701- Frigo Boeuf JOUR M5M7"
+10797,"Charpentier Samuel",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
+10809,"Hachemi Said",,,1,"706 -  F",,"706 -  Frigo Shutdown SOIR M5M7"
+10798,"Ilfrant Elveus Tius",,,,"801 - En",,"801 - Entretien En Prod JOUR M6M9"
+10796,"Leblanc Stephane",,,1,"802 - Co",,"802 - Conciergerie  M6M8"
+10808,"Tchanga Seigneur",,,1,9991-Ass,,"9991-Ass. Temp. Production"
+28025,"Acuna Sergio",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
+28027,"Ramos Cristihian",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
+28028,"Salazar Gustavo",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
+48244,"Rodriguez Jonathan",,,1,"9996 - D",,"9996 - DESOSSAGE GC"
+48235,"Chacon Juan David",,,1,"9998 - D",,"9998 - Desossage MS"
+48236,"Castillo Cesar",,,1,"9998 - D",,"9998 - Desossage MS"
+48237,"De Candelario Ursula Ynoa",,,1,"9998 - D",,"9998 - Desossage MS"
+48238,"Candelario Gil Ricardo",,,1,"9998 - D",,"9998 - Desossage MS"
+48239,"Durante Ismari",,,1,"9998 - D",,"9998 - Desossage MS"
+48240,"Fermin Juan Felix",,,1,"9998 - D",,"9998 - Desossage MS"
+48241,"Herrera Mahynor",,,,"9998 - D",,"9998 - Desossage MS"
+48242,"Herrera Kevin",,,1,"9998 - D",,"9998 - Desossage MS"
+48243,"Cruz Brayan Samuel",,,1,"9998 - D",,"9998 - Desossage MS"

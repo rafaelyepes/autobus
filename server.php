@@ -1,5 +1,5 @@
 <?php
-include ("./indexg1.php"); 
+include ("./indexg1.php");
 // numeros duplicados */
 /*
 SELECT NUMEMP, COUNT(*) Total
@@ -106,10 +106,10 @@ var_dump($output);
 */
 //FIN Genera .sql Backup de una tabla//
 
-//Genera .csv  de una tabla//
+//Genera .csv  de una tabla//:
 echo ("</br>");
 echo ("</br>");
-echo "Generando ARCHIVO .csv";
+echo "Generando ARCHIVO --backup.csv--";
 
 $archivo_csv = fopen('backup.csv', 'w');
 
